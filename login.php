@@ -6,7 +6,7 @@ if($_SERVER["REQUEST_METHOD"]=="post"){
 
     mysql_connect("localhost","root","") or die(mysql_error()); //connect to server
     mysql_select_db("1st_db") or die("Can't connect to databse"); //connect to databse
-    $query = mysql_query("Select * from user"); //query the user table
+    $query = mysql_query("Select * from users"); //query the user table
     while($row = mysql_fetch_array($query)) //display all rows from query
     {
         $table_user = $row['username']; //first username row is passed to the variable
