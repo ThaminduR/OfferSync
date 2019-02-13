@@ -1,18 +1,22 @@
 <head>
     <link rel="stylesheet" href="login.css">
 </head>
-<div class="bg-img"></div>
-<form action="login_page.php">
-    
-    <div class="container">
-        <p><label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required></p>
-        <p><label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required></p>
-        <button type="submit">Login</button></br>
-        <label class="remember">
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-        <span class="psw"><a href="#">Forgot password?</a></span>
-    </div>
-</form>
+
+<body>
+    <div class="bg-img"></div>
+    <form action="login_page.php">
+
+        <div class="container">
+            <h1>Sign In</h1>
+            <p><input type="text" placeholder="Enter Username" name="uname" required></p>
+            <p><input type="password" placeholder="Enter Password" name="psw" required></p>
+            <button type="submit">Login</button></br>
+            <label class="remember">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <div>
+                <span class="psw"><a href="#">Forgot password?</a></span>
+            </div>
+        </div>
+    </form>
+</body>
