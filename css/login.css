@@ -19,7 +19,7 @@ input{
 
 .bg-img {
     /* The image used */
-    background-image: url(/img/login_back.jpg);
+    background-image: url('/img/login_back.jpg');
     /* Add the blur effect*/
     filter: blur(08px);
     -webkit-filter: blur(4px);
