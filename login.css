@@ -1,3 +1,5 @@
+
+
 /* Bordered form */
 form {
     border: 3px solid #f1f1f1;
@@ -6,15 +8,16 @@ form {
     margin: 0;
     padding: 0;
 }
-/*make body font monospace and size-125%*/
+/*make body font merriweather and size-125%*/
+
 body{
-    font-family: monospace;
+    font-family:'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-size: 125%;
 }
 
-/*make input font monospace*/
+/*make input font  merriweather*/
 input{
-    font-family: monospace;
+    font-family:'Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
 .bg-img {
