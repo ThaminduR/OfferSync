@@ -2,21 +2,20 @@
     <link rel="stylesheet" href="css/register.css">
 </head>
 
-<body>
-    <div class="bg-img"> </div>
-    <form action="login.php" method="post">
-
-        <div class="container">
-            <h1>Sign In !</h1>
-            <p><input type="text" placeholder="Enter Username" name="uname" required></p>
-            <p><input type="password" placeholder="Enter Password" name="psw" required></p>
-            <button type="submit">Sign In</button></br>
+<body background="img/login_back.jpg">
+    <div class="login-form">
+        <h1>Sign In </h1>
+        <form action="authenticate.php" method="post">
+            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="submit">
             <label class="remember">
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
             <div>
                 <span class="psw"><a href="#">Forgot password ?</a></span>
             </div>
-        </div>
-    </form>
+
+        </form>
+    </div>
 </body>
