@@ -59,11 +59,42 @@ button {
     border-radius: 15%;
 }
 
+
 /* Add a hover effect for buttons */
 button:hover {
     opacity: 0.8;
 }
-
+a {
+    color: rgb(255, 255, 255);
+    /*-webkit-transition: all 0.2s;
+    transition: all 0.2s;*/
+    float: right;
+  }
+.btn {
+    font-weight: 7;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  .btn-xl {
+    padding: 1rem 2rem;
+  }
+/*.btn-primary {
+    background-color: #F05F40;
+    border-color: #F05F40;
+  }*/
+  
+ /* .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: #fff;
+    background-color: #ee4b28 !important;
+  }*/
+  
+  /*.btn-primary:active, .btn-primary:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+    box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+  }*/
 /*making container see through*/
 .container {
     background-color: rgb(0, 0, 0);
@@ -86,7 +117,10 @@ button:hover {
 
 /* The "Forgot password" text */
 span.psw {
-    float: right;
+    
+    float: right;color: rgb(255, 255, 255);
+    
+    
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -94,6 +128,7 @@ span.psw {
     span.psw {
         display: block;
         float: right;
+    
         ;
     }
 }
