@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         {
             $bool = false;
             Print '<script>alert("Username has been taken !");</script>'; //prompt the user
-            Print '<script>window.location.assign("login.php");</script>'; //redirects to register page
+            Print '<script>window.location.assign("register.html");</script>'; //redirects to register page
 
         }
     }
@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     {
         mysqli_query($db, "INSERT INTO users (username, password) VALUES ('$username', '$password')"); //insert values to table user
         Print '<script>alert("Successfully Registered !");</script>';
-        Print '<script>window.location.assign("login.html");</script>';
+        Print '<script>window.location.assign("index.html");</script>';
 
     }
 }

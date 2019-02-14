@@ -19,12 +19,12 @@ input{
 
 .bg-img {
     /* The image used */
-    background-image: url('/img/login_back.jpg');
-    /* Add the blur effect*/
+    background-image: url("../img/login_back.jpg");
+    /* Add the blur effect
     filter: blur(08px);
     -webkit-filter: blur(4px);
-    /* Full height */
-    height: 99%;
+    Full height */
+    height: 99.87%;
 
     margin: auto;
     /* Center and scale the image nicely */
@@ -71,6 +71,7 @@ button:hover {
     background-color: rgb(0, 0, 0, 0.4);
     /*BLack with see through opacity*/
     padding: 20px;
+    
     border: 1px solid #f1f1f1;
     color: white;
     position: absolute;
