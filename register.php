@@ -14,12 +14,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $this->city = $_city;
             $this->username = $uname;
             $this->password = $psw;
+
+        function set_city($new_city){
+            $this->city = $new_city;
+        }
+
         }
 
 
     }
-    $username = mysqli_real_escape_string($db, $_POST['uname']);
-    $password = mysqli_real_escape_string($db, $_POST['psw']);
+    $first_name = mysqli_real_escape_string($db, $_POST['firstname']);
+    $last_name = mysqli_real_escape_string($db, $_POST['lastname']);
+    $_city = mysqli_real_escape_string($db, $_POST['city']);
+    $uname = mysqli_real_escape_string($db, $_POST['username']);
+    $psw = mysqli_real_escape_string($db, $_POST['password']);
+
+    
     $bool = true;
 
     //mysql_select_db() or die("Can't connect to databse"); //connect to databse
