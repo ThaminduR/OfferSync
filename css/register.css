@@ -1,54 +1,24 @@
-/* Bordered form */
-form {
-    border: 3px solid #f1f1f1;
-}
-* {
-    margin: 0;
-    padding: 0;
-}
-/*make body font monospace and size-125%*/
-body{
-    font-family: monospace;
-    font-size: 125%;
-}
 
-/*make input font monospace*/
-input{
-    font-family: monospace;
-}
-
-.bg-img {
-    /* The image used */
-    background-image: url("../img/login_back.jpg");
-    /* Add the blur effect
-    filter: blur(08px);
-    -webkit-filter: blur(4px);
-    Full height */
-    height: 99.87%;
-
+.login-form{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 24px;
+    width: 300px;
     margin: auto;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
 }
-
-/* Full-width inputs */
-input[type=text],
-input[type=password] {
-    width: 25%;
-    padding: 6px 10px;
+.login-form input[type=text],
+.login-form input[type=password] {
+    width: 100%;
+    padding: 15px;
     margin: 8px 0;
-    border-radius: 5%;
+    border:1px solid #dddddd;
     display: inline-block;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
     box-sizing:border-box;
 
 }
 
 /* Set a style for all buttons */
-button {
+.login-form input[type="submit"] {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
