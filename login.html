@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body background="img/login_back.jpg">
@@ -7,15 +7,23 @@
         <h1>Sign In </h1>
         <form action="authenticate.php" method="post">
             <input type="text" placeholder="Enter Username" name="uname" required>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-            <input type="submit">
+            <input type="password" placeholder="Enter Password" name="psw" required></br>
+            
             <label class="remember">
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
             <div>
                 <span class="psw"><a href="#">Forgot password ?</a></span>
             </div>
-
+            
         </form>
+    </div>
+    <div class="container-login100-form-btn">
+        <div class="wrap-login100-form-btn">
+            <div class="login100-form-bgbtn"></div>
+            <button class="login100-form-btn">
+                Login
+            </button>
+        </div>
     </div>
 </body>
