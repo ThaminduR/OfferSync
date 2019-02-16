@@ -126,7 +126,7 @@ iframe {
     line-height: 1.5;
   }
 
-  /*//////////////////////////////////////////////////////////////////
+  /*///////////////////////////////////////////////////////////////////
 [ login ]*/
 
 .limiter {
@@ -146,13 +146,13 @@ iframe {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background-image: "/../img/login_back.jpg";
-    background-size: contain;  
+    background-image: url("/../OfferSync/img/login_back.jpg");
+    background-size: cover;  
   }
   
   .wrap-login100 {
     width: 390px;
-    background: #fff;
+    background: rgb(153, 71, 17);
     border-radius: 10px;
     overflow: hidden;
     padding: 77px 55px 33px 55px;
