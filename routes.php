@@ -1,16 +1,16 @@
 <?php
 
-Route::set('Home',function()
+Route::set('index.php',function()
 {
-    Home::CreateView('Home');
+    Controller::CreateView('index');
 });
 
 Route::set('Login',function()
 {
-    Login::CreateView('Login'); 
+    Controller::CreateView('Login'); 
 });
 
 Route::set('Register',function()
 {
-    Login::CreateView('Register'); 
+    Controller::CreateView('Register'); 
 });
