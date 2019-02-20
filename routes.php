@@ -2,15 +2,15 @@
 
 Route::set('index.php',function()
 {
-    Controller::CreateView('index');
+    ViewController::CreateView('index');
 });
 
 Route::set('Login',function()
 {
-    Controller::CreateView('Login'); 
+    ViewController::CreateView('Login'); 
 });
 
 Route::set('Register',function()
 {
-    Controller::CreateView('Register'); 
+    ViewController::CreateView('Register'); 
 });
