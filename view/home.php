@@ -41,10 +41,10 @@
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/../OfferSync/view/Login/login.html">Login</a>
+            <a class="nav-link js-scroll-trigger" href="/../OfferSync/view/login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/../OfferSync/register/register.html">Sign Up</a>
+            <a class="nav-link js-scroll-trigger" href="/../OfferSync/view/register.php">Sign Up</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
