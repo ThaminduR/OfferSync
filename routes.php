@@ -1,11 +1,11 @@
 <?php
 
-Route::set('home',function()
+Route::set('Home',function()
 {
     Home::CreateView();
 });
 
-Route::set('login',function()
+Route::set('Login',function()
 {
-    echo "login";
+    Login::CreateView(); 
 });
