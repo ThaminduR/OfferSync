@@ -2,7 +2,7 @@
 
 Route::set('home',function()
 {
-    echo "home";
+    Home::CreateView();
 });
 
 Route::set('login',function()
