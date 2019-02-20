@@ -2,10 +2,15 @@
 
 Route::set('Home',function()
 {
-    Home::CreateView();
+    Home::CreateView('Home');
 });
 
 Route::set('Login',function()
 {
-    Login::CreateView(); 
+    Login::CreateView('Login'); 
+});
+
+Route::set('Register',function()
+{
+    Login::CreateView('Register'); 
 });

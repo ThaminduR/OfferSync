@@ -2,9 +2,9 @@
 
 class Controller
 {
-    public static function CreateView()
+    public static function CreateView($viewName)
     {
-        echo "View Created";
+        require_once("./view/$viewName.php");
     }
 }
 
