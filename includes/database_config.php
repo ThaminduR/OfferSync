@@ -9,7 +9,7 @@ $password = "1234";
 $db = "offersync";
 
 //connect to the database
-$Database = new mysqli($server,$user,$password,$db);
+$Database = new mysqli_connect($server,$user,$password,$db);
 
 //error 
 
