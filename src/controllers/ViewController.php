@@ -4,7 +4,7 @@ class ViewController
 {
     public static function CreateView($viewName)
     {
-        require_once("./view/$viewName.php");
+        require_once($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/view/'.$viewName.'.php');
     }
 }
 
