@@ -1,6 +1,6 @@
 @font-face {
   font-family: OpenSans;
-  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
+  src: url('/../../fonts/OpenSans/OpenSans-Regular.ttf'); 
 }
 
 * {
@@ -146,7 +146,7 @@ border: none !important;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background-image: url("/../OfferSync/img/reg_back.jpeg");
+  background-image: url("/../../img/reg_back.jpeg");
   background-size: cover;  
 }
 
