@@ -14,3 +14,8 @@ Route::set('Register',function()
 {
     ViewController::CreateView('Register'); 
 });
+
+Route::set('LoginController',function()
+{
+    LoginController::Show();
+});
