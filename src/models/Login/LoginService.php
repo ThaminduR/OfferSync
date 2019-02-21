@@ -10,9 +10,12 @@ class LoginService
     {
         $this->LoginGateway = new LoginGateway();
     }
-
-    public function getUserDetails()
+    
+    public function getDetails($username)
     {
-
+        $sql1 = "SELECT id from users where username=$username";
+        $result = mysqli_query($Database,$sql1);
+        $user_data = mysqli_fetch_array($result);
+        $count_rows = $result->num_rows;
     }
 }
