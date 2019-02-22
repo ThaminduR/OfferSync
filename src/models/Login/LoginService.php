@@ -1,27 +1,22 @@
 <?php
 
-require_once "/../../includes/database_config.php";
-require_once "./users.php";
-
-class LoginService
+require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/database_config.php';
+require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/classes/User.php';
+function UserLogin($username,$password)
 {
-    public function getData(){
-        if($_SERVER["REQUEST_METHOD"] == "POST")
-        {
-        // username and password sent from Form
-        $username = mysqli_real_escape_string($obj->conn,$_POST['username']); 
-        $temppassword = mysqli_real_escape_string($obj->conn,$_POST['password']); 
-        $password = sha256($username,$temppassword,$pepper);
-        
-        return $username,$password;
+    session_start();
+    
+        $user = new User();
+
+        if (isset($_REQUEST['submit'])) {
+            extract($_REQUEST);
+            $login = $user->check_login($username, $password);
+            if ($login) {
+                // Registration Success
+            header("location:index.html");
+            } else {
+                // Registration Failed
+                echo 'Wrong username or password';
+            }
         }
-    }
-  
-    public function getDetails($username)
-    {
-        $sql1 = "SELECT id from users where username=$username";
-        $result = mysqli_query($Database,$sql1);
-        $user_data = mysqli_fetch_array($result);
-        $count_rows = $result->num_rows;
-    }
-}
+    }        

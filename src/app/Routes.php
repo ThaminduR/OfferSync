@@ -15,7 +15,17 @@ Route::set('Register',function()
     ViewController::CreateView('Register'); 
 });
 
+Route::set('postOffer',function()
+{
+    ViewController::CreateView('postOffer'); 
+});
+
+Route::set('search',function()
+{
+    ViewController::CreateView('search'); 
+});
+
 Route::set('LoginController',function()
 {
-    LoginController::Show();
+    LoginController::LogIn();
 });

@@ -1,14 +1,12 @@
 <?php
-require_once '/../models/Login/LoginService.php';
-
-$pepper = "#1l2v3y45@"
+require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/Login/LoginService.php';
 
 class LoginController
 {
-    private $LoginModel;
-
-    public function __construct()
+    public function LogIn()
     {
-        $this->LoginModel = new LoginService();
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        UserLogin($username,$password);
     }
 }
