@@ -1,7 +1,7 @@
 <?php
-require_once "/../includes/database_config.php";
-require_once "/../includes/salt.php";
-$pepper = "#1q2w3e4r5t6@t9h8m7n6d5"
+require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/database_config.php';
+require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/salt.php';
+$pepper = "#1q2w3e4r5t6@t9h8m7n6d5";
 
 
 class User
@@ -10,8 +10,12 @@ class User
     private $_SESSION;
 
     public function __construct()
-    {
-        $this->database = $Database;
+    {   
+        $this->database = new mysqli(server, user, password, db);
+        if(mysqli_connect_errno()) {
+            echo "Error: Could not connect to database.";
+                exit;
+        }
     }
 
     /*** for login process ***/
@@ -21,7 +25,7 @@ class User
         $sql1="SELECT id,hpassword,salt from users WHERE username='$username'";
 
         //checking if the username is available in the table
-        $result = mysqli_query($databse,$sql1);
+        $result = mysqli_query($this->database,$sql1);
         $user_data = mysqli_fetch_array($result);
         
         //getting user data from array

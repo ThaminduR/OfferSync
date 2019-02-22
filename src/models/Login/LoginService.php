@@ -7,7 +7,7 @@ function UserLogin($username,$password)
     session_start();
     
         $user = new User();
-
+        echo "test";
         if (isset($_REQUEST['submit'])) {
             extract($_REQUEST);
             $login = $user->check_login($username, $password);
