@@ -12,6 +12,5 @@ $db = "offersync";
 $Database = new mysqli_connect($server,$user,$password,$db);
 
 //error 
-
 mysqli_report(mysqli_report_error);
 
