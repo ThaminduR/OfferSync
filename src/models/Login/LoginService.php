@@ -10,7 +10,7 @@ function UserLogin($username,$password)
         if (isset($_REQUEST['submit'])) {
             extract($_REQUEST);
             $login = $user->check_login($username, $password);
-            echo $login;
+            //echo $login;
             if ($login) {
                 // Registration Success
             //header("location:index.php");

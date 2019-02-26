@@ -50,19 +50,20 @@ class User
         }
     }
 
-    public function Reg_User($firstname,$lastname,$email,$gender,$city,$password){
-
-        $password = hash('sha256',$password);
-        $sql="SELECT * FROM users WHERE uname='$username' OR uemail='$email'";
+    public function Reg_User($username,$firstname,$lastname,$email,$gender,$city,$password){
+        $salt = getSalt(25);
+        $hpassword = hash('sha256',$username.$password.$salt.$pepper);
+        
+        $sql2="SELECT * FROM users WHERE uname='$username' OR uemail='$email'";
     
         //checking if the username or email is available in db
-        $check =  $this->db->query($sql) ;
+        $check =  $this->database->query($sql2) ;
         $count_row = $check->num_rows;
     
         //if the username is not in db then insert to the table
         if ($count_row == 0){
-            $sql1="INSERT INTO users SET uname='$username', upass='$password', fullname='$name', uemail='$email'";
-            $result = mysqli_query($this->db,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
+            $sql1="INSERT INTO users SET username='$username', password='$hpassword', salt='$salt', firstname='$firstname', lastname='$lastname', city='$city', gender='$gender', email='$email'";
+            $result = mysqli_query($this->database,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
             return $result;
         }
         else { return false;}
