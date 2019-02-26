@@ -29,3 +29,8 @@ Route::set('LoginController',function()
 {
     LoginController::LogIn();
 });
+
+Route::set('RegisterController',function()
+{
+    LoginController::SignUp();
+});
