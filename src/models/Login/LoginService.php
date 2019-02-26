@@ -7,13 +7,15 @@ function UserLogin($username,$password)
     session_start();
     
         $user = new User();
-        echo "test";
         if (isset($_REQUEST['submit'])) {
             extract($_REQUEST);
             $login = $user->check_login($username, $password);
+            echo $login;
             if ($login) {
                 // Registration Success
-            header("location:index.html");
+            //header("location:index.php");
+                echo $login;
+                echo 'Logged In !';
             } else {
                 // Registration Failed
                 echo 'Wrong username or password';
