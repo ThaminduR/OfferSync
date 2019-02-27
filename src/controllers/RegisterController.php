@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/Login/RegisterService.php';
+require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/Register/RegisterService.php';
 
 class RegisterController
 {
@@ -15,4 +15,6 @@ class RegisterController
         
         UserSignUp($username,$firstname,$lastname,$email,$gender,$city,$password);
     }
+}
+
 ?>

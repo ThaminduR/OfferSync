@@ -32,5 +32,5 @@ Route::set('LoginController',function()
 
 Route::set('RegisterController',function()
 {
-    LoginController::SignUp();
+    RegisterController::SignUp();
 });

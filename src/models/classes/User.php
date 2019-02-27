@@ -3,13 +3,14 @@ require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/database_config.ph
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/salt.php';
 
 
-$pepper = "#1q2w3e4r5t6@t9h8m7n6d5";
+
 
 
 class User
 {
     private $database;
     private $_SESSION;
+    private $pepper = "#1q2w3e4r5t6@t9h8m7n6d5";
 
     public function __construct()
     {   
@@ -21,28 +22,26 @@ class User
         }
     }
 
-    /*** for login process ***/
+    /*** for login ***/
     public function check_login($username, $password){
 
         
-        $sql1="SELECT id,hpassword,salt from users WHERE username='$username'";
+        $sql1="SELECT * FROM users WHERE username='$username'";
 
         //checking if the username is available in the table
         $result = mysqli_query($this->database,$sql1);
         $user_data = mysqli_fetch_array($result);
-        
         //getting user data from array
-        $id = $user_data['id'];
-        $db_hpassword = $user_data['hpassword'];
+        $useremail = $user_data['email'];
+        $db_hpassword = $user_data['password'];
         $salt = $user_data['salt'];
-        $hpassword = hash('sha256',$username.$password.$salt.$pepper);
-        echo 'THis is is',$id,$salt;
+        $hpassword = base64_encode(hash('sha256',"$username.$password.$salt.$this->pepper",TRUE));
         
         //compare two hashed passwords
         if (strcmp($hpassword,$db_hpassword) == 0) {
             // this login var will use for the session thing
-            $this->$_SESSION['login'] = true;
-            $this->$_SESSION['id'] = $user_data['id'];
+            //$this->$_SESSION['login'] = TRUE;
+            //$this->$_SESSION['id'] = $user_data['id'];
             return true;
         }
         else{
@@ -52,18 +51,18 @@ class User
 
     public function Reg_User($username,$firstname,$lastname,$email,$gender,$city,$password){
         $salt = getSalt(25);
-        $hpassword = hash('sha256',$username.$password.$salt.$pepper);
+        $hpassword = base64_encode(hash('sha256',"$username.$password.$salt.$this->pepper",TRUE));
         
         $sql2="SELECT * FROM users WHERE uname='$username' OR uemail='$email'";
     
         //checking if the username or email is available in db
-        $check =  $this->database->query($sql2) ;
-        $count_row = $check->num_rows;
-    
+        $check =  mysqli_query($this->database,$sql2) ;
+        
         //if the username is not in db then insert to the table
-        if ($count_row == 0){
+        if (empty($check)){
             $sql1="INSERT INTO users SET username='$username', password='$hpassword', salt='$salt', firstname='$firstname', lastname='$lastname', city='$city', gender='$gender', email='$email'";
-            $result = mysqli_query($this->database,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
+            $result = mysqli_query($this->database,$sql1) or die("Data cannot inserted");
+            //mysqli_connect_errno() - put this in die to find error code
             return $result;
         }
         else { return false;}

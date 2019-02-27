@@ -1,8 +1,9 @@
 <?php
+
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/database_config.php';
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/classes/User.php';
 
-public function UserSignUp($username,$firstname,$lastname,$email,$gender,$city,$password)
+function UserSignUp($username,$firstname,$lastname,$email,$gender,$city,$password)
 {
     $user = new User();
     if(isset($_REQUEST['submit']))
@@ -18,4 +19,6 @@ public function UserSignUp($username,$firstname,$lastname,$email,$gender,$city,$
             echo 'Registration Failed !';
         }
     }
-} 
+}
+
+?>

@@ -13,9 +13,8 @@ function UserLogin($username,$password)
             //echo $login;
             if ($login) {
                 // Registration Success
-            //header("location:index.php");
-                echo $login;
-                echo 'Logged In !';
+                header("location:index.php");
+                //echo 'Logged In !';
             } else {
                 // Registration Failed
                 echo 'Wrong username or password';
