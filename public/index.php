@@ -1,23 +1,16 @@
 <?php
 
+require $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/Routes.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/AltoRouter.php';
 
-require $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/app/Routes.php';
+$router = new AltoRouter();
+$router->addRoutes($routes);
+$match = $router->match();
 
-//require_once $root.'/src/app/Routes.php';
-function __autoload($class_name)
-{
-  if (file_exists($_SERVER['DOCUMENT_ROOT'].'/..'. '/src/app/'.$class_name.'.php'))
-  {
-    require_once $_SERVER['DOCUMENT_ROOT'].'/..' . '/src/app/'.$class_name.'.php';
-  }
-  else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/..' . '/src/controllers/'.$class_name.'.php'))
-  {
-    require_once $_SERVER['DOCUMENT_ROOT'].'/..' . '/src/controllers/'.$class_name.'.php';
-  }
-  else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/..' . '/src/models/Login/'.$class_name.'php'))
-  {
-    require_once $_SERVER['DOCUMENT_ROOT'].'/..' . '/src/models/Login/'.$class_name.'php';
-  }
+
+if( is_array($match) && is_callable( $match['target'])){
+  call_user_func_array( $match['target'], $match['params']);
+} else {
+  header( $_SERVER["SERVER_PROTOCOL"].'404 Not Found');
 }
-
 ?>
