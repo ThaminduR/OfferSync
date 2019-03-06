@@ -4,8 +4,6 @@ require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/salt.php';
 
 
 
-
-
 class User
 {
     private $database;
@@ -36,6 +34,35 @@ class User
         $db_hpassword = $user_data['password'];
         $salt = $user_data['salt'];
         $hpassword = base64_encode(hash('sha256',"$username.$password.$salt.$this->pepper",TRUE));
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         //compare two hashed passwords
         if (strcmp($hpassword,$db_hpassword) == 0) {
