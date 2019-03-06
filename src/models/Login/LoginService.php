@@ -13,7 +13,7 @@ function UserLogin($username,$password)
             //echo $login;
             if ($login) {
                 // Registration Success
-                header("location:index.php");
+                header("location:/loggedIn");
                 //echo 'Logged In !';
             } else {
                 // Registration Failed

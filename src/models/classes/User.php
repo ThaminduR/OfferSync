@@ -33,37 +33,7 @@ class User
         $useremail = $user_data['email'];
         $db_hpassword = $user_data['password'];
         $salt = $user_data['salt'];
-        $hpassword = base64_encode(hash('sha256',"$username.$password.$salt.$this->pepper",TRUE));
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+        $hpassword = base64_encode(hash('sha256',"$username.$password.$salt.$this->pepper",TRUE));        
         //compare two hashed passwords
         if (strcmp($hpassword,$db_hpassword) == 0) {
             // this login var will use for the session thing
