@@ -9,6 +9,7 @@ class Database{
     private $user;
     private $password;
     private $dbname;
+    private $connection;
 
     public Database(){
         this->server = server;
@@ -18,9 +19,15 @@ class Database{
         this->Connect(); 
     }
     private function Connect(){
+        $this->connection = new mysqli($this->server, $this->user, $this->password, $this->dbname);
+        if(mysqli_connect_errno()) {
+            echo "Error: Could not connect to database.";
+                exit;
+        }
         
     }
-    public function Insert(){
+    //Insert function - required parameter is an array of the data to to be inserted.
+    public function Insert($){
         
     }
     
