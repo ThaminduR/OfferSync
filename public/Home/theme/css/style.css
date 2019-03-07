@@ -1,7 +1,3 @@
-/*!
- * Mobirise v4 theme (https://mobirise.com/)
- * Copyright 2017 Mobirise
- */
 section {
   background-color: #eeeeee; }
 
@@ -423,43 +419,44 @@ nav .mbr-section-btn {
 
 .navbar {
   display: -webkit-flex;
+  /*
   -webkit-flex-wrap: wrap;
   -webkit-align-items: center;
-  -webkit-justify-content: space-between; }
-
-.navbar-collapse {
+  -webkit-justify-content: space-between; 
+*/ }
+/*.navbar-collapse {
   -webkit-flex-basis: 100%;
   -webkit-flex-grow: 1;
   -webkit-align-items: center; }
-
+*/
 .nav-dropdown .link {
   padding: .667em 1.667em !important;
   margin: 0 !important; }
 
 .nav {
   display: -webkit-flex;
-  -webkit-flex-wrap: wrap; }
+ /* -webkit-flex-wrap: wrap; */}
 
 .row {
   display: -webkit-flex;
-  -webkit-flex-wrap: wrap; }
+  /*-webkit-flex-wrap: wrap;*/ }
 
-.justify-content-center {
-  -webkit-justify-content: center; }
+/*.justify-content-center {
+  -webkit-justify-content: center; }*/
 
 .form-inline {
   display: -webkit-flex;
-  -webkit-flex-flow: row wrap;
-  -webkit-align-items: center; }
+  /*-webkit-flex-flow: row wrap;
+  -webkit-align-items: center; */}
 
-.card-wrapper {
-  -webkit-flex: 1; }
+/* .card-wrapper {
+  -webkit-flex: 1; } */
 
 .carousel-control {
   z-index: 10;
   display: -webkit-flex;
-  -webkit-align-items: center;
-  -webkit-justify-content: center; }
+  /*-webkit-align-items: center;
+  -webkit-justify-content: center;*/ }
 
 .carousel-controls {
   display: -webkit-flex; }
