@@ -7,6 +7,7 @@ class OfferController {
     }
 
     public function SearchOffer(){
+        
 
     }
 }
