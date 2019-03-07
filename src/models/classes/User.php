@@ -24,13 +24,13 @@ class User
     public function check_login($username, $password){
 
         
-        $sql1="SELECT * FROM users WHERE username='$username'";
+        $sql1="SELECT * FROM userlogin WHERE username='$username'";
 
         //checking if the username is available in the table
         $result = mysqli_query($this->database,$sql1);
         $user_data = mysqli_fetch_array($result);
         //getting user data from array
-        $useremail = $user_data['email'];
+        //$useremail = $user_data['email'];
         $db_hpassword = $user_data['password'];
         $salt = $user_data['salt'];
         $hpassword = base64_encode(hash('sha256',"$username.$password.$salt.$this->pepper",TRUE));        
@@ -57,10 +57,12 @@ class User
         
         //if the username is not in db then insert to the table
         if (empty($check)){
-            $sql1="INSERT INTO users SET username='$username', password='$hpassword', salt='$salt', firstname='$firstname', lastname='$lastname', city='$city', gender='$gender', email='$email'";
-            $result = mysqli_query($this->database,$sql1) or die("Data cannot inserted");
-            //mysqli_connect_errno() - put this in die to find error code
-            return $result;
+            $sql1="INSERT INTO users SET username='$username', firstname='$firstname', lastname='$lastname', city='$city', gender='$gender', email='$email'";
+            $sql2="INSERT INTO userlogin SET username='$username', password='$hpassword', salt='$salt'";
+            $result1 = mysqli_query($this->database,$sql1) or die("Data cannot inserted");
+            $result2 = mysqli_query($this->database,$sql2) or die("Data cannot inserted");
+                      //mysqli_connect_errno() - put this in die to find error code
+            return $result1;
         }
         else { return false;}
     }
