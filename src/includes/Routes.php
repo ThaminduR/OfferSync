@@ -13,7 +13,8 @@ $routes = [
     ['GET','/postOffer',function(){ViewController::CreateView('postOffer');}],
     ['GET','/search',function(){ViewController::CreateView('search');}],
     ['POST','/LoginController',function(){LoginController::LogIn();}],
-    ['POST','/RegisterController',function(){RegisterController::SignUp();}]
+    ['POST','/RegisterController',function(){RegisterController::SignUp();}],
+    ['POST','/OfferController_POST',function(){OfferController::PostOffer();}]
 ]
 
 ?>
