@@ -10,7 +10,7 @@ public function Search($restaurant,$city){
     $database = new Database();
     $offers = $database->SearchOffer($restaurant,$city);
     foreach($offers as $offer) {
-        echo $offer['user'];
+        echo $offer['Username'];
     }
     
 

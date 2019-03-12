@@ -68,7 +68,7 @@ class Database{
     public function SearchOffer($restaurant,$city){
         $restaurant = mysqli_real_escape_string($this->connection,$restaurant);
         $city = mysqli_real_escape_string($this->connection,$city);
-        $sql = "SELECT * FROM offers WHERE restaurant ='$restaurant' AND city = '$city'";
+        $sql = "SELECT * FROM offers WHERE Restaurant ='$restaurant' AND City = '$city'";
         $result = mysqli_query($this->connection,$sql);
         $offers = array();
         while($offer = mysqli_fetch_array($result)){
