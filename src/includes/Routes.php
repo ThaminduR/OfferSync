@@ -9,6 +9,7 @@ $routes = [
     ['GET','/',function(){ViewController::CreateView('index');}],
     ['GET','/index.php',function(){ViewController::CreateView('index');}],
     ['GET','/Login',function(){ViewController::CreateView('Login');}],
+    ['GET','/test',function(){ViewController::CreateView('home');}],
     ['GET','/loggedIn',function(){ViewController::CreateView('loggedIn');}],
     ['GET','/profile',function(){ViewController::CreateView('profile');}],
     ['GET','/Register',function(){ViewController::CreateView('Register');}],

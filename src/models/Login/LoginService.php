@@ -13,6 +13,7 @@ function UserLogin($username,$password)
             if ($login) {
                 // Login Success
                 $_SESSION['user'] = $username;
+                $_SESSION['logged'] = true;
                 header("location:/loggedIn");
                 //echo 'Logged In !';
             } else {

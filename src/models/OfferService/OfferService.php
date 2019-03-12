@@ -12,6 +12,4 @@ function Search($restaurant,$city){
     foreach($offers as $offer) {
         echo $offer['Username'];
     }
-    
-
 }
