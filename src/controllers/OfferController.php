@@ -1,5 +1,5 @@
 <?php
-
+require $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/OfferService/OfferService.php';
 class OfferController {
     public function PostOffer(){
         
@@ -7,7 +7,8 @@ class OfferController {
     }
 
     public function SearchOffer(){
-        
-
+        $restaurant = $_POST['Restaurant'];
+        $city = $_POST['city'];
+        Search($restaurant,$city);
     }
 }

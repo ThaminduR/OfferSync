@@ -65,4 +65,12 @@ class Database{
             return true;
         }
     }
+    public function SearchOffer($restaurant,$city){
+        $restaurant = mysqli_real_escape_string($this->connection,$restaurant);
+        $city = mysqli_real_escape_string($this->connection,$city);
+        $sql = "SELECT * FROM offers WHERE restaurant ='$restaurant' AND city = '$city'";
+        $result = mysqli_query($this->connection,$sql);
+        $offers = mysqli_fetch_array($result);
+        return $offers;
+    }
 }
