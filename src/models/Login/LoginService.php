@@ -5,18 +5,18 @@ require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/classes/User.php';
 function UserLogin($username,$password)
 {
     session_start();
-    
         $user = new User();
         if (isset($_REQUEST['submit'])) {
             extract($_REQUEST);
             $login = $user->check_login($username, $password);
             //echo $login;
             if ($login) {
-                // Registration Success
+                // Login Success
+                $_SESSION['user'] = $username;
                 header("location:/loggedIn");
                 //echo 'Logged In !';
             } else {
-                // Registration Failed
+                // Login Failed
                 echo 'Wrong username or password';
             }
         }

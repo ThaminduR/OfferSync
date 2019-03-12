@@ -23,7 +23,6 @@ class User
         $salt = $user_data['salt'];
         $hpassword = base64_encode(hash('sha256',"$username.$password.$salt.$this->pepper",TRUE));        
         if (strcmp($hpassword,$db_hpassword) == 0) {
-            //$this->$_SESSION['login'] = TRUE;
             return true;
         }
         else{
