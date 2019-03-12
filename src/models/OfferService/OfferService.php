@@ -6,9 +6,12 @@ public function Post_(){
     
 }
 
-public function Search($restaurant,$$city){
+public function Search($restaurant,$city){
     $database = new Database();
-    $offer_details = $database->SearchOffer($restaurant,$city);
+    $offers = $database->SearchOffer($restaurant,$city);
+    foreach($offers as $offer) {
+        echo $offer['user'];
+    }
     
 
 }

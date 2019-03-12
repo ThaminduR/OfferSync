@@ -70,7 +70,10 @@ class Database{
         $city = mysqli_real_escape_string($this->connection,$city);
         $sql = "SELECT * FROM offers WHERE restaurant ='$restaurant' AND city = '$city'";
         $result = mysqli_query($this->connection,$sql);
-        $offers = mysqli_fetch_array($result);
+        $offers = array();
+        while($offer = mysqli_fetch_array($result)){
+           $offers[] = $offer;
+        }
         return $offers;
     }
 }
