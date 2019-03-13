@@ -1,0 +1,25 @@
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+.navbar{
+    background-color: rgba(14, 14, 14, 0.719)
+}
+#intro {
+    background: url("/img/Search.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.fas{
+    text-align:right
+}
+.card-img-top{
+    max-width: 500px;
+    max-height: 367px;
+    align-self:center;
+}

@@ -10,7 +10,7 @@ $routes = [
     ['GET','/index.php',function(){ViewController::CreateView('index');}],
     ['GET','/Login',function(){ViewController::CreateView('Login');}],
     ['GET','/test',function(){ViewController::CreateView('home');}],
-    ['GET','/loggedIn',function(){ViewController::CreateView('loggedIn');}],
+    ['GET','/loggedIn',function(){ViewController::CreateView('index');}],
     ['GET','/profile',function(){ViewController::CreateView('profile');}],
     ['GET','/Register',function(){ViewController::CreateView('Register');}],
     ['GET','/postOffer',function(){ViewController::CreateView('postOffer');}],
