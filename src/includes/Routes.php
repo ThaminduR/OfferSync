@@ -7,12 +7,9 @@ require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/OfferController.php
 
 $routes = [
     ['GET','/',function(){ViewController::CreateView('index');}],
-    ['GET','/index.php',function(){ViewController::CreateView('index');}],
-    ['GET','/Login',function(){ViewController::CreateView('Login');}],
     ['GET','/test',function(){ViewController::CreateView('home');}],
-    ['GET','/loggedIn',function(){ViewController::CreateView('index');}],
     ['GET','/profile',function(){ViewController::CreateView('profile');}],
-    ['GET','/Register',function(){ViewController::CreateView('Register');}],
+    ['GET','/Register',function(){ViewController::CreateView('profile');}],
     ['GET','/postOffer',function(){ViewController::CreateView('postOffer');}],
     ['GET','/search',function(){ViewController::CreateView('search');}],
     ['POST','/LoginController',function(){LoginController::LogIn();}],
