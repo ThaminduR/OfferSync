@@ -16,7 +16,7 @@ $routes = [
     ['POST','/LoginController',function(){LoginController::LogIn();}],
     ['POST','/RegisterController',function(){RegisterController::SignUp();}],
     ['POST','/OfferController_Post',function(){OfferController::PostOffer();}],
-    ['POST','/offercontroller_search',function(){OfferController::SearchOffer();}]
+    ['POST','/OfferController_Search',function(){OfferController::SearchOffer();}]
 ]
 
 ?>

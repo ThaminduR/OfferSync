@@ -11,9 +11,9 @@ class RegisterController
         $email = $_POST['email'];
         $gender = $_POST['gender'];
         $city = $_POST['city'];
+        $number = $_POST['number'];
         $password = $_POST['password'];
-        
-        UserSignUp($username,$firstname,$lastname,$email,$gender,$city,$password);
+        UserSignUp($username,$firstname,$lastname,$email,$gender,$city,$password,$number);
     }
 }
 

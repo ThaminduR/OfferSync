@@ -3,11 +3,13 @@ require $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/OfferService/OfferService
 class OfferController {
     public function PostOffer(){
         $restaurant = $_POST['Restaurant'];
-        $offerTitle=$_POST['Title'];
-        $offerDesc=$_POST['Description'];
+        $offer=$_POST['Offer'];
+        $price=$_POST['Price'];
         $city = $_POST['City'];
+        $restaurantbranch = $_POST['RestaurantBranch'];
+        $date= $_POST['Date'];
         $gender=$_POST['Gender'];
-        Post_Offer($restaurant,$offerTitle,$offerDesc,$city,$gender);
+        Post_Offer($restaurant,$offer,$price,$restaurantbranch,$date,$city,$gender);
  
     }
  

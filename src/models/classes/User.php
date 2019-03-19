@@ -29,14 +29,14 @@ class User
         }
     }
     //For Registration
-    public function Reg_User($username, $firstname, $lastname, $email, $gender, $city, $password)
+    public function Reg_User($username, $firstname, $lastname, $email, $gender, $city, $password,$number)
     {
         $salt = getSalt(25);
         $hpassword = base64_encode(hash('sha256', "$username.$password.$salt.$this->pepper", true));
         $check =  $this->database->FindUser($username, $email);
         echo $check;
         if (!($check)) {
-            $result1 = $this->database->InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city);
+            $result1 = $this->database->InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city,$number);
             $result2 = $this->database->InsertLoginData($username, $hpassword, $salt);
             return $result1;
         } else {

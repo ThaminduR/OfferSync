@@ -29,7 +29,7 @@ class Database
         }
     }
     //Insert function - required parameter is an array of the data to to be inserted.
-    public function InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city)
+    public function InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city, $number)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
         $firstname = mysqli_real_escape_string($this->connection, $firstname);
@@ -37,7 +37,8 @@ class Database
         $gender = mysqli_real_escape_string($this->connection, $gender);
         $email = mysqli_real_escape_string($this->connection, $email);
         $city = mysqli_real_escape_string($this->connection, $city);
-        $sql = "INSERT INTO users SET username='$username', firstname='$firstname', lastname='$lastname', city='$city', gender='$gender', email='$email'";
+        $number = mysqli_real_escape_string($this->connection, $number);
+        $sql = "INSERT INTO users SET username='$username', firstname='$firstname', lastname='$lastname', city='$city', gender='$gender', email='$email', MobileNumber='$number'";
         $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $result;
     }
@@ -71,14 +72,17 @@ class Database
             return true;
         }
     }
-    public function PostOffer($restaurant, $offerTitle, $offerDescription, $city, $gender)
-    {
+    public function PostOffer($restaurant,$offer,$price,$restaurantbranch,$date,$city,$gender)
+    {   
+        $testuser = "Test User";
         $restaurant = mysqli_real_escape_string($this->connection, $restaurant);
-        $offerTitle = mysqli_real_escape_string($this->connection, $offerTitle);
-        $offerDescription = mysqli_real_escape_string($this->connection, $offerDescription);
+        $offer = mysqli_real_escape_string($this->connection, $offer);
+        $price = mysqli_real_escape_string($this->connection, $price);
+        $date = mysqli_real_escape_string($this->connection, $date);
+        $restaurantbranch = mysqli_real_escape_string($this->connection, $restaurantbranch);
         $city = mysqli_real_escape_string($this->connection, $city);
         $gender = mysqli_real_escape_string($this->connection, $gender);
-        $sql = "INSERT INTO offers SET restaurant='$restaurant',title='$offerTitle', Odescription='$offerDescription', city='$city', gender='$gender'";
+        $sql = "INSERT INTO offers SET Username='$testuser',Restaurant='$restaurant',Offer='$offer', Price='$price', City='$city', RestaurantBranch='$restaurantbranch', Date='$date', Gender='$gender'";
         $finalOffer = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $finalOffer;
     }
