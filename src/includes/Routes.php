@@ -11,11 +11,12 @@ $routes = [
     ['GET','/profile',function(){ViewController::CreateView('profile');}],
     ['GET','/Register',function(){ViewController::CreateView('profile');}],
     ['GET','/postOffer',function(){ViewController::CreateView('postOffer');}],
+    ['GET','/searchResult',function(){ViewController::CreateView('search_result');}],
     ['GET','/search',function(){ViewController::CreateView('search');}],
     ['POST','/LoginController',function(){LoginController::LogIn();}],
     ['POST','/RegisterController',function(){RegisterController::SignUp();}],
     ['POST','/OfferController_POST',function(){OfferController::PostOffer();}],
-    ['POST','/offercontroller_search',function(){OfferController::SearchOffer();}]
+    ['POST','/OfferController_Search',function(){OfferController::SearchOffer();}]
 ]
 
 ?>

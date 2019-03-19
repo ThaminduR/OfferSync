@@ -8,5 +8,6 @@ class OfferController {
         $restaurant = $_POST['Restaurant'];
         $city = $_POST['City'];
         Search($restaurant,$city);
+
     }
 }
