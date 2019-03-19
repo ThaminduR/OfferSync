@@ -14,7 +14,7 @@ function UserLogin($username,$password)
                 // Login Success
                 $_SESSION['user'] = $username;
                 $_SESSION['logged'] = true;
-                header("location:/loggedIn");
+                header("location:/");
                 //echo 'Logged In !';
             } else {
                 // Login Failed
