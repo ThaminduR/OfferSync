@@ -65,6 +65,17 @@ class Database{
             return true;
         }
     }
+    public function PostOffer($restaurant,$offerTitle,$offerDescription,$city,$gender){
+        $restaurant=mysqli_real_escape_string($this->connection,$restaurant);
+        $offerTitle=mysqli_real_escape_string($this->connection,$offerTitle);
+        $offerDescription=mysqli_real_escape_string($this->connection,$offerDescription);
+        $city=mysqli_real_escape_string($this->connection,$city);
+        $gender=mysqli_real_escape_string($this->connection,$gender);
+        $sql="INSERT INTO offers SET restaurant='$restaurant',title='$offerTitle', Odescription='$offerDescription', city='$city', gender='$gender'";
+        $finalOffer = mysqli_query($this->connection,$sql) or die("Data cannot inserted");
+        return $finalOffer;
+    }
+ 
     public function SearchOffer($restaurant,$city){
         $restaurant = mysqli_real_escape_string($this->connection,$restaurant);
         $city = mysqli_real_escape_string($this->connection,$city);
