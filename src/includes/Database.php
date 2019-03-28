@@ -72,8 +72,8 @@ class Database
             return true;
         }
     }
-    public function PostOffer($restaurant,$offer,$price,$restaurantbranch,$date,$city,$gender)
-    {   
+    public function PostOffer($restaurant, $offer, $price, $restaurantbranch, $date, $city, $gender)
+    {
         $testuser = "Test User";
         $restaurant = mysqli_real_escape_string($this->connection, $restaurant);
         $offer = mysqli_real_escape_string($this->connection, $offer);
@@ -99,5 +99,32 @@ class Database
         }
         return $offers;
     }
-}
 
+    public function SearchSession($id)
+    {
+        $sql = "SELECT data FROM sessions WHERE id ='$id'";
+        $result = mysqli_query($this->connection, $sql);
+        return $result;
+    }
+
+    public function InsertSession($id, $data, $access)
+    {
+        $sql = "INSERT INTO sessions SET id ='$id' ,data ='$data' ,access ='$access'";
+        $result = mysqli_query($this->connection, $sql) or die("Session cannot be inserted");
+        return $result;
+    }
+
+    public function DestroySession($id)
+    {
+        $sql = "DELETE FROM sessions WHERE id ='  $id'  ";
+        $result = mysqli_query($this->connection, $sql);
+        return $result;
+    }
+
+    public function GarbageSession($old)
+    {
+        $sql = "DELETE * FROM sessions WHERE access < '$old'";
+        $result = mysqli_query($this->connection, $sql);
+        return $result;
+    }
+}
