@@ -1,5 +1,7 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/LoginStatus.php';
+
 class ViewController
 {
     public static function CreateView($viewName)
@@ -9,7 +11,8 @@ class ViewController
 
     public static function CreateViewR($viewName)
     {   
-        if (isset($_SESSION['username']))  {
+        $logged = CheckLoginStatus();
+        if ($logged)  {
             require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.html');
         }
         else

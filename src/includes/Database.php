@@ -104,7 +104,7 @@ class Database
     {
         $sql = "SELECT data FROM sessions WHERE id ='$id'";
         $result = mysqli_query($this->connection, $sql);
-        return $result;
+        return mysqli_fetch_array($result);
     }
 
     public function InsertSession($id, $data, $access)

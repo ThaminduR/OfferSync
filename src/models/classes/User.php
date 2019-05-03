@@ -2,12 +2,14 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/database_config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/salt.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/Database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/classes/Session.php';
+
 
 
 class User
 {
     private $database;
-    private $_SESSION;
+    private $session;
     private $pepper = "#1q2w3e4r5t6@t9h8m7n6d5";
 
     public function __construct()
@@ -42,6 +44,11 @@ class User
         } else {
             return false;
         }
+    }
+
+    public function Get_Database()
+    {
+        return $this->database;
     }
 }
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Session
 {
@@ -7,7 +7,7 @@ class Session
     function __construct($user)
     {
         $this->user = $user;
-        $this->database = $user->database;
+        $this->database = $user->Get_Database();
 
         session_set_save_handler(
             array($this, "_open"),

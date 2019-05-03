@@ -2,9 +2,10 @@
 
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/database_config.php';
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/classes/User.php';
+require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/classes/Session.php';
+
 function UserLogin($username,$password)
-{
-    
+{   
         $user = new User();
         if (isset($_REQUEST['submit'])) {
             extract($_REQUEST);
@@ -12,10 +13,13 @@ function UserLogin($username,$password)
             //echo $login;
             if ($login) {
                 // Login Success
-                session_start();
-                $_SESSION['username'] = $username;
-                $_SESSION['logged'] = true;
-                setcookie($username,);
+                $ip =$_SERVER['REMOTE_ADDR'];
+                $agent =$_SERVER['HTTP_USER_AGENT'];
+                $data = base64_encode(hash('sha256',$ip.$agent,true));
+                $data = $ip.$agent;
+                $Session = new Session($user);
+                $Session->_write($username,$data);
+                setcookie('login_details',$username);
                 header("location:/User");
                 //echo 'Logged In !';
             } else {
