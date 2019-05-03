@@ -19,7 +19,7 @@ function UserLogin($username,$password)
                 $data = $ip.$agent;
                 $Session = new Session($user);
                 $Session->_write($username,$data);
-                setcookie('login_details',$username);
+                setcookie('login_details',$username,86400);
                 header("location:/User");
                 //echo 'Logged In !';
             } else {
@@ -27,4 +27,10 @@ function UserLogin($username,$password)
                 echo 'Wrong username or password';
             }
         }
-    }        
+    }
+
+function UserLogout($username){
+    $user = new User();
+    $session = new Session($user);
+    $session->_destroy($username);
+}

@@ -2,22 +2,30 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/LoginStatus.php';
 
+
 class ViewController
 {
     public static function CreateView($viewName)
-    {   
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.html');
+    {
+        if ($viewName == 'index') {
+            $logged = CheckLoginStatus();
+            if ($logged) {
+                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/logged.html');
+            } else {
+                    require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/index.html');
+                }
+        } else {
+                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.html');
+            }
     }
 
     public static function CreateViewR($viewName)
-    {   
+    {
         $logged = CheckLoginStatus();
-        if ($logged)  {
+        if ($logged) {
             require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.html');
-        }
-        else
-        {
-            echo "Please Login First !";
+        } else {
+            require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/Login/LoginFail.php');
         }
     }
 }

@@ -18,7 +18,7 @@ class Session
             array($this, "_gc")
         );
 
-        session_start();
+        //session_start();
     }
 
     public function _open()

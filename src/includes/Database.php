@@ -1,5 +1,5 @@
 <?php
- //TODO : implement database library (PDO)
+//TODO : implement database library (PDO)
 //NOTE : If a function is needed comment it here
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/database_config.php';
 
@@ -116,7 +116,7 @@ class Database
 
     public function DestroySession($id)
     {
-        $sql = "DELETE FROM sessions WHERE id ='  $id'  ";
+        $sql = "DELETE FROM sessions WHERE id ='$id'  ";
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }

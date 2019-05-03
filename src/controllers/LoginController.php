@@ -1,5 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/Login/LoginService.php';
+require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/classes/Session.php';
 
 class LoginController
 {
@@ -10,9 +11,8 @@ class LoginController
         UserLogin($username,$password);
     }
     public function Logout()
-    {
-        $_SESSION['username']='';
-        $_SESSION['logged']=false;
+    {   $username = ($_COOKIE['login_details']);
+        UserLogout($username);
         header("location:/");
     }
 }
