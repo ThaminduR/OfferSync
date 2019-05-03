@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/database_config.ph
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/classes/User.php';
 function UserLogin($username,$password)
 {
-    session_start();
+    
         $user = new User();
         if (isset($_REQUEST['submit'])) {
             extract($_REQUEST);
@@ -12,9 +12,11 @@ function UserLogin($username,$password)
             //echo $login;
             if ($login) {
                 // Login Success
-                $_SESSION['user'] = $username;
+                session_start();
+                $_SESSION['username'] = $username;
                 $_SESSION['logged'] = true;
-                header("location:/");
+                setcookie($username,);
+                header("location:/User");
                 //echo 'Logged In !';
             } else {
                 // Login Failed
