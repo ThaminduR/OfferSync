@@ -6,7 +6,6 @@ require $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/AltoRouter.php';
 $router = new AltoRouter();
 $router->addRoutes($routes);
 $match = $router->match();
-
 if( is_array($match) && is_callable( $match['target'])){
   call_user_func_array( $match['target'], $match['params']);
 } else {

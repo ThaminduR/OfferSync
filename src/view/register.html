@@ -37,23 +37,59 @@
                         <div class="col-md-9 mt-4 mb-3 loginform">
 
                             <form class="text-center p-5" action="/RegisterController" method="POST">
-                                <h3 class="h-4 mb-4 text-uppercase">Sign In</h3>
+                                <h3 class="h-4 mb-4 text-uppercase">Sign Up</h3>
                                 <div class="form-row mb-4">
                                     <div class="col">
-                                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
-                                            placeholder="First Name">
+                                        <input name="firstname" type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                            placeholder="First Name" required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="defaultRegisterFormLastName" class="form-control"
-                                            placeholder="Last Name">
+                                        <input name="lastname" type="text" id="defaultRegisterFormLastName" class="form-control"
+                                            placeholder="Last Name" required>
                                     </div>
                                 </div>
-                                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
-                                <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4"
-                                    placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                                <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
-                                    aria-describedby="defaultRegisterFormPhoneHelpBlock">
-                                <button class="btn btn-info my-4 btn-block" type="submit" name="submit">Sign in</button>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input name="email" type="email" id="defaultRegisterFormEmail" class="form-control mb-4"
+                                            placeholder="Email" required>
+                                    </div>
+                                    <div class="col">
+                                            <input name="username" type="text" id="defaultRegisterFormEmail" class="form-control mb-4"
+                                                placeholder="Username" required>
+                                        </div>
+                                </div>
+                                <input name="password" type="password" id="defaultRegisterFormPassword" class="form-control mb-4"
+                                    placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input name="city" type="text" id="defaultRegisterPhonePassword" class="form-control"
+                                            placeholder="City" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                                    </div>
+                                    <div class="col">
+                                        <input name="number" type="text" id="defaultRegisterPhonePassword" class="form-control"
+                                            placeholder="Phone Number" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                                    </div>
+                                </div>
+                                <p class="text-left mt-1 mb-1">Prefered Gender</p>
+                                <div class="row md-form mt-0 mb-5">
+
+                                    <div class="custom-control custom-radio ml-5 mr-5">
+                                        <input name="gender" type="radio" class="custom-control-input" id="defaultGroupExample1"
+                                            name="groupOfDefaultRadios">
+                                        <label class="custom-control-label" for="defaultGroupExample1">Male</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio ml-5">
+
+                                        <input name="gender" type="radio" class="custom-control-input" id="defaultGroupExample2"
+                                            name="groupOfDefaultRadios">
+                                        <label class="custom-control-label" for="defaultGroupExample2"> Female</label>
+
+                                    </div>
+
+
+                                </div>
+                                <button class="btn btn-info my-4 btn-block" type="submit" name="submit">Sign </button>
                                 <hr>
                                 <p>By clicking
                                     <em>Sign up</em> you agree to our
