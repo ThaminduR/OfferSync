@@ -6,14 +6,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/classes/Session.ph
 
 function UserLogin($username, $password)
 {
-    $user = new User();
+    $user = new User($username);
     if (isset($_REQUEST['submit'])) {
         extract($_REQUEST);
         $login = $user->check_login($username, $password);
 
         // Login Success
         if ($login) {
-
+            setcookie('Username',$username);
             // Session data
             $ip = $_SERVER['REMOTE_ADDR'];
             $agent = $_SERVER['HTTP_USER_AGENT'];

@@ -88,9 +88,8 @@ class Database
     }
 
     //save the post to database
-    public function PostOffer($restaurant, $offer, $price, $restaurantbranch, $date, $city, $gender)
+    public function PostOffer($username, $restaurant, $offer, $price, $restaurantbranch, $date, $city, $gender)
     {
-        $testuser = "Test User";
         $restaurant = mysqli_real_escape_string($this->connection, $restaurant);
         $offer = mysqli_real_escape_string($this->connection, $offer);
         $price = mysqli_real_escape_string($this->connection, $price);
@@ -98,7 +97,7 @@ class Database
         $restaurantbranch = mysqli_real_escape_string($this->connection, $restaurantbranch);
         $city = mysqli_real_escape_string($this->connection, $city);
         $gender = mysqli_real_escape_string($this->connection, $gender);
-        $sql = "INSERT INTO offers SET Username='$testuser',Restaurant='$restaurant',Offer='$offer', Price='$price', City='$city', RestaurantBranch='$restaurantbranch', Date='$date', Gender='$gender'";
+        $sql = "INSERT INTO offers SET Username='$username',Restaurant='$restaurant',Offer='$offer', Price='$price', City='$city', RestaurantBranch='$restaurantbranch', Date='$date', Gender='$gender'";
         $finalOffer = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $finalOffer;
     }

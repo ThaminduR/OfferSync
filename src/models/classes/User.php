@@ -9,12 +9,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/classes/Session.ph
 class User
 {
     private $database;
+    private $name;
     //pepper is to improve the security
     private $pepper = "#1q2w3e4r5t6@t9h8m7n6d5";
 
-    public function __construct()
+    public function __construct($username)
     {
         $this->database = Database::getDbConnection();
+        $this->name = $username;
     }
 
     //For Login
@@ -51,12 +53,6 @@ class User
         } else {
             return false;
         }
-    }
-
-    public function Get_Database()
-    {
-        // to return the database attribute to session object
-        return $this->database;
     }
 }
 

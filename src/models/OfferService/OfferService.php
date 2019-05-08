@@ -3,8 +3,9 @@ require $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/classes/Offer.php';
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/includes/Database.php';
 
 function Post_Offer($restaurant,$offer,$price,$restaurantbranch,$date,$city,$gender){
+    $username = $_COOKIE['Username'];
     $database= Database::getDbConnection();
-    $offers = $database->PostOffer($restaurant,$offer,$price,$restaurantbranch,$date,$city,$gender);
+    $offers = $database->PostOffer($username,$restaurant,$offer,$price,$restaurantbranch,$date,$city,$gender);
     header("location:/");
    
  }
