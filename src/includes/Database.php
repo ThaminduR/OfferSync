@@ -10,9 +10,12 @@ class Database
     private $password;
     private $dbname;
     private $connection;
-    private $Database;
+    private static $dbconnection = null;
+   
 
-    public function __construct()
+
+    //TODO: make this a object pool 
+    private function __construct()
     {
         $this->server = server;
         $this->user = user;
@@ -20,6 +23,15 @@ class Database
         $this->dbname = db;
         $this->Connect();
     }
+
+    public static function getDbConnection(){
+        if(self::$dbconnection==null){
+            self::$dbconnection = new Database();
+        }
+        return self::$dbconnection;
+    }
+
+    //establishing a connection to database
     private function Connect()
     {
         $this->connection = new mysqli($this->server, $this->user, $this->password, $this->dbname);
@@ -28,7 +40,7 @@ class Database
             exit;
         }
     }
-    //Insert function - required parameter is an array of the data to to be inserted.
+    //Insert user registration details.
     public function InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city, $number)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
@@ -42,7 +54,7 @@ class Database
         $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $result;
     }
-
+    //Insert user login details
     public function InsertLoginData($username, $password, $salt)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
@@ -51,6 +63,7 @@ class Database
         return $result;
     }
 
+    //to find a certain user from username 
     public function FindUserDetail($username)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
@@ -60,6 +73,7 @@ class Database
         return $user_data;
     }
 
+    //find a user from username or email
     public function FindUser($username, $email)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
@@ -72,6 +86,8 @@ class Database
             return true;
         }
     }
+
+    //save the post to database
     public function PostOffer($restaurant, $offer, $price, $restaurantbranch, $date, $city, $gender)
     {
         $testuser = "Test User";
@@ -87,6 +103,7 @@ class Database
         return $finalOffer;
     }
 
+    //search posts in database
     public function SearchOffer($restaurant, $city)
     {
         $restaurant = mysqli_real_escape_string($this->connection, $restaurant);
@@ -100,20 +117,24 @@ class Database
         return $offers;
     }
 
+    //Search session in the databse
     public function SearchSession($id)
     {
         $sql = "SELECT data FROM sessions WHERE id ='$id'";
         $result = mysqli_query($this->connection, $sql);
         return mysqli_fetch_array($result);
+        echo "test"; 
     }
 
+    //Inserting the session to database
     public function InsertSession($id, $data, $access)
     {
-        $sql = "INSERT INTO sessions SET id ='$id' ,data ='$data' ,access ='$access'";
+        $sql = "REPLACE into sessions(id,access,data) VALUES ('$id','$access', '$data')";
         $result = mysqli_query($this->connection, $sql) or die("Session cannot be inserted");
         return $result;
     }
 
+    //Deleting the session using the id
     public function DestroySession($id)
     {
         $sql = "DELETE FROM sessions WHERE id ='$id'  ";
@@ -121,6 +142,7 @@ class Database
         return $result;
     }
 
+    //garbage collector will automatically delete the unnecessary sessions
     public function GarbageSession($old)
     {
         $sql = "DELETE * FROM sessions WHERE access < '$old'";

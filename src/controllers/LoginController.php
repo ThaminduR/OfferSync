@@ -11,8 +11,7 @@ class LoginController
         UserLogin($username,$password);
     }
     public function Logout()
-    {   $username = ($_COOKIE['login_details']);
-        UserLogout($username);
+    {   UserLogout();
         header("location:/");
     }
 }

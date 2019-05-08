@@ -1,13 +1,12 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/Database.php';
 
 class Session
 {
-    private $user;
     private $database;
-    function __construct($user)
+    function __construct()
     {
-        $this->user = $user;
-        $this->database = $user->Get_Database();
+        $this->database = Database::getDbConnection();
 
         session_set_save_handler(
             array($this, "_open"),
@@ -18,7 +17,6 @@ class Session
             array($this, "_gc")
         );
 
-        //session_start();
     }
 
     public function _open()
@@ -30,21 +28,25 @@ class Session
     }
 
     public function _close()
-    { }
+    {
+        return true;
+     }
 
     public function _read($id)
     {
         $result = $this->database->SearchSession($id);
         if ($result) {
             return $result['data'];
+            
         }
         return "";
+        
     }
 
     public function _write($id, $data)
-    {
+    {   
         $access = time();
-        $result = $this->database->InsertSession($id, $data, $access);
+        $result = $this->database->InsertSession($id,$data,$access);
 
         if ($result) {
             return true;

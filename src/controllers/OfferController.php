@@ -8,7 +8,14 @@ class OfferController {
         $city = $_POST['City'];
         $restaurantbranch = $_POST['RestaurantBranch'];
         $date= $_POST['Date'];
-        $gender=$_POST['Gender'];
+        $gender = null;
+        if (isset($_POST['GenderM'])){
+            $gender='Male';
+        }
+        if (isset($_POST['GenderF'])){
+            $gender='Female';
+        }
+        
         Post_Offer($restaurant,$offer,$price,$restaurantbranch,$date,$city,$gender);
  
     }
