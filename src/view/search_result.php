@@ -1,43 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<!-- <?php 
-$username = "username"; 
-$password = "password"; 
-$database = "your_database"; 
-$mysqli = new mysqli("localhost", $username, $password, $database); 
-$query = "SELECT * FROM table_name";
- 
- 
-echo '<table border="0" cellspacing="2" cellpadding="2"> 
-      <tr> 
-          <td> <font face="Arial">Value1</font> </td> 
-          <td> <font face="Arial">Value2</font> </td> 
-          <td> <font face="Arial">Value3</font> </td> 
-          <td> <font face="Arial">Value4</font> </td> 
-          <td> <font face="Arial">Value5</font> </td> 
-      </tr>';
- 
-if ($result = $mysqli->query($query)) {
-    while ($row = $result->fetch_assoc()) {
-        $field1name = $row["col1"];
-        $field2name = $row["col2"];
-        $field3name = $row["col3"];
-        $field4name = $row["col4"];
-        $field5name = $row["col5"]; 
- 
-        echo '<tr> 
-                  <td>'.$field1name.'</td> 
-                  <td>'.$field2name.'</td> 
-                  <td>'.$field3name.'</td> 
-                  <td>'.$field4name.'</td> 
-                  <td>'.$field5name.'</td> 
-              </tr>';
-    }
-    $result->free();
-} 
-?> -->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -50,7 +13,7 @@ if ($result = $mysqli->query($query)) {
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Custom styles -->
-    <link href="css/Searchstyle.css" rel="stylesheet">
+    <link href="css/SearchResultStyle.css" rel="stylesheet">
 
 </head>
 
@@ -67,9 +30,9 @@ if ($result = $mysqli->query($query)) {
             </div>
         </nav>
 
-        <div id="intro" class="view ">
+        <div id="intro" class="view">
             <div class="mask">
-                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="container-fluid d-flex align-items-center justify-content-center h-50">
                     <div class="row search d-flex col-lg-4 justify-content-center text-center">
                     
                             <div class="container mr-2 mt-2 mb-2">
@@ -91,7 +54,7 @@ if ($result = $mysqli->query($query)) {
                                                             <option>Kandy</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-lg-3 col-md-4 col-sm-12 p-0">
+                                                    <div class="col-lg-3 col-md-4 col-sm-11  p-0">
                                                         <button class="btn btn-outline-black" type="submit" name="submit">Search</a>
                                                     </div>
                                                 </div>
@@ -99,14 +62,13 @@ if ($result = $mysqli->query($query)) {
                                         </div>
                                     </form>
                                 </div>
-                        
-
                     </div>
                 </div>
             </div>
         </div>
+    
 
-    </header>
+    print "<h2>" . $offer. "</h2>";
     <footer class="page-footer font-small unique-color-dark">
         <div class="footer-copyright fixed-bottom text-center py-3">© 2019 Copyright:
             <a href="/"> OfferSync.com</a>

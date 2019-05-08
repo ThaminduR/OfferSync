@@ -22,9 +22,14 @@ class OfferController {
  
 
     public function SearchOffer(){
+        
         $restaurant = $_POST['Restaurant'];
         $city = $_POST['City'];
         Search($restaurant,$city);
+        // echo $username,$offer,$price;
+        header("location:/searchResult");
 
     }
 }
+
+
