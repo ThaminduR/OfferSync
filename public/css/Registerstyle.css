@@ -4,10 +4,12 @@ header,
 #intro {
     height: 100%;
 }
+
 .navbar{
-    background-color: rgba(14, 14, 14, 0.719)
+    background-color: rgba(14, 14, 14, 0.719);
+    
 }
-#intro {
+.bg {
     background: url("/img/login_back.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -15,8 +17,9 @@ header,
     background-size: cover;
 }
 .loginform{
-    background-color: rgba(255, 255, 255, 0.61)
+    background-color: rgba(224, 224, 224, 0.788);
+   
 } 
-.fas{
+/* .fas{
     text-align:right
-}
+} */

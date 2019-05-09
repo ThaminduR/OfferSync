@@ -47,7 +47,9 @@ class User
         $check =  $this->database->FindUser($username, $email);
         if (!($check)) {
             //register the user ; username is available
+            
             $result1 = $this->database->InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city,$number);
+            
             $result2 = $this->database->InsertLoginData($username, $hpassword, $salt);
             return $result1;
         } else {

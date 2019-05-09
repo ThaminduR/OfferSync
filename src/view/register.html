@@ -19,91 +19,101 @@
 
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-            <div class="container">
-                <a class="navbar-brand" href="/"><i class="fas fa-arrow-circle-left mr-2"></i>OfferSync</a>
-                <div class="collapse navbar-collapse " id="Nav">
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                    </ul>
-                </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark black scrolling-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="fas fa-arrow-circle-left mr-2"></i>OfferSync</a>
+            <div class="collapse navbar-collapse " id="Nav">
+                <ul class="navbar-nav mr-auto smooth-scroll">
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <div id="intro" class="view">
-            <div class="mask rgba-black-strong">
-                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
-                    <div class="row d-flex justify-content-center text-center">
-                        <div class="col-md-9 mt-4 mb-3 loginform">
+    <div class="bg">
+        <div class="mask">
+            <div class=" container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="row d-flex justify-content-center text-center">
 
-                            <form class="text-center p-5" action="/RegisterController" method="POST">
-                                <h3 class="h-4 mb-4 text-uppercase">Sign Up</h3>
-                                <div class="form-row mb-4">
-                                    <div class="col">
-                                        <input name="firstname" type="text" id="defaultRegisterFormFirstName" class="form-control"
-                                            placeholder="First Name" required>
-                                    </div>
-                                    <div class="col">
-                                        <input name="lastname" type="text" id="defaultRegisterFormLastName" class="form-control"
-                                            placeholder="Last Name" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col">
-                                        <input name="email" type="email" id="defaultRegisterFormEmail" class="form-control mb-4"
-                                            placeholder="Email" required>
-                                    </div>
-                                    <div class="col">
-                                            <input name="username" type="text" id="defaultRegisterFormEmail" class="form-control mb-4"
-                                                placeholder="Username" required>
-                                        </div>
-                                </div>
-                                <input name="password" type="password" id="defaultRegisterFormPassword" class="form-control mb-4"
-                                    placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
-                                <div class="form-row">
-                                    <div class="col">
-                                        <input name="city" type="text" id="defaultRegisterPhonePassword" class="form-control"
-                                            placeholder="City" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
-                                    </div>
-                                    <div class="col">
-                                        <input name="number" type="text" id="defaultRegisterPhonePassword" class="form-control"
-                                            placeholder="Phone Number" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
-                                    </div>
-                                </div>
-                                <p class="text-left mt-1 mb-1">Gender</p>
-                                <div class="row md-form mt-0 mb-5">
+                    <form class="text-center p-5" action="/RegisterController" method="POST">
+                        <!-- Card -->
+                        <div class="card">
+                            <!-- Card Content -->
+                            <div class="card-body mb-5">
+                                <h2 class="card-title">Sign Up</h2>
 
-                                    <div class="custom-control custom-radio ml-5 mr-5">
-                                        <input name="gender" value="Male" type="radio" class="custom-control-input" id="defaultGroupExample1"
-                                            name="groupOfDefaultRadios" >
+                                <div class="md-form">
+                                    <input name="firstname" type="text" id="defaultRegisterFormFirstName"
+                                        class="form-control" placeholder="First Name" required>
+                                </div>
+
+                                <div class="md-form">
+                                    <input name="lastname" type="text" id="inputMDEx"
+                                        class="form-control" placeholder="Last Name" required>
+                                </div>
+
+                                <div class="md-form">
+                                    <input name="email" onblur="checkemail()" type="email" id="defaultRegisterFormEmail"
+                                        class="form-control mb-4" placeholder="Email" required>
+                                </div>
+
+                                <div class="md-form">
+                                    <input name="username" onblur="checkusername()" type="text"
+                                        id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Username"
+                                        required>
+                                </div>
+                                <div class="md-form">
+                                    <input name="password" type="password" onblur="checkpw()"
+                                        id="defaultRegisterFormPassword" class="form-control mb-4"
+                                        placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"
+                                        required>
+                                </div>
+
+                                <div class="md-form">
+                                    <input name="city" type="text" id="defaultRegisterPhonePassword"
+                                        class="form-control" placeholder="City"
+                                        aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                                </div>
+
+                                <div class="md-form">
+                                    <input name="number" type="text" id="defaultRegisterPhonePassword"
+                                        class="form-control" placeholder="Phone Number"
+                                        aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                                </div>
+                                <p class="text-muted text-left mb-1 ">Prefered Gender :</p>
+
+                                <div class="md-form">
+
+                                    <div class="custom-control custom-radio custom-control-inline mr-5">
+                                        <input name="gender" value="Male" type="radio" class="custom-control-input"
+                                            id="defaultInline1" name="groupOfDefaultRadios">
                                         <label class="custom-control-label" for="defaultGroupExample1">Male</label>
                                     </div>
 
-                                    <div class="custom-control custom-radio ml-5">
+                                    <div class="custom-control custom-radio custom-control-inline">
 
-                                        <input name="gender" value="Female" type="radio" class="custom-control-input" id="defaultGroupExample2"
-                                            name="groupOfDefaultRadios" >
-                                        <label class="custom-control-label" for="defaultGroupExample2"> Female</label>
+                                        <input name="gender" value="Female" type="radio" class="custom-control-input"
+                                            id="defaultInline2" name="groupOfDefaultRadios">
+                                        <label class="custom-control-label " for="defaultGroupExample2"> Female</label>
 
                                     </div>
-
-
                                 </div>
                                 <button class="btn btn-info my-4 btn-block" type="submit" name="submit">Sign </button>
                                 <hr>
-                                <p>By clicking
-                                    <em>Sign up</em> you agree to our
-                                    <a href="" target="_blank">terms of service</a>
-                            </form>
+                                <p class="text-muted" >By clicking <em>Sign up</em> you agree to our <a href="" target="_blank">terms of
+                                        service</a></p>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+    </div>
 
-    <footer class="page-footer font-small unique-color-dark">
-        <div class="footer-copyright fixed-bottom text-center py-3">© 2019 Copyright:
+
+    <footer class="page-footer font-small  unique-color-dark">
+        <div class="footer-copyright  text-center py-3">© 2019 Copyright:
             <a href="/"> OfferSync.com</a>
         </div>
     </footer>

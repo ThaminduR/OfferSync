@@ -19,101 +19,103 @@
 
 <body>
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="/"><i class="fas fa-arrow-circle-left mr-2"></i>OfferSync</a>
-        <div class="collapse navbar-collapse " id="Nav">
-          <ul class="navbar-nav mr-auto smooth-scroll">
-          </ul>
-        </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark black scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/"><i class="fas fa-arrow-circle-left mr-2"></i>OfferSync</a>
+      <div class="collapse navbar-collapse " id="Nav">
+        <ul class="navbar-nav mr-auto smooth-scroll">
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <div id="intro" class="view">
-      <div class="mask">
-        <div class="container-fluid d-flex align-items-center justify-content-center h-100">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-md-9 mt-4 mb-3 loginform">
+  <div class="bg">
+    <div class="mask">
+      <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+        <div class="row d-flex justify-content-center text-center">
 
-              <form class="text-center p-5" action="/OfferController_Post" method="POST">
-                <div class="card">
+          <form class="text-center p-5" action="/OfferController_Post" method="POST">
+            <div class="card">
 
-                  <!-- Card image -->
-                  <div class="view overlay">
-                    <img class="card-img-top z-depth-1" src="img/post-back.jpg" alt="Card image cap">
-                    <a href="#!">
-                      <div class="mask rgba-white-slight"></div>
-                    </a>
+              <!-- Card image -->
+              <div class="view overlay">
+                <img class="card-img-top z-depth-1" src="img/post-back.jpg" alt="Card image cap">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <!-- Card content -->
+              <div class="card-body mb-5">
+
+                <!-- Title -->
+                <h4 class="card-title">Post Offer</h4>
+                <!-- Text -->
+
+                <div class="md-form">
+                  <input name="Restaurant" type="text" id="inputMDEx" class="form-control" required>
+                  <label for="inputMDEx">Restaurant</label>
+                </div>
+
+                <div class="md-form">
+                  <input name="Offer" type="text" id="inputMDEx" class="form-control" required>
+                  <label for="inputMDEx">Offer</label>
+                </div>
+
+                <div class="md-form">
+                  <input name="Price" type="text" id="inputMDEx" class="form-control" required>
+                  <label for="inputMDEx">Price</label>
+                </div>
+
+                <div class="md-form ">
+                  <input name="City" type="text" id="inputMDEx" class="form-control" required>
+                  <label for="inputMDEx">City</label>
+                </div>
+
+                <div class="md-form">
+                  <input name="Date" type="text" id="inputMDEx" class="form-control" required>
+                  <label for="inputMDEx">Date</label>
+                </div>
+
+                <div class="md-form">
+                  <input name="RestaurantBranch" type="text" id="inputMDEx" class="form-control" required>
+                  <label for="inputMDEx">Restaurant Branch</label>
+                </div>
+
+                <p class="text-muted text-left mb-1 ">Prefered Gender :</p>
+
+                <div class="md-form ">
+                  <div class="custom-control custom-radio custom-control-inline  mr-5">
+                    <input name="Gender" value="Male" type="radio" class="custom-control-input" id="defaultInline1"
+                      name="groupOfDefaultRadios">
+                    <label class="custom-control-label" for="defaultGroupExample1">Male</label>
                   </div>
 
-                  <!-- Card content -->
-                  <div class="card-body mb-5">
+                  <div class="custom-control custom-radio custom-control-inline">
 
-                    <!-- Title -->
-                    <h4 class="card-title">Post Offer</h4>
-                    <!-- Text -->
-                    <div class="form-row">
-                      <div class="col md-form">
-                        <input name="Restaurant" type="text" id="inputMDEx" class="form-control" required>
-                        <label for="inputMDEx">Restaurant</label>
-                      </div>
-                      <div class="col md-form">
-                        <input name="Offer" type="text" id="inputMDEx" class="form-control" required>
-                        <label for="inputMDEx">Offer</label>
-                      </div>
-                      <div class="col md-form">
-                        <input name="Price" type="text" id="inputMDEx" class="form-control" required>
-                        <label for="inputMDEx">Price</label>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="col md-form">
-                        <input name="City" type="text" id="inputMDEx" class="form-control" required>
-                        <label for="inputMDEx">City</label>
-                      </div>
-                      <div class="col md-form">
-                        <input name="Date" type="text" id="inputMDEx" class="form-control" required>
-                        <label for="inputMDEx">Date</label>
-                      </div>
-                      <div class="col md-form">
-                        <input name="RestaurantBranch" type="text" id="inputMDEx" class="form-control" required>
-                        <label for="inputMDEx">Restaurant Branch</label>
-                      </div>
-                    </div>
-                    <p class="text-muted text-left mb-1">Prefered Gender</p>
-                    <div class="row md-form mt-0 mb-5">
-
-                      <div class="custom-control custom-radio ml-5 mr-5">
-                        <input name="Gender" value="Male" type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
-                        <label class="custom-control-label" for="defaultGroupExample1">Male</label>
-                      </div>
-
-                      <div class="custom-control custom-radio ml-5">
-
-                        <input name="Gender" value="Female" type="radio" class="custom-control-input" id="defaultGroupExample2" name="groupOfDefaultRadios">
-                        <label class="custom-control-label" for="defaultGroupExample2"> Female</label>
-
-                      </div>
-
-
-                    </div>
-                    <!-- Button -->
-                    <button class="btn btn-outline-black" type="submit">Post<i class="far fa-paper-plane ml-2"></i></button>
+                    <input name="Gender" value="Female" type="radio" class="custom-control-input" id="defaultInline2"
+                      name="groupOfDefaultRadios">
+                    <label class="custom-control-label" for="defaultGroupExample2"> Female</label>
 
                   </div>
+
 
                 </div>
-              </form>
+                <!-- Button -->
+                <button class="btn btn-outline-black" type="submit">Post<i class="far fa-paper-plane ml-2"></i></button>
+
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+
 
   <footer class="page-footer font-small unique-color-dark">
-    <div class="footer-copyright fixed-bottom text-center py-3">© 2019 Copyright:
+    <div class="footer-copyright  text-center py-3">© 2019 Copyright:
       <a href="/"> OfferSync.com</a>
     </div>
   </footer>
