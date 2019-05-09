@@ -40,6 +40,8 @@ class Database
             exit;
         }
     }
+
+//------------------------------------------------User Related -----------------------------------------------------------------------
     //Insert user registration details.
     public function InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city, $number)
     {
@@ -74,19 +76,33 @@ class Database
     }
 
     //find a user from username or email
-    public function FindUser($username, $email)
+    public function FindUserName($username)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
-        $email = mysqli_real_escape_string($this->connection, $email);
-        $sql = "SELECT * FROM userlogin WHERE username='$username' or email='$email'";
+        $sql = "SELECT username FROM userlogin WHERE username='$username'";
         $result = mysqli_query($this->connection, $sql);
-        if (empty($result)) {
+        $user_data = mysqli_fetch_array($result);
+        if (empty($user_data)) {
             return false;
         } else {
             return true;
         }
     }
 
+    public function FindEmail($email)
+    {
+        $email = mysqli_real_escape_string($this->connection, $email);
+        $sql = "SELECT email FROM users WHERE email='$email'";
+        $result = mysqli_query($this->connection, $sql);
+        $user_data = mysqli_fetch_array($result);
+        if (empty($user_data)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+//------------------------------------------------Offers Related-----------------------------------------------------------------------
     //save the post to database
     public function PostOffer($username, $restaurant, $offer, $price, $restaurantbranch, $date, $city, $gender)
     {
@@ -116,6 +132,7 @@ class Database
         return $offers;
     }
 
+//------------------------------------------------Sessions Related -----------------------------------------------------------------------
     //Search session in the databse
     public function SearchSession($id)
     {

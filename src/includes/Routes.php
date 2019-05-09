@@ -4,6 +4,7 @@ require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/ViewController.php'
 require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/LoginController.php');
 require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/RegisterController.php');
 require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/OfferController.php');
+require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/CheckingController.php');
 
 $routes = [
     ['GET','/',function(){ViewController::CreateView('index');}],
@@ -17,7 +18,10 @@ $routes = [
     ['POST','/LoginController',function(){LoginController::LogIn();}],
     ['POST','/RegisterController',function(){RegisterController::SignUp();}],
     ['POST','/OfferController_Post',function(){OfferController::PostOffer();}],
-    ['POST','/OfferController_Search',function(){OfferController::SearchOffer();}]
+    ['POST','/OfferController_Search',function(){OfferController::SearchOffer();}],
+    ['POST','/checkUsername',function(){CheckingController::checkUsername();}],
+    ['POST','/checkEmail',function(){CheckingController::checkEmail();}],
+    ['POST','/checkPassword',function(){CheckingController::checkPassword();}]
 ]
 
 ?>

@@ -48,35 +48,47 @@
                                 </div>
 
                                 <div class="md-form">
-                                    <input name="lastname" type="text" id="inputMDEx"
-                                        class="form-control" placeholder="Last Name" required>
+                                    <input name="lastname" type="text" id="inputMDEx" class="form-control"
+                                        placeholder="Last Name" required>
                                 </div>
 
                                 <div class="md-form">
-                                    <input name="email" onblur="checkemail()" type="email" id="defaultRegisterFormEmail"
+                                    <input name="email" onblur="checkemail()" type="email" id="email"
                                         class="form-control mb-4" placeholder="Email" required>
+                                    <div class="spinner-border" style="display:none" id="loaderIcon" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                    <span id="email-check"></span>
                                 </div>
 
                                 <div class="md-form">
-                                    <input name="username" onblur="checkusername()" type="text"
-                                        id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Username"
-                                        required>
+                                    <input name="username" onblur="checkusername()" type="text" id="username"
+                                        class="form-control mb-4" placeholder="Username" required>
+                                    <div class="spinner-border" style="display:none" id="loaderIcon" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                    <span id="username-check"></span>
                                 </div>
+
                                 <div class="md-form">
                                     <input name="password" type="password" onblur="checkpw()"
-                                        id="defaultRegisterFormPassword" class="form-control mb-4"
+                                        id="password" class="form-control mb-4"
                                         placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"
                                         required>
+                                    <div class="spinner-border" style="display:none" id="loaderIcon" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                    <span id="password-check"></span>
                                 </div>
 
                                 <div class="md-form">
-                                    <input name="city" type="text" id="defaultRegisterPhonePassword"
+                                    <input name="city" type="text" id="city"
                                         class="form-control" placeholder="City"
                                         aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
                                 </div>
 
                                 <div class="md-form">
-                                    <input name="number" type="text" id="defaultRegisterPhonePassword"
+                                    <input name="number" type="text" id="number"
                                         class="form-control" placeholder="Phone Number"
                                         aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
                                 </div>
@@ -100,7 +112,8 @@
                                 </div>
                                 <button class="btn btn-info my-4 btn-block" type="submit" name="submit">Sign </button>
                                 <hr>
-                                <p class="text-muted" >By clicking <em>Sign up</em> you agree to our <a href="" target="_blank">terms of
+                                <p class="text-muted">By clicking <em>Sign up</em> you agree to our <a href=""
+                                        target="_blank">terms of
                                         service</a></p>
                             </div>
                         </div>
@@ -128,6 +141,7 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.js"></script>
     <script type="text/javascript" src="js/jquery.steps.js"></script>
+    <script type="text/javascript" src="js/checking.js"></script>
 </body>
 
 </html>
