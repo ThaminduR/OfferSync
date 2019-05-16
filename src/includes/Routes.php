@@ -21,7 +21,8 @@ $routes = [
     ['POST','/OfferController_Search',function(){OfferController::SearchOffer();}],
     ['POST','/checkUsername',function(){CheckingController::checkUsername();}],
     ['POST','/checkEmail',function(){CheckingController::checkEmail();}],
-    ['POST','/checkPassword',function(){CheckingController::checkPassword();}]
+    ['POST','/checkPassword',function(){CheckingController::checkPassword();}],
+    ['POST','/checkNumber',function(){CheckingController::checkNumber();}]
 ]
 
 ?>

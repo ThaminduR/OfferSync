@@ -36,3 +36,16 @@ function checkpw() {
         error: function () { }
     });
 }
+
+function checknum() {
+    $("#loaderIcon").show();
+    $.post({
+        url: "/checkNumber",
+        data: 'number=' + $("#number").val(),
+        success: function (data) {
+            $("#number-check").html(data);
+            $("#loaderIcon").hide();
+        },
+        error: function () { }
+    });
+}

@@ -29,8 +29,11 @@ function UserLogin($username, $password)
             header("location:/User");
 
         } else {
-            // Login Failed
-            echo 'Wrong username or password';
+            // Login Failed\
+            header("Refresh: 0; url=/");
+            $message = "Invalid Credentials !";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        
         }
     }
 }

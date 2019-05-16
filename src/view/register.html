@@ -43,72 +43,68 @@
                                 <h2 class="card-title">Sign Up</h2>
 
                                 <div class="md-form">
-                                    <input name="firstname" type="text" id="defaultRegisterFormFirstName"
-                                        class="form-control" placeholder="First Name" required>
+                                    <input name="firstname" type="text" id="FirstName" class="form-control" required>
+                                    <label data-error="wrong" data-success="right" for="FirstName">First Name</label>
                                 </div>
 
                                 <div class="md-form">
-                                    <input name="lastname" type="text" id="inputMDEx" class="form-control"
-                                        placeholder="Last Name" required>
+                                    <input name="lastname" type="text" id="lastname" class="form-control" required>
+                                    <label data-error="wrong" data-success="right" for="lastname">Last Name</label>
                                 </div>
 
                                 <div class="md-form">
                                     <input name="email" onblur="checkemail()" type="email" id="email"
-                                        class="form-control mb-4" placeholder="Email" required>
-                                    <div class="spinner-border" style="display:none" id="loaderIcon" role="status">
-                                        <span class="sr-only">Loading...</span>
-                                    </div>
+                                        class="form-control mb-4" required>
+                                    <label for="email">Email</label>
                                     <span id="email-check"></span>
                                 </div>
 
                                 <div class="md-form">
+
                                     <input name="username" onblur="checkusername()" type="text" id="username"
-                                        class="form-control mb-4" placeholder="Username" required>
-                                    <div class="spinner-border" style="display:none" id="loaderIcon" role="status">
-                                        <span class="sr-only">Loading...</span>
-                                    </div>
+                                        class="form-control mb-4" required>
+                                    <label for="username">Username</label>
                                     <span id="username-check"></span>
                                 </div>
 
                                 <div class="md-form">
-                                    <input name="password" type="password" onblur="checkpw()"
-                                        id="password" class="form-control mb-4"
-                                        placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"
-                                        required>
-                                    <div class="spinner-border" style="display:none" id="loaderIcon" role="status">
-                                        <span class="sr-only">Loading...</span>
-                                    </div>
+                                    <input name="password" type="password" onblur="checkpw()" id="password"
+                                        class="form-control mb-4"
+                                        aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+                                    <label for="paasword">Password</label>
                                     <span id="password-check"></span>
                                 </div>
 
                                 <div class="md-form">
-                                    <input name="city" type="text" id="city"
-                                        class="form-control" placeholder="City"
+                                    <input name="city" type="text" id="city" class="form-control"
                                         aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                                    <label for="city">City</label>
+
                                 </div>
 
                                 <div class="md-form">
-                                    <input name="number" type="text" id="number"
-                                        class="form-control" placeholder="Phone Number"
-                                        aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                                    <input name="number" type="text" onblur="checknum()" id="number"
+                                        class="form-control" aria-describedby="defaultRegisterFormPhoneHelpBlock"
+                                        required>
+                                    <label for="number">Phone Number</label>
+                                    <span id="number-check"></span>
                                 </div>
+                                
                                 <p class="text-muted text-left mb-1 ">Prefered Gender :</p>
 
-                                <div class="md-form">
-
-                                    <div class="custom-control custom-radio custom-control-inline mr-5">
-                                        <input name="gender" value="Male" type="radio" class="custom-control-input"
-                                            id="defaultInline1" name="groupOfDefaultRadios">
-                                        <label class="custom-control-label" for="defaultGroupExample1">Male</label>
+                                <div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" value="Male" class="custom-control-input"
+                                            id="defaultInline1" name="gender">
+                                        <label class="custom-control-label" for="defaultInline1">Male</label>
                                     </div>
 
                                     <div class="custom-control custom-radio custom-control-inline">
-
-                                        <input name="gender" value="Female" type="radio" class="custom-control-input"
-                                            id="defaultInline2" name="groupOfDefaultRadios">
-                                        <label class="custom-control-label " for="defaultGroupExample2"> Female</label>
-
+                                        <input type="radio" value="Female" class="custom-control-input"
+                                            id="defaultInline2" name="gender">
+                                        <label class="custom-control-label" for="defaultInline2">Female</label>
                                     </div>
+
                                 </div>
                                 <button class="btn btn-info my-4 btn-block" type="submit" name="submit">Sign </button>
                                 <hr>

@@ -44,8 +44,9 @@ class User
         //hashing pw with salt and pepper
         $hpassword = base64_encode(hash('sha256', "$username.$password.$salt.$this->pepper", true));
         //checking for existing username
-        $check =  $this->database->FindUser($username, $email);
-        if (!($check)) {
+        $check1 =  $this->database->FindUserName($username);
+        $check2 = $this->database->FindEmail($email);
+        if (!($check1 && $check2)) {
             //register the user ; username is available
             
             $result1 = $this->database->InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city,$number);
