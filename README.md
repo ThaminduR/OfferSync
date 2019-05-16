@@ -1,7 +1,7 @@
 # OfferSync
 Web application 
 
-*   Login/Signup System - CodeX97
-*   Home Page - nigma97
+*   Login/Signup System, Interactive features, Sessions- CodeX97
+*   Offer searching system - nigma97
 *   Offer Posting system - MithunW
-*   Offer Searching system - NGSAnjana
+*   User profile and user data handling - NGSAnjana
