@@ -15,7 +15,9 @@ class ViewController
                     require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/index.html');
                 }
         } else {
-                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.html');
+            if ($viewName == 'search'){
+                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.php');
+            }
             }
     }
 
