@@ -1,5 +1,4 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/Database.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/CheckingService.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/fetch.php';
 class RequestController
