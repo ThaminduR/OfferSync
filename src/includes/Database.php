@@ -132,10 +132,10 @@ class Database
         return $offers;
     }
 
-//Fetch Search Results from the databse
+//------------------------------------------Fetch Search Results from the databse---------------------------------------------
 public function FetchOffer($search)
         {
-            $search = mysqli_real_escape_string($connect, $search);
+            $search = mysqli_real_escape_string($this->connection, $search);
             $query = "
             SELECT * FROM offers 
             WHERE Username LIKE '%".$search."%'
@@ -144,12 +144,12 @@ public function FetchOffer($search)
             OR Price LIKE '%".$search."%' 
             OR Date LIKE '%".$search."%'
             ";
-        $result = mysqli_query($connect, $query);      
-        $offers = array();
-        while ($offer = mysqli_fetch_array($result)) {
-            $offers[] = $offer;
-        }
-        return $offers;
+        $result = mysqli_query($this->connection, $query);      
+        // $offers = array();
+        // while ($offer = mysqli_fetch_array($result)) {
+        //     $offers[] = $offer;
+        // }
+        return $result;
 }
 
 //------------------------------------------------Sessions Related -----------------------------------------------------------------------

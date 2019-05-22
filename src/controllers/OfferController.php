@@ -15,7 +15,7 @@ class OfferController {
     }
  
 
-    public function SearchOffer(){
+    public function SearchOffer1(){
         
         $restaurant = $_POST['Restaurant'];
         $city = $_POST['City'];

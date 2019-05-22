@@ -11,7 +11,7 @@
 			<br />
 			<br />
 			<br />
-			<h2>Ajax Live Data Search using Jquery PHP MySql</h2><br />
+			<h2 align="center">Ajax Live Data Search using Jquery PHP MySql</h2><br />
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon">Search</span>
@@ -33,14 +33,13 @@
 
 <script>
 $(document).ready(function(){
-
 	load_data();
 	function load_data(query)
 	{
 		$.ajax({
-			url:"/fetch",
-			method:"POST",
-			data:{searchText:query},
+			url:"fetch.php",
+			method:"post",
+			data:{query:query},
 			success:function(data)
 			{
 				$('#result').html(data);

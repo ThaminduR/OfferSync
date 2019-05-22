@@ -35,8 +35,8 @@ class RequestController
     }
 
     public function SearchOffer(){
-        if(isset($_POST['namehere'])){
-            $search = $_POST['namehere'];
+        if(isset($_POST['searchText'])){
+            $search = $_POST['searchText'];
             SearchOffers($search);
         }
     }
