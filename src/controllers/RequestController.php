@@ -1,8 +1,8 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/Database.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/CheckingService.php';
-
-class CheckingController
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/fetch.php';
+class RequestController
 {
     public function CheckUsername()
     {
@@ -32,6 +32,13 @@ class CheckingController
         if (isset($_POST['number'])) {
             $number = $_POST['number'];
             ValidateNumber($number);
+        }
+    }
+
+    public function SearchOffer(){
+        if(isset($_POST['namehere'])){
+            $search = $_POST['namehere'];
+            SearchOffers($search);
         }
     }
 }
