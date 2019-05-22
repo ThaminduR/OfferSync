@@ -12,6 +12,7 @@ $routes = [
     ['GET','/postOffer',function(){ViewController::CreateViewR('postOffer');}],
     ['GET','/searchResult',function(){ViewController::CreateView('search_result');}],
     ['GET','/search',function(){ViewController::CreateView('search');}],
+    ['GET','/profile',function(){ViewController::CreateViewR('profile');}],
     ['GET','/Logout',function(){LoginController::LogOut();}],
     ['POST','/LoginController',function(){LoginController::LogIn();}],
     ['POST','/RegisterController',function(){RegisterController::SignUp();}],

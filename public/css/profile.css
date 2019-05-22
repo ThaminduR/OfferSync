@@ -1,8 +1,20 @@
-.main {
-    background: url("/img/home.jpg");
+.bg {
     margin-left: 160px;
+    background: url("/img/home.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100% !important;
 }
 
+.space {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.card{
+    margin-bottom: 550px;
+}
 .side-nav {
     height: 100%;
     width: 160px;
@@ -10,9 +22,10 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
-    padding-top: 20px;
+    background-color: rgba(0, 0, 0, 0.671);
+
 }
+
 .sideb {
     background-color: rgba(0, 0, 0, 0.733);
     color: aliceblue;
