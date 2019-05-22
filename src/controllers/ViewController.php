@@ -10,7 +10,7 @@ class ViewController
         if ($viewName == 'index') {
             $logged = CheckLoginStatus();
             if ($logged) {
-                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/logged.html');
+                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/profile.html');
             } else {
                     require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/index.html');
                 }

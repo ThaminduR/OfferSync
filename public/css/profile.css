@@ -1,16 +1,29 @@
-html,
-body,
-header {
+.main {
+    background: url("/img/home.jpg");
+    margin-left: 160px;
+}
+
+.side-nav {
     height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 20px;
 }
-.navbar{
-    background-color: rgba(14, 14, 14, 0.719)
-}
-#intro {
-    background: url("/img/Search.jpg")no-repeat center center fixed;
+.sideb {
+    background-color: rgba(0, 0, 0, 0.733);
+    color: aliceblue;
 }
 
-.fas{
-    text-align:right
-}
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
 
+    .sidenav a {
+        font-size: 18px;
+    }
+}

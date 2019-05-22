@@ -26,7 +26,7 @@ function UserLogin($username, $password)
             //session_write_close();
             
             //redirecting to the user page
-            header("location:/User");
+            header("location:/");
 
         } else {
             // Login Failed\

@@ -8,8 +8,6 @@ require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/CheckingController.
 
 $routes = [
     ['GET','/',function(){ViewController::CreateView('index');}],
-    ['GET','/User',function(){ViewController::CreateViewR('logged');}],
-    ['GET','/Profile',function(){ViewController::CreateViewR('profile');}],
     ['GET','/Register',function(){ViewController::CreateView('register');}],
     ['GET','/postOffer',function(){ViewController::CreateViewR('postOffer');}],
     ['GET','/searchResult',function(){ViewController::CreateView('search_result');}],

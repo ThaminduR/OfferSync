@@ -5,96 +5,72 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>OfferSync</title>
+  <title>Profile</title>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Custom styles -->
-  <link href="css/profile.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/Profile.css" rel="stylesheet">
+  <style>
 
+  </style>
 </head>
 
-<body>
+<body class="bg">
 
-  <header>
+  
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="/"><i class="fas fa-arrow-circle-left mr-2"></i>OfferSync</a>
-        <div class="collapse navbar-collapse " id="Nav">
-          <ul class="navbar-nav mr-auto smooth-scroll">
-          </ul>
-          <ul class="navbar-nav nav-flex-icons">
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="" id="intro">
-      <div class="mask rgba-black-strong">
-        <div class="container-fluid d-flex align-items-center justify-content-center h-100">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-md-10">
-              <div class="card">
-                <div class="scrollbar scrollbar-primary">
-                  <div class="view overlay">
-                    <img class="card-img-top" src="img/Sarah-Grey.jpg" alt="Card image cap">
-                    <a href="#!">
-                      <div class="mask rgba-white-slight"></div>
-                    </a>
-                  </div>
-                  <div class="card-body scroll">
-                    <h4 class="card-title">Sarah Grey</h4>
-                    <div class="md-form  mt-2">
-                      <h3><span class="badge badge-light ">City</span></h3>
-                      <p>Galle</p>
-                    </div>
-                    <div class="md-form  mt-2">
-                      <h3><span class="badge badge-light ">Phone Number</span></h3>
-                      <p>0779555565</p>
-                    </div>
-                    <div class="md-form  mt-2">
-                      <h3><span class="badge badge-light ">Rating</span></h3>
-                      <p>5.0</p>
-                    </div>
-                    <div class="md-form  mt-2">
-                        <h3><span class="badge badge-light ">Rating</span></h3>
-                        <p>5.0</p>
-                      </div>
-                      <div class="md-form  mt-2">
-                          <h3><span class="badge badge-light ">Rating</span></h3>
-                          <p>5.0</p>
-                        </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Sidebar -->
+  <div class="rgba-black-light side-nav position-fixed">
+    <div class="list-group ">
+      <div class="black list-group-item text-white waves-effect">OFFERSYNC</div>
+      <a href="" class="sideb list-group-item list-group-item-action waves-effect">
+        <i class="fas fa-user mr-3"></i>Profile</a>
+      <a href="#" class="sideb list-group-item  list-group-item list-group-item-action waves-effect">
+        <i class="fas fa-hamburger mr-3"></i>My Orders</a>
+      <a href="#" class="sideb list-group-item list-group-item-action waves-effect">
+        <i class="fas fa-envelope mr-3"></i>Requests</a>
     </div>
+    <div class="container col h-20">
+    </div>
+        <a href="/Logout" class="sideb list-group-item list-group-item-action waves-effect">
+            <i class="fas fa-user mr-3"></i>Logout</a>
+  </div>
+  <!-- Sidebar -->
 
-  </header>
 
-  <footer class="page-footer font-small unique-color-dark">
-    <div class="footer-copyright fixed-bottom text-center py-3">© 2019 Copyright:
+
+      <a class="btn btn-outline-white" href="/search">Search Offer<i class="fas fa-search ml-2"></i></a>
+      <a class="btn btn-outline-white" href="/postOffer">Post an Offer<i class="far fa-paper-plane ml-2"></i></a>
+
+
+  <!--Footer-->
+  <footer class="page-footer fixed-bottom font-small  unique-color-dark">
+    <div class="footer-copyright  text-center py-3">© 2019 Copyright:
       <a href="/"> OfferSync.com</a>
     </div>
   </footer>
+  <!--/.Footer-->
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.js"></script>
-  <script type="text/javascript" src="js/jquery.steps.js"></script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+
 </body>
 
 </html>
