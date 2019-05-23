@@ -34,23 +34,22 @@ a:hover {
     opacity: 0.7;
 }
 
+body {
+    background: url("/img/profileback.jpg")no-repeat center center fixed;
+}
+
 .bg {
     margin-left: 160px;
-    background: url("img/post-back.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100% !important;
+    height: auto !important;
 }
 
 .space {
     padding-top: 20px;
     padding-bottom: 20px;
-}
-
-.card {
-    margin-bottom: 550px;
 }
 
 .side-nav {
