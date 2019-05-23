@@ -138,11 +138,9 @@ public function FetchOffer($search)
             $search = mysqli_real_escape_string($this->connection, $search);
             $query = "
             SELECT * FROM offers 
-            WHERE Username LIKE '%".$search."%'
-            OR Offer LIKE '%".$search."%' 
+            WHERE 
+            Restaurant LIKE '%".$search."%' 
             OR City LIKE '%".$search."%' 
-            OR Price LIKE '%".$search."%' 
-            OR Date LIKE '%".$search."%'
             ";
         $result = mysqli_query($this->connection, $query);      
         // $offers = array();
