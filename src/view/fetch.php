@@ -30,7 +30,7 @@ function SearchOffers()
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
 							<h3><a href="#" title="">' . $row["Offer"] . '</p></h3>
-							<p>' . $row["Price"] . '</P>
+							<p>' . $row["Price"] . '</P>-p
                             <span class="plus"><a href="#" title="Send Request"><i class="fas fa-paper-plane"></i></a></span>
                         </div>
                         
