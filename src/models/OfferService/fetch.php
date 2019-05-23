@@ -41,7 +41,7 @@ function SearchOffers()
 				<div class="verticalLine"></div>
 		  
 				 <div class="col-4 ml-5  reqbtn">
-						<a class="btn btn-outline-black like" id="'.$row["Username"].'">Send Request
+						<a class="btn btn-outline-black like" style="cursor: pointer;" onclick="SendRequest(\''.$row["Username"].'\')">Send Request
 						<i class="far fa-paper-plane ml-2"></i></a>
 				</div>
 	   </article>     
