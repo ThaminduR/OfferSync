@@ -39,8 +39,7 @@
                         <br>
                         <div class="form-group">
                             <div class="input-group text-center">
-                                <input type="text" name="search_text" id="search_text"
-                                    placeholder="Search by Restaurant" class="form-control" />
+                                <input type="text" name="search_text" id="search_text" placeholder="Search by Restaurant" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -74,7 +73,7 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             load_data();
 
@@ -85,13 +84,13 @@
                     data: {
                         searchText: query
                     },
-                    success: function (data) {
+                    success: function(data) {
                         $('#result').html(data);
                     }
                 });
             }
 
-            $('#search_text').keyup(function () {
+            $('#search_text').keyup(function() {
                 var search = $(this).val();
                 if (search != '') {
                     load_data(search);
@@ -109,21 +108,22 @@
                 url: "/request",
                 data: postData,
                 cache: false,
-                success: function (data) {
+                success: function(data) {
                     $("#email-check").html(data);
                 }
             });
-         
-            function submitform()
-
-            {
-
-            document.myform.submit();
-
-            }
 
 
-  
+
+        }
+
+        function submitform()
+
+        {
+
+            document.forms["form1"].submit();
+
+        }
     </script>
 </body>
 

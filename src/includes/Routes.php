@@ -5,6 +5,7 @@ require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/LoginController.php
 require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/RegisterController.php');
 require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/OfferController.php');
 require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/RequestController.php');
+require ($_SERVER['DOCUMENT_ROOT']. '/..'. '/src/Controllers/AccountController.php');
 
 $routes = [
     ['GET','/',function(){ViewController::CreateView('index');}],
@@ -15,6 +16,7 @@ $routes = [
     ['GET','/profile',function(){ViewController::CreateViewR('profile');}],
     ['GET','/Logout',function(){LoginController::LogOut();}],
     ['POST','/LoginController',function(){LoginController::LogIn();}],
+    ['POST','/AccountView',function(){AccountController::ViewAccount();}],
     ['POST','/RegisterController',function(){RegisterController::SignUp();}],
     ['POST','/OfferController_Post',function(){OfferController::PostOffer();}],
     ['POST','/checkUsername',function(){RequestController::checkUsername();}],
