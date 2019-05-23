@@ -1,15 +1,33 @@
-.navbar{
+.navbar {
     background-color: rgba(14, 14, 14, 0.719)
 }
+body{
+    background: url("/img/Search.jpg")no-repeat center center fixed;
+}
 .bg {
-    background: url("/img/Search.jpg");
+    /* background: url("/img/Search.jpg")no-repeat center center fixed; */
+    /* background: #fff; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100% !important;
+    height: auto;
 }
-.card{
-    height: 610px !important;
-    width: 500px;
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    max-height: 100px;
+    text-align: left;
+    padding-left: 20px;
 }
+
+.price {
+    color: grey;
+    font-size: 15px;
+}
+
+/* .container{
+    background-color: aliceblue;
+    opacity: 0.5;
+} */
