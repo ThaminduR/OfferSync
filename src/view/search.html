@@ -102,15 +102,13 @@
         });
 
         function SendRequest(p) {
-            var postData = 'username=' + p;
-            console.log(postData);
             $.ajax({
-                type: "GET",
-                url: "/request",
-                data: postData,
+                type:"POST",
+                url:"/request",
+                data: {username:p},
                 cache: false,
-                success: function (data) {
-                    $("#email-check").html(data);
+                success: function(){            
+                    $('#'+pro_id).html('OK').addClass('unlike').removeClass('like');
                 }
             });
 
