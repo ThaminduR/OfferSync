@@ -40,4 +40,11 @@ class RequestController
             SearchOffers($search);
         }
     }
+
+    public function SendRequest(){
+        if(isset($_POST['username'])){
+            echo "<span class='badge badge-danger'>Your password must contain at least 8 characters</span><br>";
+        }
+    }
 }
+

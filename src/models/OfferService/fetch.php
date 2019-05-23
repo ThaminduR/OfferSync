@@ -23,7 +23,10 @@ function SearchOffers()
                     
 				<div class="col-4 offerdetails">
 					<ul >
-						<li><i class="fas fa-user-circle"></i><span class="ml-2">'.$row["Username"].'</span></li>
+					<form id="form1" action="/AccountView" method="POST">
+						<a href="javascript: submitform()"><li><i class="fas fa-user-circle"></i><span class="ml-2">'.$row["Username"].'</span></li></a>
+					</form>
+						
 						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">'.$row["City"].'</span></li>
 						<li><i class="fas fa-building"></i><span class="ml-2">'.$row["Date"].'</span></li>
 						
@@ -41,7 +44,7 @@ function SearchOffers()
 				<div class="verticalLine"></div>
 		  
 				 <div class="col-4 ml-5  reqbtn">
-						<a class="btn btn-outline-black like" id="'.$row["Username"].'">Send Request
+						<a class="btn btn-outline-black like" style="cursor: pointer;" onclick="SendRequest(\''.$row["Username"].'\')">Send Request
 						<i class="far fa-paper-plane ml-2"></i></a>
 				</div>
 	   </article>     

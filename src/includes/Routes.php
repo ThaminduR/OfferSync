@@ -21,6 +21,7 @@ $routes = [
     ['POST','/checkEmail',function(){RequestController::checkEmail();}],
     ['POST','/checkPassword',function(){RequestController::checkPassword();}],
     ['POST','/checkNumber',function(){RequestController::checkNumber();}],
+    ['POST','/request',function(){RequestController::SendRequest();}],
     ['POST','/fetch',function(){RequestController::SearchOffer();}]
 ]
 
