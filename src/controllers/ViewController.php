@@ -12,13 +12,15 @@ class ViewController
             if ($logged) {
                 require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/welcome.html');
             } else {
-                    require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/index.html');
-                }
+                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/index.html');
+            }
         } else {
-            if ($viewName == 'search'){
+            if ($viewName == 'search') {
                 require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.php');
+            } else {
+                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.html');
             }
-            }
+        }
     }
 
     public static function CreateViewR($viewName)
