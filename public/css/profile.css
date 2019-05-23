@@ -1,3 +1,10 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
 .bg {
     margin-left: 160px;
     background: url("/img/home.jpg");
@@ -12,9 +19,11 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.card{
+
+.card {
     margin-bottom: 550px;
 }
+
 .side-nav {
     height: 100%;
     width: 160px;
@@ -23,8 +32,8 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.671);
-
 }
+
 .sideb {
     background-color: rgba(0, 0, 0, 0.733);
     color: aliceblue;
@@ -34,7 +43,6 @@
     .sidenav {
         padding-top: 15px;
     }
-
     .sidenav a {
         font-size: 18px;
     }
