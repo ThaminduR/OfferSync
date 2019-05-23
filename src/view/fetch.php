@@ -13,11 +13,11 @@ function SearchOffers()
             $output .= '<div class="table-responsive">
 					<table class="table table bordered">
 						<tr>
-							<th>Customer Name</th>
-							<th>Address</th>
+							<th>Username</th>
+							<th>Restaurant</th>
 							<th>City</th>
-							<th>Postal Code</th>
-							<th>Country</th>
+							<th>Offer</th>
+							<th>Price</th>
 						</tr>';
             while ($row = mysqli_fetch_array($result)) {
                 $output .= '
@@ -26,7 +26,7 @@ function SearchOffers()
 				<td>' . $row["Restaurant"] . '</td>
 				<td>' . $row["City"] . '</td>
 				<td>' . $row["Offer"] . '</td>
-				<td>' . $row["Gender"] . '</td>
+				<td>' . $row["Price"] . '</td>
 			</tr>
 		';
             }
