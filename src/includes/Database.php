@@ -150,6 +150,20 @@ public function FetchOffer($search)
         return $result;
 }
 
+//------------------------------------------Fetch User Details from the databse---------------------------------------------
+public function FetchUser($search)
+        {
+            $username = mysqli_real_escape_string($this->connection, $search);                       
+            $sql = "SELECT * FROM offers WHERE Username ='$username'";
+            $result = mysqli_query($this->connection, $sql);
+            $offers = array();
+            while ($offer = mysqli_fetch_array($result)) {
+                $offers[] = $offer;
+            }
+            return $offers;
+                
+}
+
 //------------------------------------------------Sessions Related -----------------------------------------------------------------------
     //Search session in the databse
     public function SearchSession($id)
