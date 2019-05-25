@@ -1,9 +1,11 @@
 .navbar {
     background-color: rgba(14, 14, 14, 0.719)
 }
-body{
+
+body {
     background: url("/img/Search.jpg")no-repeat center center fixed;
 }
+
 .bg {
     /* background: url("/img/Search.jpg")no-repeat center center fixed; */
     /* background: #fff; */
@@ -14,15 +16,15 @@ body{
     height: auto;
     margin-bottom: 7%;
 }
-.offerdetails{
 
+.offerdetails {
     padding-top: 2%;
 }
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: auto;
     max-height: 100px;
-
     text-align: left;
     padding-left: 5px;
 }
@@ -32,30 +34,35 @@ body{
     font-size: 15px;
 }
 
+
 /* .container{
     background-color: aliceblue;
     opacity: 0.5;
 } */
-article{
+
+article {
     background-color: antiquewhite;
     border-width: 2px;
     border-radius: 5px;
     max-width: auto;
     box-shadow: 5px 10px 8px #444444;
 }
+
 .verticalLine {
     border-left: 3px solid black;
-    height : auto;
+    height: auto;
 }
-.offerd2{
+
+.offerd2 {
     max-width: 15%;
     word-wrap: break-word;
     padding-top: 2%;
 }
-li{
+
+li {
     list-style: none;
 }
-.reqbtn{
-    padding-top:4%;
-   
+
+.reqbtn {
+    padding-top: 4%;
 }
