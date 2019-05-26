@@ -25,7 +25,9 @@ function SearchOffers()
 					<ul >
 					<form id="form1" action="/AccountView" method="POST">
 					
-						<a href="javascript:submitform()"><li><i class="fas fa-user-circle"></i><span class="ml-2">' . $row["Username"] . '</span></li></a>
+					
+					<button class="unstyled-button"><li><i class="fas fa-user-circle"></i><span class="ml-2">' . $row["Username"] . '</span></li></button>
+				  	
 						<input type="hidden"  name="Username" value="' . $row["Username"] . '">
 						
 						</form>
@@ -103,7 +105,9 @@ function DisplayUser($username)
 	<div class="bg">
     </div>
 			<div class="card">
-			<img src="/img/poster.jpg" alt="John" style="width:100%">
+			
+			<img src="data:image/jpeg;base64,'.base64_encode( $user['photo'] ).'" alt="' . $user["username"] .'" style="width:100%"/>
+			
 			<h3>' . $user["username"] . '</p>
 			<p class="title">' . $user["gender"] . '</h3>
 			<p>' . $user["city"] . '</p>
