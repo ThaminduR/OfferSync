@@ -37,15 +37,10 @@ body {
     background-color: aliceblue;
     opacity: 0.5;
 } */
-<<<<<<< HEAD
 
 article {
-    background-color: antiquewhite;
-=======
-article{
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.89);
->>>>>>> b7eecd1ac4ef2bc44f89939aaa35bff4d8d4cfc4
     border-width: 2px;
     border-radius: 5px;
     max-width: auto;

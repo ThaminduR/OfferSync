@@ -102,22 +102,13 @@
 
         function SendRequest(p) {
             $.ajax({
-<<<<<<< HEAD
                 type: "POST",
                 url: "/request",
                 data: {
                     username: p
                 },
-                cache: false,
-                success: function(data) {
-                    $("#email-check").html(data);
-=======
-                type:"POST",
-                url:"/request",
-                data: {username:p},
-                success: function(){            
-                    $('#'+p).html('OK').addClass('unlike').removeClass('like');
->>>>>>> b7eecd1ac4ef2bc44f89939aaa35bff4d8d4cfc4
+                success: function() {
+                    $('#' + p).html('OK').addClass('unlike').removeClass('like');
                 }
             });
 
