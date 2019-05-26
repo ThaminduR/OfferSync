@@ -196,7 +196,6 @@ class Database
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }
-<<<<<<< HEAD
 
     //------------------------------------------------Requests Related -----------------------------------------------------------------------
 
@@ -207,6 +206,4 @@ class Database
         return $result;
 
     }
-=======
->>>>>>> f77ee38b29f96473108cc5f77416287ba93eddda
 }
