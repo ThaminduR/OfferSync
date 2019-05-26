@@ -25,7 +25,7 @@ function SearchOffers()
 					<ul >
 					<form id="form1" action="/AccountView" method="POST">
 					
-					
+				
 					<button class="unstyled-button"><li><i class="fas fa-user-circle"></i><span class="ml-2">' . $row["Username"] . '</span></li></button>
 				  	
 						<input type="hidden"  name="Username" value="' . $row["Username"] . '">
