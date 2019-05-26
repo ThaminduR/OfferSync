@@ -24,6 +24,7 @@ function SearchOffers()
 				<div class="col-4 offerdetails">
 					<ul >
 					<form id="form1" action="/AccountView" method="POST">
+<<<<<<< HEAD
 					
 						<a href="javascript:submitform()"><li><i class="fas fa-user-circle"></i><span class="ml-2">'.$row["Username"].'</span></li></a>
 						<input type="hidden"  name="Username" value="'.$row["Username"].'">
@@ -32,6 +33,13 @@ function SearchOffers()
 						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">'.$row["Restaurant"].'</span></li>
 						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">'.$row["City"].'</span></li>
 						<li><i class="fas fa-building"></i><span class="ml-2">'.$row["Date"].'</span></li>
+=======
+						<a href="javascript: submitform()"><li><i class="fas fa-user-circle"></i><span class="ml-2">' . $row["Username"] . '</span></li></a>
+					</form>
+						
+						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">' . $row["City"] . '</span></li>
+						<li><i class="fas fa-building"></i><span class="ml-2">' . $row["Date"] . '</span></li>
+>>>>>>> b7eecd1ac4ef2bc44f89939aaa35bff4d8d4cfc4
 						
 					</ul>
 				</div>
@@ -40,14 +48,14 @@ function SearchOffers()
 			
 							  
 				<div class="col-4 ml-3 mr-3 offerd2"  >
-					<p>'.$row["Offer"].'</p>
-					<p>Rs.'.$row["Price"].'</p>
+					<p>' . $row["Offer"] . '</p>
+					<p>Rs.' . $row["Price"] . '</p>
 				</div>
 
 				<div class="verticalLine"></div>
 		  
 				 <div class="col-4 ml-5  reqbtn">
-						<a class="btn btn-outline-black like" style="cursor: pointer;" onclick="SendRequest(\''.$row["Username"].'\')">Send Request
+						<a class="btn btn-outline-black like" style="cursor: pointer;" onclick="SendRequest(\'' . $row["Username"] . '\')">Send Request
 						<i class="far fa-paper-plane ml-2"></i></a>
 				</div>
 	   </article>     
@@ -61,6 +69,7 @@ function SearchOffers()
 	}
 }
 
+<<<<<<< HEAD
 
 
 function DisplayUser($username)
@@ -121,3 +130,9 @@ function DisplayUser($username)
 	
 }
 
+=======
+function SendRequest()
+{ 
+
+}
+>>>>>>> b7eecd1ac4ef2bc44f89939aaa35bff4d8d4cfc4
