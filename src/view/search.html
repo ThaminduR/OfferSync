@@ -101,12 +101,12 @@
         });
 
         function SendRequest(p) {
-            var postData = 'username=' + p;
-            console.log(postData);
             $.ajax({
-                type: "GET",
+                type: "POST",
                 url: "/request",
-                data: postData,
+                data: {
+                    username: p
+                },
                 cache: false,
                 success: function(data) {
                     $("#email-check").html(data);

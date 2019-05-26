@@ -153,6 +153,7 @@ public function FetchOffer($search)
 //------------------------------------------Fetch User Details from the databse---------------------------------------------
 public function FetchUser($search)
         {
+        
             $username = mysqli_real_escape_string($this->connection, $search);                       
             $sql = "SELECT * FROM offers WHERE Username ='$username'";
             $result = mysqli_query($this->connection, $sql);

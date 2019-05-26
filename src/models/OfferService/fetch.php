@@ -24,10 +24,12 @@ function SearchOffers()
 				<div class="col-4 offerdetails">
 					<ul >
 					<form id="form1" action="/AccountView" method="POST">
+					
 						<a href="javascript:submitform()"><li><i class="fas fa-user-circle"></i><span class="ml-2">'.$row["Username"].'</span></li></a>
 						<input type="hidden"  name="Username" value="'.$row["Username"].'">
-						</form>
 						
+						</form>
+						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">'.$row["Restaurant"].'</span></li>
 						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">'.$row["City"].'</span></li>
 						<li><i class="fas fa-building"></i><span class="ml-2">'.$row["Date"].'</span></li>
 						
@@ -68,9 +70,7 @@ function DisplayUser($username)
 		$offers = $connection->FetchUser($username);
 		
 		foreach($offers as $offer) {
-			// header("location:/profilecard");
-			// echo "Username: " . $offer["Username"]. "     ----- Restaurant: " . $offer["Restaurant"]. "    ----- Offer: " . $offer["Offer"].  "    ----- Price: " . $offer["Price"] ;
-			// echo "<br>";
+	
 			$output .= '
 			
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -102,11 +102,12 @@ function DisplayUser($username)
         </div>
 	</nav>
 	
-
+	<div class="bg">
+    </div>
 			<div class="card">
 			<img src="/img/poster.jpg" alt="John" style="width:100%">
-			<h1>'.$offer["Username"].'</h1>
-			<p class="title">'.$offer["Restaurant"].'</p>
+			<h3>'.$offer["Username"].'</p>
+			<p class="title">'.$offer["Restaurant"].'</h3>
 			<p>'.$offer["City"].'</p>
 	
 			<p><button>Contact</button></p>

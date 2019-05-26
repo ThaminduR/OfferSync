@@ -8,6 +8,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/OfferService/fetch
 class AccountController{
     public function ViewAccount(){
     if (isset($_POST['Username'])){
+    
      DisplayUser($_POST['Username']);
     }
 
