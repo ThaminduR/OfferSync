@@ -38,14 +38,14 @@ class RequestController
     {
         if (isset($_POST['searchText'])) {
             $search = $_POST['searchText'];
-            SearchOffers($search);
+            SearchOffers();
         }
     }
 
     public function SendRequest()
     {
         if (isset($_POST['username'])) {
-        
+            
         }
     }
 }

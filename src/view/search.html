@@ -106,9 +106,8 @@
                 type:"POST",
                 url:"/request",
                 data: {username:p},
-                cache: false,
                 success: function(){            
-                    $('#'+pro_id).html('OK').addClass('unlike').removeClass('like');
+                    $('#'+p).html('OK').addClass('unlike').removeClass('like');
                 }
             });
 
