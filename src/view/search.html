@@ -107,8 +107,8 @@
                 data: {
                     username: p
                 },
-                success: function() {
-                    $('#' + p).html('OK').addClass('unlike').removeClass('like');
+                success: function(data) {
+                        $('#message').html(data);
                 }
             });
 
