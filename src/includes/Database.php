@@ -194,4 +194,14 @@ class Database
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }
+
+    //------------------------------------------------Requests Related -----------------------------------------------------------------------
+
+    public function InsertRequest($sender,$receiver){
+        $date = date("DD-MM-YYYY");
+        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date='$date' , IsConfirmed='false' ";
+        $result = mysqli_query($this->connection, $sql);
+        return $result;
+
+    }
 }

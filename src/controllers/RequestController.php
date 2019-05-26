@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/CheckingService.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/OfferService/fetch.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/OfferService/OfferService.php';
 class RequestController
 {
     public function CheckUsername()
@@ -45,7 +46,8 @@ class RequestController
     public function SendRequest()
     {
         if (isset($_POST['username'])) {
-            
+            $receiver = $_POST['username'];
+            SendRequests($receiver);
         }
     }
 }

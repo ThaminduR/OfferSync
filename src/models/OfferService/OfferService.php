@@ -18,3 +18,11 @@ function Search($restaurant,$city){
         echo "<br>";
     }
 }
+
+function SendRequests($receiver)
+{
+    $sender = $_COOKIE['Username'];
+    InsertRequest($sender,$receiver);
+    
+
+}
