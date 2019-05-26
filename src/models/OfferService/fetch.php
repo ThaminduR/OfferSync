@@ -25,13 +25,13 @@ function SearchOffers()
 					<ul >
 					<form id="form1" action="/AccountView" method="POST">
 					
-						<a href="javascript:submitform()"><li><i class="fas fa-user-circle"></i><span class="ml-2">'.$row["Username"].'</span></li></a>
-						<input type="hidden"  name="Username" value="'.$row["Username"].'">
+						<a href="javascript:submitform()"><li><i class="fas fa-user-circle"></i><span class="ml-2">' . $row["Username"] . '</span></li></a>
+						<input type="hidden"  name="Username" value="' . $row["Username"] . '">
 						
 						</form>
-						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">'.$row["Restaurant"].'</span></li>
-						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">'.$row["City"].'</span></li>
-						<li><i class="fas fa-building"></i><span class="ml-2">'.$row["Date"].'</span></li>
+						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">' . $row["Restaurant"] . '</span></li>
+						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">' . $row["City"] . '</span></li>
+						<li><i class="fas fa-building"></i><span class="ml-2">' . $row["Date"] . '</span></li>
 						
 					</ul>
 				</div>
@@ -64,14 +64,12 @@ function SearchOffers()
 
 
 function DisplayUser($username)
-{		
-		$connection = Database::getDBconnection();
-		$output = '';
-		$offers = $connection->FetchUser($username);
-		
-		foreach($offers as $offer) {
-	
-			$output .= '
+{
+	$connection = Database::getDBconnection();
+	$output = '';
+	$user = $connection->FetchUser($username);
+
+	$output .= '
 			
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="css/profilecard.css" rel="stylesheet">
@@ -106,18 +104,14 @@ function DisplayUser($username)
     </div>
 			<div class="card">
 			<img src="/img/poster.jpg" alt="John" style="width:100%">
-			<h3>'.$offer["Username"].'</p>
-			<p class="title">'.$offer["Restaurant"].'</h3>
-			<p>'.$offer["City"].'</p>
+			<h3>' . $user["username"] . '</p>
+			<p class="title">' . $user["gender"] . '</h3>
+			<p>' . $user["city"] . '</p>
 	
 			<p><button>Contact</button></p>
 		</div>
-		</body>'
-		;
-			
-		}
-		echo $output;
-	
-	
-}
+		</body>';
 
+
+	echo $output;
+}

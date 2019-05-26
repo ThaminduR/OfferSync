@@ -11,7 +11,7 @@ class Database
     private $dbname;
     private $connection;
     private static $dbconnection = null;
-   
+
 
 
     //TODO: make this a object pool 
@@ -24,8 +24,9 @@ class Database
         $this->Connect();
     }
 
-    public static function getDbConnection(){
-        if(self::$dbconnection==null){
+    public static function getDbConnection()
+    {
+        if (self::$dbconnection == null) {
             self::$dbconnection = new Database();
         }
         return self::$dbconnection;
@@ -41,7 +42,7 @@ class Database
         }
     }
 
-//------------------------------------------------User Related -----------------------------------------------------------------------
+    //------------------------------------------------User Related -----------------------------------------------------------------------
     //Insert user registration details.
     public function InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city, $number)
     {
@@ -102,7 +103,7 @@ class Database
         }
     }
 
-//------------------------------------------------Offers Related-----------------------------------------------------------------------
+    //------------------------------------------------Offers Related-----------------------------------------------------------------------
     //save the post to database
     public function PostOffer($username, $restaurant, $offer, $price, $restaurantbranch, $date, $city, $gender)
     {
@@ -132,47 +133,44 @@ class Database
         return $offers;
     }
 
-//------------------------------------------Fetch Search Results from the databse---------------------------------------------
-public function FetchOffer($search)
-        {
-            $search = mysqli_real_escape_string($this->connection, $search);
-            $query = "
+    //------------------------------------------Fetch Search Results from the databse---------------------------------------------
+    public function FetchOffer($search)
+    {
+        $search = mysqli_real_escape_string($this->connection, $search);
+        $query = "
             SELECT * FROM offers 
             WHERE 
-            Restaurant LIKE '%".$search."%' 
-            OR City LIKE '%".$search."%' 
+            Restaurant LIKE '%" . $search . "%' 
+            OR City LIKE '%" . $search . "%' 
             ";
-        $result = mysqli_query($this->connection, $query);      
+        $result = mysqli_query($this->connection, $query);
         // $offers = array();
         // while ($offer = mysqli_fetch_array($result)) {
         //     $offers[] = $offer;
         // }
         return $result;
-}
+    }
 
-//------------------------------------------Fetch User Details from the databse---------------------------------------------
-public function FetchUser($search)
-        {
-        
-            $username = mysqli_real_escape_string($this->connection, $search);                       
-            $sql = "SELECT * FROM offers WHERE Username ='$username'";
-            $result = mysqli_query($this->connection, $sql);
-            $offers = array();
-            while ($offer = mysqli_fetch_array($result)) {
-                $offers[] = $offer;
-            }
-            return $offers;
-                
-}
+    //------------------------------------------Fetch User Details from the databse---------------------------------------------
+    public function FetchUser($username)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT * FROM users WHERE username='$username'";
+        $result = mysqli_query($this->connection, $sql);
+        $user = mysqli_fetch_array($result);
+        echo $username;
+        echo "test";
+        return $user;
+    }
 
-//------------------------------------------------Sessions Related -----------------------------------------------------------------------
+    //------------------------------------------------Sessions Related -----------------------------------------------------------------------
     //Search session in the databse
     public function SearchSession($id)
     {
         $sql = "SELECT data FROM sessions WHERE id ='$id'";
         $result = mysqli_query($this->connection, $sql);
         return mysqli_fetch_array($result);
-        echo "test"; 
+        echo "test";
     }
 
     //Inserting the session to database
@@ -198,6 +196,4 @@ public function FetchUser($search)
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }
-
-
 }
