@@ -13,7 +13,7 @@ $routes = [
     ['GET','/postOffer',function(){ViewController::CreateViewR('postOffer');}],
     ['GET','/searchResult',function(){ViewController::CreateView('search_result');}],
     ['GET','/search',function(){ViewController::CreateView('search');}], 
-    ['GET','/requests',function(){AccountController::ViewRequets();}],
+    ['GET','/requests',function(){ViewController::CreateViewR('requests');}],
     ['GET','/profile',function(){ViewController::CreateViewR('profile');}],
     ['GET','/Logout',function(){LoginController::LogOut();}],
     ['POST','/LoginController',function(){LoginController::LogIn();}],
@@ -25,7 +25,8 @@ $routes = [
     ['POST','/checkPassword',function(){RequestController::checkPassword();}],
     ['POST','/checkNumber',function(){RequestController::checkNumber();}],
     ['POST','/request',function(){RequestController::SendRequest();}],
-    ['POST','/fetch',function(){RequestController::SearchOffer();}]
+    ['POST','/fetch',function(){RequestController::SearchOffer();}],
+    ['POST','/viewRequests',function(){AccountController::ViewRequets();}]
 ]
 
 ?>
