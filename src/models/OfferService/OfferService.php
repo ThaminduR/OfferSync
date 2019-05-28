@@ -10,9 +10,10 @@ function Post_Offer($restaurant,$offer,$price,$restaurantbranch,$date,$city,$gen
    
  }
  
-function Search($restaurant,$city){
+function GetPosts($username){
+ 
     $database = Database::getDbConnection();
-    $offers = $database->SearchOffer($restaurant,$city);
+    $offers = $database->GetPosts($username);
     foreach($offers as $offer) {
         echo "Username: " . $offer["Username"]. "     ----- Restaurant: " . $offer["Restaurant"]. "    ----- Offer: " . $offer["Offer"].  "    ----- Price: " . $offer["Price"] ;
         echo "<br>";
