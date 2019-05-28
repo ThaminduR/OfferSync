@@ -10,7 +10,6 @@ class AccountController
     public function ViewAccount()
     {
         if (isset($_POST['Username'])) {
-            ECHO $_POST['Username'];
             DisplayUser($_POST['Username']);
         }
     }

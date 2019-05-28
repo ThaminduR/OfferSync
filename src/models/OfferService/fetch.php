@@ -25,7 +25,9 @@ function SearchOffers()
 					<ul >
 					<form id="form1" action="/AccountView" method="POST">
 					
-						<a href="javascript:submitform()"><li><i class="fas fa-user-circle"></i><span class="ml-2">' . $row["Username"] . '</span></li></a>
+				
+					<button class="unstyled-button"><li><i class="fas fa-user-circle"></i><span class="ml-2">' . $row["Username"] . '</span></li></button>
+				  	
 						<input type="hidden"  name="Username" value="' . $row["Username"] . '">
 						
 						</form>
@@ -64,3 +66,34 @@ function SearchOffers()
 
 
 
+<<<<<<< HEAD
+=======
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark black scrolling-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="fas fa-arrow-circle-left mr-2"></i>OfferSync</a>
+            <div class="collapse navbar-collapse " id="Nav">
+                <ul class="navbar-nav mr-auto smooth-scroll">
+                </ul>
+            </div>
+        </div>
+	</nav>
+	
+	<div class="bg">
+    </div>
+			<div class="card">
+			
+			<img src="data:image/jpeg;base64,'.base64_encode( $user['photo'] ).'" alt="' . $user["username"] .'" style="width:100%"/>
+			
+			<h3>' . $user["username"] . '</p>
+			<p class="title">' . $user["gender"] . '</h3>
+			<p>' . $user["city"] . '</p>
+	
+			<p><button>Contact</button></p>
+		</div>
+		</body>';
+
+
+	echo $output;
+}
+>>>>>>> 10220dca043b2651c36454972161366912e3be5d

@@ -158,8 +158,6 @@ class Database
         $sql = "SELECT * FROM users WHERE username='$username'";
         $result = mysqli_query($this->connection, $sql);
         $user = mysqli_fetch_array($result);
-        echo $username;
-        echo "test";
         return $user;
     }
 
