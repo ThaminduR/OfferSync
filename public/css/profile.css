@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #f3894c;
+    background-color: #ffffff;
 }
 
 header {
@@ -30,7 +30,7 @@ header {
     -o-border-radius: 8px;
     border-radius: 8px;
     padding-bottom: 1.5em;
-    background-color: #e6ccbd;
+    background-color: #ffffff;
 }
 
 .bio:hover>.desc {
@@ -55,7 +55,7 @@ header {
 
 .avatar {
     width: 100%;
-    border: 8px solid #f3894c;
+    border: 8px solid #ffffff;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -80,7 +80,7 @@ header {
     cursor: pointer;
     width: 100%;
     height: 100%;
-    background-color: #f3894c;
+    background-color: #ffffff;
     top: 0;
     font-size: 1.8em;
     text-align: center;
@@ -119,7 +119,7 @@ header {
     display: inline-block;
     font-size: 1.5em;
     font-family: 'Lato';
-    border-right: solid 1px #f3894c;
+    border-right: solid 1px #ffffff;
 }
 
 .data li:last-child {
@@ -173,9 +173,9 @@ header {
 
 .edit {
     margin: 1.5em auto 0 auto;
-    background-color: #f3894c;
+    background-color: #ffffff;
     width: 150px;
-    color: #f3894c;
+    color: #ffffff;
     font-family: "Lato";
     text-align: center;
     padding: .5em;
@@ -214,7 +214,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     height: auto !important;
-    border-bottom: 8px solid #f3894c;
+    border-bottom: 8px solid #ffffff;
 }
 
 .space {
@@ -234,7 +234,7 @@ body {
 
 .sideb {
     background-color: rgba(0, 0, 0, 0.733);
-    color: #f3894c;
+    color: #ffffff;
 }
 
 @media screen and (max-height: 450px) {
