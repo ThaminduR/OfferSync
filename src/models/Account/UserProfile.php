@@ -39,8 +39,9 @@ function DisplayUser($username)
 	
 	<div class="bg">
     </div>
-			<div class="card">
-			<img src="/img/poster.jpg" alt="John" style="width:100%">
+            <div class="card">
+            
+			<img src="data:image/jpeg;base64,'.base64_encode( $user['photo'] ).'"/ style="width:100%">
 			<h3>' . $user["username"] . '</p>
 			<p class="title">' . $user["gender"] . '</h3>
 			<p>' . $user["city"] . '</p>

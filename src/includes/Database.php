@@ -119,12 +119,11 @@ class Database
         return $finalOffer;
     }
 
-    //search posts in database
-    public function SearchOffer($restaurant, $city)
+    //get posts to profile
+    public function GetPosts($username)
     {
-        $restaurant = mysqli_real_escape_string($this->connection, $restaurant);
-        $city = mysqli_real_escape_string($this->connection, $city);
-        $sql = "SELECT * FROM offers WHERE Restaurant ='$restaurant' AND City = '$city'";
+        
+        $sql = "SELECT * FROM offers WHERE Username ='$username'";
         $result = mysqli_query($this->connection, $sql);
         $offers = array();
         while ($offer = mysqli_fetch_array($result)) {

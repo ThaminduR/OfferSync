@@ -43,6 +43,14 @@ class RequestController
         }
     }
 
+    public function GetMyOffers()
+    {
+      
+        $username = $_COOKIE['Username'];
+        
+        GetPosts($username);
+        
+    }
     public function SendRequest()
     {
         if (isset($_POST['username'])) {
