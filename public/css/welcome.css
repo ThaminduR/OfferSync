@@ -3,6 +3,8 @@
     max-width: 500px;
     margin: auto;
     text-align: center;
+    background: rgba(0, 0, 0, 0.733);
+    color: white;
 }
 
 .title {
@@ -35,7 +37,7 @@ a:hover {
 }
 
 body {
-    background: url("/img/reg_back.jpeg")no-repeat center center fixed;
+    background: url("/img/Search.jpg")no-repeat center center fixed;
 }
 
 .bg {
