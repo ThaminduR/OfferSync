@@ -12,9 +12,8 @@ $routes = [
     ['GET','/Register',function(){ViewController::CreateView('register');}],
     ['GET','/postOffer',function(){ViewController::CreateViewR('postOffer');}],
     ['GET','/searchResult',function(){ViewController::CreateView('search_result');}],
-    ['GET','/search',function(){ViewController::CreateView('search');}],
-    
-    ['GET','/profilecard',function(){ViewController::CreateView('profilecard');}],
+    ['GET','/search',function(){ViewController::CreateView('search');}], 
+    ['GET','/requests',function(){AccountController::ViewRequets();}],
     ['GET','/profile',function(){ViewController::CreateViewR('profile');}],
     ['GET','/Logout',function(){LoginController::LogOut();}],
     ['POST','/LoginController',function(){LoginController::LogIn();}],

@@ -200,10 +200,21 @@ class Database
     //------------------------------------------------Requests Related -----------------------------------------------------------------------
 
     public function InsertRequest($sender,$receiver){
-        $date = date("DD-MM-YYYY");
+        $date = date("dd/mm/yyyy");
         $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date='$date' , IsConfirmed='false' ";
         $result = mysqli_query($this->connection, $sql);
         return $result;
 
+    }
+
+    public function SearchRequests($username){
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT * FROM requests WHERE Receiver ='$username'";
+        $result = mysqli_query($this->connection, $sql);
+        // $requests = array();
+        // while ($request = mysqli_fetch_array($result)) {
+        //     $requests[] = $request;
+        // }
+        return $result;
     }
 }
