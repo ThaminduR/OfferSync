@@ -15,6 +15,7 @@ $routes = [
     ['GET','/search',function(){ViewController::CreateView('search');}], 
     ['GET','/requests',function(){ViewController::CreateViewR('requests');}],
     ['GET','/profile',function(){ViewController::CreateViewR('profile');}],
+    ['POST','/LoginController',function(){LoginController::LogIn();}],
     ['GET','/Logout',function(){LoginController::LogOut();}],
     ['GET','/myoffers',function(){RequestController::GetMyOffers();}],
     ['POST','/AccountView',function(){AccountController::ViewAccount();}],
