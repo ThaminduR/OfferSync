@@ -22,7 +22,8 @@ function Search($restaurant,$city){
 function SendRequests($receiver)
 {
     $sender = $_COOKIE['Username'];
-    InsertRequest($sender,$receiver);
-    
+    $database= Database::getDbConnection();
+    $database->InsertRequest($sender,$receiver);
+    echo "Request Send !";
 
 }
