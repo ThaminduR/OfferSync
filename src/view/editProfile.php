@@ -40,15 +40,15 @@
                         <div class="card">
                             <!-- Card Content -->
 
-                            
+
                             <div class="card-body mb-5">
                                 <h2 class="card-title">Edit Profile</h2>
 
                                 <form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
+                                    Select a Profile Picture:
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                    
+                                </form>
 
 
 
@@ -58,7 +58,7 @@
                                     <span id="email-check"></span>
                                 </div>
 
-                                
+
                                 <div class="md-form">
                                     <input name="password" type="password" onblur="checkpw()" id="password" class="form-control mb-4" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
                                     <label for="paasword">Password</label>
@@ -77,18 +77,19 @@
                                     <span id="number-check"></span>
                                 </div>
 
-                               
 
-                                </div>
-                                <button class="btn btn-info my-4 btn-block" type="submit" name="submit">Submit Updates</button>
-                            
-                                
+
                             </div>
+                            <div class="edit">
+                            <button class="btn"  type="submit" name="submit"  >Submit Updates</button >
+
+
                         </div>
-                    </form>
                 </div>
+                </form>
             </div>
         </div>
+    </div>
     </div>
 
 
