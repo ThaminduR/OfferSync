@@ -25,10 +25,6 @@ header,
     background: rgba(255, 255, 255, 0.925)
 }
 
-body {
-    background: url("/img/editprof.jpg")no-repeat center center fixed;
-}
-
 .hover {
     position: absolute;
     cursor: pointer;
