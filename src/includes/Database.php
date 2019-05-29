@@ -197,8 +197,7 @@ class Database
     //------------------------------------------------Requests Related -----------------------------------------------------------------------
 
     public function InsertRequest($sender,$receiver){
-        $date = date("dd/mm/yyyy");
-        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date='$date' , IsConfirmed='false' ";
+        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , IsConfirmed='false' ";
         $result = mysqli_query($this->connection, $sql);
         return $result;
 
