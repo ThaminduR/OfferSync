@@ -37,8 +37,7 @@
                         <br>
                         <div class="form-group">
                             <div class="input-group text-center">
-                                <input type="text" name="search_text" id="search_text"
-                                    placeholder="Search by Restaurant" class="form-control" />
+                                <input type="text" name="search_text" id="search_text" placeholder="Search by Restaurant" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -46,8 +45,7 @@
                 <div class="row-8">
                     <div class="toast" style="position: absolute; top: 0; right: 0;" data-autohide="false">
                         <div class="toast-header">
-                            <svg class="rounded mr-2" width="20" height="20" preserveAspectRatio="xMidYMid slice"
-                                focusable="false" role="img">
+                            <svg class="rounded mr-2" width="20" height="20" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
                                 <rect fill="#007aff" width="100%" height="100%" /></svg>
                             <strong class="mr-auto">OfferSync</strong>
                             <small></small>
@@ -59,9 +57,10 @@
                             Request send successfully !
                         </div>
                     </div>
-                    <div class="col-8">
-                        <div id="result"></div>
-                        <div style="clear:both"></div>
+                    <div class="col-12">
+                        <hgroup class="mb20">
+                            <div id="result"></div>
+                            <div style="clear:both"></div>
                     </div>
 
                 </div>
@@ -87,7 +86,7 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             load_data();
 
@@ -98,13 +97,13 @@
                     data: {
                         searchText: query
                     },
-                    success: function (data) {
+                    success: function(data) {
                         $('#result').html(data);
                     }
                 });
             }
 
-            $('#search_text').keyup(function () {
+            $('#search_text').keyup(function() {
                 var search = $(this).val();
                 if (search != '') {
                     load_data(search);
@@ -121,7 +120,7 @@
                 data: {
                     username: p
                 },
-                success: function (data) {
+                success: function(data) {
                     $('.toast').toast('show');
                     $('#message1').html(data);
 

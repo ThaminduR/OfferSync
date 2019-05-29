@@ -15,7 +15,7 @@
     <!-- Your custom styles (optional) -->
     <link href="css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/welcome.css" rel="stylesheet">
+    <link href="css/requests.css" rel="stylesheet">
 </head>
 
 <body>
@@ -39,7 +39,6 @@
     <div class="bg">
         <div class="container">
             <div class="col-12">
-                <div class="row-3"><a class="btn" onclick="load_requests()">CLick to view</a></div>
                 <div class="row-9">
                     <div id="result"></div>
                     <div style="clear:both"></div>
@@ -83,7 +82,7 @@
         function Accept() {
             $.ajax({
                 type: "POST",
-                url: "/viewReests",
+                url: "/accept",
                 data: {
                     username: p
                 },

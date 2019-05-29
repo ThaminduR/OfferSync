@@ -1,11 +1,12 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/CheckingService.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/OfferService/fetch.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/OfferService/OfferService.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/controllers/Controller.php';
 
 class RequestController extends Controller
 {
+
+    //------------------------------------------- Validation ---------------------
     public function CheckUsername()
     {
         if (isset($_POST['username'])) {
@@ -37,7 +38,10 @@ class RequestController extends Controller
         }
     }
 
-    public function SearchOffer()
+    //------------------------------------------ Offers Searching ---------------------------
+
+    //Searching offers from search page
+    public function SearchOffers()
     {
         if (isset($_POST['searchText'])) {
             $search = $_POST['searchText'];
@@ -45,12 +49,17 @@ class RequestController extends Controller
         }
     }
 
+    //Retrieving offers for certain profile
     public function GetMyOffers()
     {   
         $username = $_COOKIE['Username'];
         GetPosts($username);
         
     }
+
+    //----------------------------------------Requests ---------------------------------------
+
+    
     public function SendRequest()
     {
         if (isset($_POST['username'])) {

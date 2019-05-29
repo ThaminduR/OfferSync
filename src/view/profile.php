@@ -16,7 +16,6 @@
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/Profile.css" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Twitter Card</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
