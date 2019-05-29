@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -18,6 +19,7 @@
 </head>
 
 <body>
+
 
 
     <nav class="navbar navbar-expand-lg navbar-dark black scrolling-navbar">
@@ -75,10 +77,10 @@
 
 
 
-                                <form action="upload.php" method="post" enctype="multipart/form-data">
-                                    Select a Profile Picture:
+                                <form action="src\view\upload.php" method="post" enctype="multipart/form-data">
+                                    Select image to upload:
                                     <input type="file" name="fileToUpload" id="fileToUpload">
-
+                                    <input type="submit" value="Upload Image" name="submit">
                                 </form>
                                 <br>
                                 <br>

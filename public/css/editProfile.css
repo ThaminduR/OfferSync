@@ -10,7 +10,7 @@ header,
 }
 
 .bg {
-    /*background: url("/img/editprof.jpg")no-repeat center center fixed;*/
+    background: url("/img/editprof.jpg")no-repeat center center fixed !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -23,10 +23,6 @@ header,
 
 .card {
     background: rgba(255, 255, 255, 0.925)
-}
-
-body {
-    background: url("/img/editprof.jpg")no-repeat center center fixed;
 }
 
 .hover {
