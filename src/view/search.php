@@ -17,33 +17,15 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark black scrolling-navbar">
+    <!-- Modal -->
+
+    <!-- Modal -->
+    <nav class="navbar navbar-expand-lg  fixed-top navbar-dark black scrolling-navbar">
         <div class="container">
             <a class="navbar-brand" href="/"><i class="fas fa-arrow-circle-left mr-2"></i>OfferSync</a>
             <div class="collapse navbar-collapse " id="Nav">
                 <ul class="navbar-nav mr-auto smooth-scroll">
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="bg">
-        <div class="container">
-
-            <div class="col-12">
-
-                <div class="row-4">
-                    <div class="col-5">
-                        <br>
-                        <div class="form-group">
-                            <div class="input-group text-center">
-                                <input type="text" name="search_text" id="search_text" placeholder="Search by Restaurant" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-8">
-                    <div class="toast" style="position: absolute; top: 0; right: 0;" data-autohide="false">
+                    <div class="toast toastsuc" style="position: absolute; top: 0; right: 0;" data-autohide="false">
                         <div class="toast-header">
                             <svg class="rounded mr-2" width="20" height="20" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
                                 <rect fill="#007aff" width="100%" height="100%" /></svg>
@@ -57,6 +39,40 @@
                             Request send successfully !
                         </div>
                     </div>
+                    <div class="toast toastfail" style="position: absolute; top: 0; right: 0;" data-autohide="false">
+                        <div class="toast-header">
+                            <svg class="rounded mr-2" width="20" height="20" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                <rect fill="#007aff" width="100%" height="100%" /></svg>
+                            <strong class="mr-auto">OfferSync</strong>
+                            <small></small>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body">
+                            Request already sent !
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="bg">
+        <div class="container">
+            <div class="col-12">
+                <div class="row-4">
+                    <div class="col-5">
+                        <br>
+                        <div class="form-group">
+                            <div class="input-group text-center">
+                                <input type="text" name="search_text" id="search_text" placeholder="Search by Restaurant" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-8">
                     <div class="col-12">
                         <hgroup class="mb20">
                             <div id="result"></div>
@@ -113,16 +129,20 @@
             });
         });
 
-        function SendRequest(p) {
+        function SendRequest(p, id) {
             $.ajax({
                 type: "POST",
                 url: "/request",
                 data: {
-                    username: p
+                    username: p,
+                    id: id
                 },
                 success: function(data) {
-                    $('.toast').toast('show');
-                    $('#message1').html(data);
+                    if (data == 'failed') {
+                        $('.toastfail').toast('show');
+                    } else {
+                        $('.toastsuc').toast('show');
+                    }
 
                 }
             });

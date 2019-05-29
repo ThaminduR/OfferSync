@@ -26,7 +26,8 @@
                 <p><i class="fas fa-utensils mr-2"></i><?= $row["Offer"] ?></p>
                 <p><i class="fas fa-hand-holding-usd mr-2"></i>Rs. <?= $row["Price"] ?></p>
                 <hr>
-                <p><a class="btn btn-outline-black " style="cursor: pointer;" onclick="SendRequest(<?= '\'' . $row['Username'] . '\'' ?>)">Send Request
+
+                <p><a class="btn btn-outline-black " style="cursor: pointer;" onclick="SendRequest(<?= '\'' . $row['Username'] . '\'' ?>,<?= '\'' . $row['OfferID'] . '\'' ?>)">Send Request
                         <i class="far fa-paper-plane ml-2"></i></a></p>
 
             </div>

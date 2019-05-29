@@ -206,10 +206,22 @@ class Database
 
     //------------------------------------------------Requests Related -----------------------------------------------------------------------
 
-    public function InsertRequest($sender,$receiver){
-        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , IsConfirmed='false' ";
+    public function InsertRequest($sender,$receiver,$id){
+        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , OfferID='$id', IsConfirmed='false' ";
         $result = mysqli_query($this->connection, $sql);
         return $result;
+
+    }
+
+    public function AlreadySent($sender,$id){
+        $sql = "SELECT * FROM requests WHERE Sender='$sender'and OfferId='$id'";
+        $result = mysqli_query($this->connection, $sql);
+        $req_data = mysqli_fetch_array($result);
+        if (empty($req_data)) {
+            return false;
+        } else {
+            return true;
+        }
 
     }
 
