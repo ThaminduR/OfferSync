@@ -19,6 +19,16 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="modalAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+            <div class="modal-content" id="Acccontent">
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+    
     <div class="side-nav">
         <div class="list-group ">
             <a href="/" class="sideb list-group-item list-group-item-action waves-effect"><i class="fas fa-arrow-circle-left mr-2"></i>Home</a>
@@ -150,6 +160,19 @@
                         load_myrequests();
                         load_Irequests();
                     }
+                }
+            });
+        }
+
+        function ViewAcc(p) {
+            $.ajax({
+                type: "POST",
+                url: "/AccountView",
+                data: {
+                    Username: p
+                },
+                success: function(data) {
+                    $('#Acccontent').html(data);
                 }
             });
         }
