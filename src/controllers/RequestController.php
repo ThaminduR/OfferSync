@@ -46,11 +46,9 @@ class RequestController extends Controller
     }
 
     public function GetMyOffers()
-    {
-      
+    {   
         $username = $_COOKIE['Username'];
-        
-        GetPosts($username);
+        GetOffers($username);
         
     }
     public function SendRequest()

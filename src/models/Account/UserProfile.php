@@ -8,10 +8,11 @@ function DisplayUser($username)
 
     $output .= '
 			
+
+<head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="css/profilecard.css" rel="stylesheet">
 
-<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -41,7 +42,7 @@ function DisplayUser($username)
     </div>
             <div class="card">
             
-			<img src="data:image/jpeg;base64,'.base64_encode( $user['photo'] ).'"/ style="width:100%">
+			<img src="data:image/jpeg;base64,' . base64_encode($user['photo']) . '"/ style="width:100%">
 			<h3>' . $user["username"] . '</p>
 			<p class="title">' . $user["gender"] . '</h3>
 			<p>' . $user["city"] . '</p>

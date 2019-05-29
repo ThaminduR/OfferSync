@@ -36,7 +36,7 @@
             <a href="/profile" class="sideb list-group-item list-group-item-action white black-text">
                 <i class="fas fa-user mr-3"></i>Profile</a>
 
-            <a class="sideb list-group-item list-group-item-action waves-effect" href="/myoffers" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
+            <a href="/myoffers" value="call" class="sideb list-group-item list-group-item-action waves-effect" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
                 <i class="fas fa-hamburger mr-3"></i>My Offers</a>
 
             <a href="/requests " class="sideb list-group-item list-group-item-action waves-effect ">
@@ -120,7 +120,34 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript " src="js/mdb.min.js "></script>
         <!-- Initializations -->
+        <script>
+            $(call).click(function() {
 
+                load_data();
+
+                function load_data(query) {
+                    $.ajax({
+                        url: "/OfferService",
+                        method: "POST",
+                        data: {
+                            searchText: query
+                        },
+                        success: function(data) {
+                            $('#result').html(data);
+                        }
+                    });
+                }
+
+                $('#search_text').keyup(function() {
+                    var search = $(this).val();
+                    if (search != '') {
+                        load_data(search);
+                    } else {
+                        load_data();
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>
