@@ -2,7 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/Login/LoginService.php';
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/classes/Session.php';
 
-class LoginController
+class LoginController extends Controller
 {
     public function LogIn()
     {

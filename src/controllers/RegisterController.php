@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/Register/RegisterService.php';
 
-class RegisterController
+class RegisterController extends Controller
 {
     public function SignUp()
     {   

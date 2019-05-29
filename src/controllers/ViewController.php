@@ -3,7 +3,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/LoginStatus.php';
 
 
-class ViewController
+class ViewController extends Controller
 {
     public static function CreateView($viewName)
     {
