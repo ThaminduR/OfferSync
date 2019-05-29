@@ -39,7 +39,6 @@
     <div class="bg">
         <div class="container">
             <div class="col-12">
-                <div class="row-3"><a class="btn" onclick="load_requests()">CLick to view</a></div>
                 <div class="row-9">
                     <div id="result"></div>
                     <div style="clear:both"></div>

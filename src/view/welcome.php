@@ -49,7 +49,7 @@
 
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                   <div>
-                    <h3 class="text-black">Welcome Back !</h3>
+                    <h3 class="text-black">Greetings <?=$_COOKIE['Username']?> !</h3>
                   </div>
                   <a class="btn btn-outline-white waves-effect" href="/search">Search Offer<i class="fas fa-search ml-2"></i></a>
                   <a class="btn btn-outline-white waves-effect" href="/postOffer">Post an Offer<i
