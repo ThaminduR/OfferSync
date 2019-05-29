@@ -25,15 +25,9 @@
             <div class="space"></div>
             <a href="/profile" class="sideb list-group-item list-group-item-action waves-effect">
                 <i class="fas fa-user mr-3"></i>Profile</a>
-<<<<<<< HEAD
-            <a href="/myoffers" class="sideb list-group-item  list-group-item list-group-item-action waves-effect">
-                <i class="fas fa-hamburger mr-3"></i>My Orders</a>
-            <a href="" class="sideb list-group-item list-group-item-action white black-text">
-=======
             <a href="/posts" method ="GET" class="sideb list-group-item  list-group-item list-group-item-action waves-effect">
                 <i class="fas fa-hamburger mr-3"></i>My Offers</a>
             <a href="#" class="sideb list-group-item list-group-item-action white black-text">
->>>>>>> 1fdefe4a7ad4c7666b13b439d948877271b4c3cf
                 <i class="fas fa-envelope mr-3"></i>Requests</a>
         </div>
 
