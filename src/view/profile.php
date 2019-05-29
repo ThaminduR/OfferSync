@@ -33,10 +33,10 @@
         <div class="list-group ">
             <a href="/" class="sideb list-group-item list-group-item-action waves-effect"><i class="fas fa-arrow-circle-left mr-2"></i>Home</a>
             <div class="space"></div>
-            <a href="/profile" class="sideb list-group-item list-group-item-action white black-text">
+            <a href="" class="sideb list-group-item list-group-item-action white black-text">
                 <i class="fas fa-user mr-3"></i>Profile</a>
 
-            <a href="/myoffers" class="sideb list-group-item list-group-item-action waves-effect" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
+            <a href="/posts" id= offers class="sideb list-group-item list-group-item-action waves-effect" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
                 <i class="fas fa-hamburger mr-3"></i>My Offers</a>
 
             <a href="/requests " class="sideb list-group-item list-group-item-action waves-effect ">
@@ -54,8 +54,6 @@
             <div class="bio ">
                 <img src="/img/profcvr.jpg ">
                 <div class="desc ">
-                    <h3>@carlf</h3>
-                    <p>Carl Fredricksen is the protagonist in Up. He also appeared in Dug's Special Mission as a minor character.</p>
                 </div>
             </div>
 
@@ -119,6 +117,7 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript " src="js/mdb.min.js "></script>
         <!-- Initializations -->
+           
 </body>
 
 </html>

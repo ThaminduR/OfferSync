@@ -147,36 +147,23 @@ class Database
 
         $sql = "SELECT * FROM offers WHERE Username ='$username'";
         $result = mysqli_query($this->connection, $sql);
-        $offers = array();
-        while ($offer = mysqli_fetch_array($result)) {
-            $offers[] = $offer;
-        }
-        return $offers;
+        return $result;
     }
 
     //------------------------------------------Fetch Search Results from the databse---------------------------------------------
-    public function FetchOffer($search)
+    public function FetchOffer($search,$username)
     {
         $search = mysqli_real_escape_string($this->connection, $search);
-        $query = "
-            SELECT * FROM offers 
-            WHERE 
-            Restaurant LIKE '%" . $search . "%' 
-            OR City LIKE '%" . $search . "%' 
-            ";
+        $query = "SELECT * FROM offers WHERE Restaurant LIKE '%" . $search . "%' AND Username!='$username'";
         $result = mysqli_query($this->connection, $query);
-        // $offers = array();
-        // while ($offer = mysqli_fetch_array($result)) {
-        //     $offers[] = $offer;
-        // }
         return $result;
     }
 
     //------------------------------------------Fetch Posts from the databse---------------------------------------------
-    public function GetOffers($search)
+    public function GetOffers($username)
     {
-        $search = mysqli_real_escape_string($this->connection, $search);
-        $query = "SELECT * FROM offers WHERE Username ='$search'";
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $query = "SELECT * FROM offers WHERE Username ='$username'";
         $result = mysqli_query($this->connection, $query);
         return $result;
     }
@@ -228,13 +215,15 @@ class Database
 
     //------------------------------------------------Requests Related -----------------------------------------------------------------------
 
-    public function InsertRequest($sender,$receiver,$id){
-        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , OfferID='$id', IsConfirmed='false' ";
+    public function InsertRequest($sender, $receiver, $id)
+    {
+        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , OfferID='$id', IsConfirmed=false ";
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }
 
-    public function AlreadySent($sender,$id){
+    public function AlreadySent($sender, $id)
+    {
         $sql = "SELECT * FROM requests WHERE Sender='$sender'and OfferId='$id'";
         $result = mysqli_query($this->connection, $sql);
         $req_data = mysqli_fetch_array($result);
@@ -243,12 +232,27 @@ class Database
         } else {
             return true;
         }
-
     }
 
-    public function SearchRequests($username){
+    public function AcceptRequest($id)
+    {
+        $sql = "UPDATE requests SET IsConfirmed=true WHERE OfferId=$id";
+        $result = mysqli_query($this->connection, $sql);
+        return ($result);
+    }
+
+    public function DeclineRequest($id)
+    {
+        $sql = "DELETE FROM requests WHERE OfferId=$id ";
+        $result = mysqli_query($this->connection, $sql);
+        return ($result);
+    }
+
+
+    public function SearchRequests($username)
+    {
         $username = mysqli_real_escape_string($this->connection, $username);
-        $sql = "SELECT * FROM requests WHERE Receiver ='$username'";
+        $sql = "SELECT * FROM requests WHERE Receiver ='$username' AND IsConfirmed=false";
         $result = mysqli_query($this->connection, $sql);
         // $requests = array();
         // while ($request = mysqli_fetch_array($result)) {

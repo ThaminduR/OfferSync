@@ -1,7 +1,9 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/CheckingService.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/OfferService/OfferService.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/Account/UserProfile.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/controllers/Controller.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/Account/UserProfile.php';
 
 class RequestController extends Controller
 {
@@ -51,10 +53,8 @@ class RequestController extends Controller
 
     //Retrieving offers for certain profile
     public function GetMyOffers()
-    {   
-        $username = $_COOKIE['Username'];
-        GetPosts($username);
-        
+    {     
+        DisplayPosts(); 
     }
 
     //----------------------------------------Requests ---------------------------------------
@@ -65,6 +65,20 @@ class RequestController extends Controller
             $receiver = $_POST['username'];
             $id = $_POST['id'];
             SendRequests($receiver,$id);
+        }
+    }
+
+    public function AcceptRequest(){
+        if(isset($_POST['id'])){
+            $id = $_POST['id'];
+            Accept($id);
+        }
+    }
+
+    public function DeclineRequest(){
+        if(isset($_POST['id'])){
+            $id = $_POST['id'];
+            Decline($id);
         }
     }
 }
