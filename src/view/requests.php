@@ -18,7 +18,9 @@
     <link href="css/requests.css" rel="stylesheet">
 </head>
 
+
 <body>
+<<<<<<< HEAD
     <!-- Modal -->
     <div class="modal fade" id="modalAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
@@ -28,6 +30,8 @@
     </div>
     <!-- Modal -->
 
+=======
+>>>>>>> 2d2c6fdf00d2bf215c4a6591764d383e6970b933
     
     <div class="side-nav">
         <div class="list-group ">
