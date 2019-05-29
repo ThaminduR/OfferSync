@@ -62,6 +62,7 @@ function DisplayRequests()
     $result = $connection->SearchRequests($username);
     $count = mysqli_num_rows($result);
     $case = 1;
+    
     require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';
 }
 
