@@ -59,7 +59,7 @@ class User
     }
 
     //For Profile Edit
-    public function Edit_User($email,$city, $password,$number)
+    public function Edit_User($username,$email,$city, $password,$number)
     {
         //generating salt
         $salt = getSalt(25);
@@ -68,12 +68,12 @@ class User
         //checking for existing username
         $check1 =  $this->database->FindUserName($username);
         $check2 = $this->database->FindEmail($email);
-        if (!($check1 && $check2)) {
+        if ($check1) {
             //register the user ; username is available
             
-            $result1 = $this->database->InsertUserDetail($email, $city,$number);
+            $result1 = $this->database->EditUserDetail($username,$email, $city,$number);
             
-            $result2 = $this->database->InsertLoginData($hpassword, $salt);
+            $result2 = $this->database->EditLoginData($username,$hpassword, $salt);
             return $result1;
         } else {
             return false;
