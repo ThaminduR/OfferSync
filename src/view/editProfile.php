@@ -1,122 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Edit Profile</title>
 
-<head>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>OfferSync</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Custom styles -->
-    <link href="css/Registerstyle.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
 
-</head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-<body>
+        <script src="C:\Users\Mithun Wijethunga\Desktop\OfferSync\public\JS\modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
 
+        <div class="overlay"></div>
+        <section class="top-part">
+          <video controls autoplay loop>
+            <source src="img/video.mp4" type="img/mp4">
+            <source src="img/video.ogg" type="img/ogg">
+          Your browser does not support the video tag.
+          </video>
+        </section>
+        
+        <section class="cd-hero">
 
+          <div class="cd-slider-nav">
+            <nav>
+              <span class="cd-marker item-1"></span>
+              <ul>
+                <li class="selected"><a href="#0"><div class="image-icon"><img src="img/featured-icon.png"></div><h6>Email</h6></a></li>
+                <li><a href="#0"><div class="image-icon"><img src="img/about-icon.png"></div><h6>Password</h6></a></li>
+                <li><a href="#0"><div class="image-icon"><img src="img/home-icon.png"></div><h6>City</h6></a></li>
+                <li><a href="#0"><div class="image-icon"><img src="img/contact-icon.png"></div><h6>Phone</h6></a></li>
+              </ul>
+            </nav> 
+          </div> <!-- .cd-slider-nav -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark black scrolling-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="/"><i class="fas fa-arrow-circle-left mr-2"></i>OfferSync</a>
-            <div class="collapse navbar-collapse " id="Nav">
-                <ul class="navbar-nav mr-auto smooth-scroll">
-                </ul>
-            </div>
-        </div>
-    </nav>
+          <ul class="cd-hero-slider">
 
-    <div class="bg">
-        <div class="mask">
-            <div class=" container-fluid d-flex align-items-center justify-content-center h-100">
-                <div class="row d-flex justify-content-center text-center">
-
-                    <form class="text-center p-5" action="/RegisterController" method="POST">
-                        <!-- Card -->
-                        <div class="card">
-                            <!-- Card Content -->
-
-
-                            <div class="card-body mb-5">
-                                <h2 class="card-title">Edit Profile</h2>
-
-
-
-
-                                <div class="md-form">
-                                    <input name="email" onblur="checkemail()" type="email" id="email" class="form-control mb-4" required>
-                                    <label for="email">Email</label>
-                                    <span id="email-check"></span>
-                                </div>
-
-
-                                <div class="md-form">
-                                    <input name="password" type="password" onblur="checkpw()" id="password" class="form-control mb-4" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
-                                    <label for="paasword">Password</label>
-                                    <span id="password-check"></span>
-                                </div>
-
-                                <div class="md-form">
-                                    <input name="city" type="text" id="city" class="form-control" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
-                                    <label for="city">City</label>
-
-                                </div>
-
-                                <div class="md-form">
-                                    <input name="number" type="text" onblur="checknum()" id="number" class="form-control" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
-                                    <label for="number">Phone Number</label>
-                                    <span id="number-check"></span>
-                                </div>
-
-
-
-
-                                <form action="src\view\upload.php" method="post" enctype="multipart/form-data">
-                                    Select image to upload:
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
-                                    <input type="submit" value="Upload Image" name="submit">
-                                </form>
-                                <br>
-                                <br>
-
-
-                                <a class="btn btn-outline-black">Submit Updates</a>
-                            </div>
+            <li class="selected">
+              <div class="heading">
+                <h1>Update Your Email</h1>
+                
+              </div>
+              <div class="cd-full-width first-slide">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="content first-content">
+                        
                         </div>
-
-
+                      </div>
+                    </div>
+                  </div>                  
                 </div>
-            </div>
-            </form>
-        </div>
-    </div>
-    </div>
-    </div>
+           
+
+            <li>
+              <div class="heading">
+                <h1>Update Your Password</h1>
+                 
+              </div>
+              <div class="cd-half-width second-slide">   
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="content second-content">
+                        <div class="row">
+                          
+                          <div class="col-md-5">
+                            <div class="right-about-text">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-7">
+                            <div class="left-about-text">
+                              
+                              <div class="primary-button">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-5 right-image">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="heading">
+                <h1>Update Your City</h1>
+              </div>
+              <div class="cd-half-width third-slide">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="content third-content">
+                        <div class="row">
+                          
+                          <div class="col-md-5">
+                            <div class="right-feature-text">
+                              
+                              <div class="feature-list">
+                                <ul>
+                                  
+                                </ul>
+                              </div>
+                              <div class="primary-button">
+                                
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="heading">
+                <h1>Update Phone Number</h1>
+                
+              </div>
+              <div class="cd-half-width fourth-slide">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="content fourth-content">
+                        <div class="row">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </li>
+
+            <li>
+              
+            </li>
+      
 
 
-    <footer class="page-footer font-small  unique-color-dark">
-        <div class="footer-copyright  text-center py-3">© 2019 Copyright:
-            <a href="/"> OfferSync.com</a>
-        </div>
-    </footer>
+        
+    
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="C:\Users\Mithun Wijethunga\Desktop\OfferSync\public\JS\jquery-1.11.2.min.js"><\/script>')</script>
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.js"></script>
-    <script type="text/javascript" src="js/jquery.steps.js"></script>
-    <script type="text/javascript" src="js/checking.js"></script>
-</body>
+        <script src="JS/bootstrap.min.js"></script>
+        <script src="JS/plugins.js"></script>
+        <script src="JS/main.js"></script>
 
+    </body>
 </html>
