@@ -25,14 +25,13 @@ function SearchOffers()
 					<ul >
 					<form id="form1" action="/AccountView" method="POST">
 					
-				
+
 					<button class="unstyled-button"><li><i class="fas fa-user-circle"></i><span class="ml-2">' . $row["Username"] . '</span></li></button>
 				  	
 						<input type="hidden"  name="Username" value="' . $row["Username"] . '">
 						
 						</form>
-						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">' . $row["Restaurant"] . '</span></li>
-						<li><i class="fas fa-map-marker-alt"></i> <span class="ml-2">' . $row["City"] . '</span></li>
+						<li class="mb-2 mt-2"><i class="fas fa-map-marker-alt"></i> <span class="ml-2">' . $row["City"] . '</span></li>		
 						<li><i class="fas fa-building"></i><span class="ml-2">' . $row["Date"] . '</span></li>
 						
 					</ul>
@@ -42,6 +41,7 @@ function SearchOffers()
 			
 							  
 				<div class="col-4 ml-3 mr-3 offerd2"  >
+					<p><i class="fas fa-map-marker-alt mr-1"></i>' . $row["Restaurant"] . '</p>
 					<p>' . $row["Offer"] . '</p>
 					<p>Rs.' . $row["Price"] . '</p>
 				</div>

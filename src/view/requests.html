@@ -67,10 +67,9 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Initializations -->
     <script>
-        $(document).ready(function() {
         function load_requests() {
             $.post({
-                url: "/viewRequets",
+                url: "/viewRequests",
                 data: {
                     Username: null
                 },
@@ -80,8 +79,6 @@
             });
         }
         load_requests();
-        });
-
 
         function Accept() {
             $.ajax({
