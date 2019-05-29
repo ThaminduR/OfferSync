@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="edit ">
-                    <a href="/Edit_profile"> Edit Profile</a>
+                    <a href="/Edit"> Edit Profile</a>
                 </div>
 
             </div>
