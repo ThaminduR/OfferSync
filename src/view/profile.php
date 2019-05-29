@@ -90,8 +90,7 @@
                 </div>
 
                 <div class="edit ">
-                    <a href="C:\Users\Mithun Wijethunga\Desktop\OfferSync\src\view\editProfile.html " style="color: black ">
-                        Edit Profile</a>
+                    <a href="/Edit"> Edit Profile</a>
                 </div>
 
             </div>
