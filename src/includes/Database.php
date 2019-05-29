@@ -58,13 +58,15 @@ class Database
         return $result;
     }
     //Edit user registration details.
-    public function EditUserDetail($email, $city, $number)
+    public function EditUserDetail($username,$email, $city, $number)
     {
 
         $email = mysqli_real_escape_string($this->connection, $email);
         $city = mysqli_real_escape_string($this->connection, $city);
         $number = mysqli_real_escape_string($this->connection, $number);
-        $sql = "INSERT INTO users SET city='$city', gender='$gender', email='$email', MobileNumber='$number'";
+        $sql ="UPDATE users SET city='$city', email='$email', MobileNumber='$number'
+        WHERE username='$username'";
+         //"INSERT INTO users SET city='$city', gender='$gender', email='$email', MobileNumber='$number'";
         $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $result;
     }
@@ -82,8 +84,10 @@ class Database
     public function EditLoginData($username, $password, $salt)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
-        $sql = "INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
-        $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
+        $sql = "UPDATE userlogin SET password='$password', salt='$salt'
+        WHERE username='$username'";
+        //"INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
+        $result = mysqli_query($this->connection, $sql) or die("Data cannot Updated");
         return $result;
     }
 
@@ -147,23 +151,36 @@ class Database
 
         $sql = "SELECT * FROM offers WHERE Username ='$username'";
         $result = mysqli_query($this->connection, $sql);
-        return $result;
+        $offers = array();
+        while ($offer = mysqli_fetch_array($result)) {
+            $offers[] = $offer;
+        }
+        return $offers;
     }
 
     //------------------------------------------Fetch Search Results from the databse---------------------------------------------
-    public function FetchOffer($search,$username)
+    public function FetchOffer($search)
     {
         $search = mysqli_real_escape_string($this->connection, $search);
-        $query = "SELECT * FROM offers WHERE Restaurant LIKE '%" . $search . "%' AND Username!='$username'";
+        $query = "
+            SELECT * FROM offers 
+            WHERE 
+            Restaurant LIKE '%" . $search . "%' 
+            OR City LIKE '%" . $search . "%' 
+            ";
         $result = mysqli_query($this->connection, $query);
+        // $offers = array();
+        // while ($offer = mysqli_fetch_array($result)) {
+        //     $offers[] = $offer;
+        // }
         return $result;
     }
 
     //------------------------------------------Fetch Posts from the databse---------------------------------------------
-    public function GetOffers($username)
+    public function GetOffers($search)
     {
-        $username = mysqli_real_escape_string($this->connection, $username);
-        $query = "SELECT * FROM offers WHERE Username ='$username'";
+        $search = mysqli_real_escape_string($this->connection, $search);
+        $query = "SELECT * FROM offers WHERE Username ='$search'";
         $result = mysqli_query($this->connection, $query);
         return $result;
     }
@@ -215,44 +232,17 @@ class Database
 
     //------------------------------------------------Requests Related -----------------------------------------------------------------------
 
-    public function InsertRequest($sender, $receiver, $id)
+    public function InsertRequest($sender, $receiver)
     {
-        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , OfferID='$id', IsConfirmed=false ";
+        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , IsConfirmed='false' ";
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }
 
-    public function AlreadySent($sender, $id)
-    {
-        $sql = "SELECT * FROM requests WHERE Sender='$sender'and OfferId='$id'";
-        $result = mysqli_query($this->connection, $sql);
-        $req_data = mysqli_fetch_array($result);
-        if (empty($req_data)) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    public function AcceptRequest($id)
-    {
-        $sql = "UPDATE requests SET IsConfirmed=true WHERE OfferId=$id";
-        $result = mysqli_query($this->connection, $sql);
-        return ($result);
-    }
-
-    public function DeclineRequest($id)
-    {
-        $sql = "DELETE FROM requests WHERE OfferId=$id ";
-        $result = mysqli_query($this->connection, $sql);
-        return ($result);
-    }
-
-
     public function SearchRequests($username)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
-        $sql = "SELECT * FROM requests WHERE Receiver ='$username' AND IsConfirmed=false";
+        $sql = "SELECT * FROM requests WHERE Receiver ='$username'";
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }

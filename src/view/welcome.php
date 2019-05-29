@@ -26,8 +26,8 @@
       <div class="space"></div>
       <a href="/profile" class="sideb list-group-item list-group-item-action waves-effect">
         <i class="fas fa-user mr-3"></i>Profile</a>
-      <a href="#" class="sideb list-group-item  list-group-item list-group-item-action waves-effect">
-        <i class="fas fa-hamburger mr-3"></i>My Orders</a>
+      <a href="/posts" class="sideb list-group-item  list-group-item list-group-item-action waves-effect">
+        <i class="fas fa-hamburger mr-3"></i>My Offers</a>
       <a href="/requests" class="sideb list-group-item list-group-item-action waves-effect">
         <i class="fas fa-envelope mr-3"></i>Requests</a>
     </div>
