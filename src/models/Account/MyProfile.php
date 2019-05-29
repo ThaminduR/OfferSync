@@ -19,5 +19,5 @@ function DisplayPosts()
     $username = $_COOKIE['Username'];
     $result = $connection->GetPosts($username);
     $count = mysqli_num_rows($result);
-	echo $count
+	echo $count;
 }
