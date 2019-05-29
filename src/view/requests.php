@@ -82,7 +82,7 @@
         function Accept() {
             $.ajax({
                 type: "POST",
-                url: "/viewReests",
+                url: "/accept",
                 data: {
                     username: p
                 },

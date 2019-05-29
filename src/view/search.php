@@ -57,7 +57,7 @@
                             Request send successfully !
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12">
                         <hgroup class="mb20">
                             <div id="result"></div>
                             <div style="clear:both"></div>
