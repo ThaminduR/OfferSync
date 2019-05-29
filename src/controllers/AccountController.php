@@ -19,4 +19,14 @@ class AccountController extends Controller
     {
         DisplayRequests();
     }
+
+    public function MyAccRequests()
+    {
+        DisplayMyAccReq();
+    }
+
+    public function RequestsIAcc()
+    {
+        DisplayReqIAcc();
+     }
 }

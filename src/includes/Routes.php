@@ -78,7 +78,13 @@ $routes = [
     ['POST','/decline',function(){RequestController::DeclineRequest();}],
 
     //Displaying incoming requests to user
-    ['POST','/viewRequests',function(){AccountController::ViewRequests();}]
+    ['POST','/viewRequests',function(){AccountController::ViewRequests();}],
+
+    //Displaying requests accpeted by user
+    ['POST','/RequestsIAcc',function(){AccountController::RequestsIAcc();}],
+
+    //Displaying accepted requetst of user
+    ['POST','/MyAccRequests',function(){AccountController::MyAccRequests();}]
 
     
     

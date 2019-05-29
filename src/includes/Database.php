@@ -254,10 +254,22 @@ class Database
         $username = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT * FROM requests WHERE Receiver ='$username' AND IsConfirmed=false";
         $result = mysqli_query($this->connection, $sql);
-        // $requests = array();
-        // while ($request = mysqli_fetch_array($result)) {
-        //     $requests[] = $request;
-        // }
+        return $result;
+    }
+
+    public function MyAcceptedRequests($username)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT * FROM requests WHERE Sender ='$username' AND IsConfirmed=true";
+        $result = mysqli_query($this->connection, $sql);
+        return $result;
+    }
+
+    public function RequestsIAccpeted($username)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT * FROM requests WHERE Receiver ='$username' AND IsConfirmed=true";
+        $result = mysqli_query($this->connection, $sql);
         return $result;
     }
 }

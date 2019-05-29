@@ -140,8 +140,10 @@
                 success: function(data) {
                     if (data == 'failed') {
                         $('.toastfail').toast('show');
+                        setTimeout(function(){$('.toastfail').toast('hide');}, 1000);
                     } else {
                         $('.toastsuc').toast('show');
+                        setTimeout(function(){$('.toastsuc').toast('hide');}, 1000);
                     }
 
                 }

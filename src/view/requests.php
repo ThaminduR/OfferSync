@@ -25,7 +25,7 @@
             <div class="space"></div>
             <a href="/profile" class="sideb list-group-item list-group-item-action waves-effect">
                 <i class="fas fa-user mr-3"></i>Profile</a>
-            <a href="/posts" method ="GET" class="sideb list-group-item  list-group-item list-group-item-action waves-effect">
+            <a href="/posts" method="GET" class="sideb list-group-item  list-group-item list-group-item-action waves-effect">
                 <i class="fas fa-hamburger mr-3"></i>My Offers</a>
             <a href="#" class="sideb list-group-item list-group-item-action white black-text">
                 <i class="fas fa-envelope mr-3"></i>Requests</a>
@@ -42,23 +42,25 @@
                 <div class="row-9">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link white black-text" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">New Requests</a>
+                            <a class="nav-link white black-text" id="newreq-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">New Requests</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white black-text" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                            <a class="nav-link white black-text" id="myreq-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Accpeted Requests</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white black-text" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                            <a class="nav-link white black-text" id="ireq-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Requests I Accpeted</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="newreq-tab">
                             <div id="result"></div>
-                            <div style="clear:both"></div>
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie</div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape
-                            wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack</div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="myreq-tab">
+                            <div id="result2"></div>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="ireq-tab">
+                            <div id="result3"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,7 +96,29 @@
             });
         }
 
+        function load_myrequests() {
+
+            $.post({
+                url: "/MyAccRequests",
+                success: function(data) {
+                    $('#result2').html(data);
+                }
+            });
+        }
+
+        function load_Irequests() {
+
+            $.post({
+                url: "/RequestsIAcc",
+                success: function(data) {
+                    $('#result3').html(data);
+                }
+            });
+        }
+
         load_requests();
+        load_myrequests();
+        load_Irequests();
 
         function Accept(id) {
             $.ajax({
@@ -106,6 +130,8 @@
                 success: function(data) {
                     if (data == 'AccSuccess') {
                         load_requests();
+                        load_myrequests();
+                        load_Irequests();
                     }
                 }
             });
@@ -121,6 +147,8 @@
                 success: function(data) {
                     if (data == 'DecSuccess') {
                         load_requests();
+                        load_myrequests();
+                        load_Irequests();
                     }
                 }
             });
