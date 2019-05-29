@@ -1,5 +1,7 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/OfferService/OfferService.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/controllers/Controller.php';
+
 class OfferController extends Controller{
     public function PostOffer(){
         $restaurant = $_POST['Restaurant'];

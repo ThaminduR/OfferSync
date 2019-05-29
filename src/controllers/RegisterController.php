@@ -1,5 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/models/Register/RegisterService.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/controllers/Controller.php';
 
 class RegisterController extends Controller
 {
