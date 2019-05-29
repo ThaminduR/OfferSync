@@ -39,18 +39,18 @@
                         <!-- Card -->
                         <div class="card">
                             <!-- Card Content -->
+
+                            
                             <div class="card-body mb-5">
-                                <h2 class="card-title">Sign Up</h2>
+                                <h2 class="card-title">Edit Profile</h2>
 
-                                <div class="md-form">
-                                    <input name="firstname" type="text" id="FirstName" class="form-control" required>
-                                    <label data-error="wrong" data-success="right" for="FirstName">First Name</label>
-                                </div>
+                                <form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
 
-                                <div class="md-form">
-                                    <input name="lastname" type="text" id="lastname" class="form-control" required>
-                                    <label data-error="wrong" data-success="right" for="lastname">Last Name</label>
-                                </div>
+
 
                                 <div class="md-form">
                                     <input name="email" onblur="checkemail()" type="email" id="email" class="form-control mb-4" required>
@@ -58,13 +58,7 @@
                                     <span id="email-check"></span>
                                 </div>
 
-                                <div class="md-form">
-
-                                    <input name="username" onblur="checkusername()" type="text" id="username" class="form-control mb-4" required>
-                                    <label for="username">Username</label>
-                                    <span id="username-check"></span>
-                                </div>
-
+                                
                                 <div class="md-form">
                                     <input name="password" type="password" onblur="checkpw()" id="password" class="form-control mb-4" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
                                     <label for="paasword">Password</label>
@@ -83,24 +77,12 @@
                                     <span id="number-check"></span>
                                 </div>
 
-                                <p class="text-muted text-left mb-1 ">Gender :</p>
-
-                                <div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" value="Male" class="custom-control-input" id="defaultInline1" name="gender">
-                                        <label class="custom-control-label" for="defaultInline1">Male</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" value="Female" class="custom-control-input" id="defaultInline2" name="gender">
-                                        <label class="custom-control-label" for="defaultInline2">Female</label>
-                                    </div>
+                               
 
                                 </div>
-                                <button class="btn btn-info my-4 btn-block" type="submit" name="submit">Sign </button>
-                                <hr>
-                                <p class="text-muted">By clicking <em>Sign up</em> you agree to our <a href="" target="_blank">terms of
-                                        service</a></p>
+                                <button class="btn btn-info my-4 btn-block" type="submit" name="submit">Submit Updates</button>
+                            
+                                
                             </div>
                         </div>
                     </form>
