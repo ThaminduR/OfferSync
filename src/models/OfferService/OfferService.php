@@ -14,6 +14,7 @@ function GetPosts($username){
  
     $database = Database::getDbConnection();
     $offers = $database->GetPosts($username);
+    require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/view/postview.php';
     foreach($offers as $offer) {
         echo "Username: " . $offer["Username"]. "     ----- Restaurant: " . $offer["Restaurant"]. "    ----- Offer: " . $offer["Offer"].  "    ----- Price: " . $offer["Price"] ;
         echo "<br>";
