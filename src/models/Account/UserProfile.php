@@ -62,7 +62,18 @@ function DisplayRequests()
     $result = $connection->SearchRequests($username);
     $count = mysqli_num_rows($result);
     if (mysqli_num_rows($result) > 0) {
-        require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';    
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';
+    }
+}
+
+function DisplayPosts()
+{
+    $connection = Database::getDBconnection();
+    $username = $_COOKIE['Username'];
+    $result = $connection->GetOffers($username);
+    $count = mysqli_num_rows($result);
+    if (mysqli_num_rows($result) > 0) {
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/postview.php';
     }
 }
 

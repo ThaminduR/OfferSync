@@ -147,11 +147,7 @@ class Database
 
         $sql = "SELECT * FROM offers WHERE Username ='$username'";
         $result = mysqli_query($this->connection, $sql);
-        $offers = array();
-        while ($offer = mysqli_fetch_array($result)) {
-            $offers[] = $offer;
-        }
-        return $offers;
+        return $result;
     }
 
     //------------------------------------------Fetch Search Results from the databse---------------------------------------------
@@ -160,18 +156,14 @@ class Database
         $search = mysqli_real_escape_string($this->connection, $search);
         $query = "SELECT * FROM offers WHERE Restaurant LIKE '%" . $search . "%' AND Username!='$username'";
         $result = mysqli_query($this->connection, $query);
-        // $offers = array();
-        // while ($offer = mysqli_fetch_array($result)) {
-        //     $offers[] = $offer;
-        // }
         return $result;
     }
 
     //------------------------------------------Fetch Posts from the databse---------------------------------------------
-    public function GetOffers($search)
+    public function GetOffers($username)
     {
-        $search = mysqli_real_escape_string($this->connection, $search);
-        $query = "SELECT * FROM offers WHERE Username ='$search'";
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $query = "SELECT * FROM offers WHERE Username ='$username'";
         $result = mysqli_query($this->connection, $query);
         return $result;
     }
