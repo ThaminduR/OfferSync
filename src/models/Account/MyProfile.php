@@ -25,6 +25,6 @@ function DisplayPosts()
         }
         echo $output;
     } else {
-        echo 'No Requests Found';
+        echo '0';
     }
 }
