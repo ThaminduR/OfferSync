@@ -17,9 +17,6 @@
 </head>
 
 <body>
-
-
-
     <nav class="navbar navbar-expand-lg navbar-dark black scrolling-navbar">
         <div class="container">
             <a class="navbar-brand" href="/"><i class="fas fa-arrow-circle-left mr-2"></i>OfferSync</a>
@@ -124,10 +121,15 @@
                 data: {
                     username: p
                 },
+<<<<<<< HEAD
+                success: function(data) {
+                    $('#message').html(data);
+=======
                 success: function (data) {
                     $('.toast').toast('show');
                     $('#message1').html(data);
 
+>>>>>>> 1b1b938ce072877dbcfd7c9c4e99b05398e4365b
                 }
             });
         }
