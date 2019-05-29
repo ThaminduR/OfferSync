@@ -26,9 +26,9 @@
                 <hr>
                 <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
                 <hr>
-                <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Accept(<?= '\'' . $row['Sender'] . '\'' ?>)">Accept Request
+                <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Accept(<?= '\'' . $row['OfferId'] . '\'' ?>)">Accept Request
                         <i class="far fa-paper-plane ml-2"></i></a></p>
-                <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Decline('<?= '\'' . $row['Sender'] . '\'' ?>')">Decline Request
+                <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Decline(<?= '\'' . $row['OfferId'] . '\'' ?>)">Decline Request
                         <i class="far fa-paper-plane ml-2"></i></a></p>
             </div>
             <br>

@@ -22,7 +22,7 @@
 
   <div class="side-nav">
     <div class="list-group ">
-      <div class="black list-group-item text-white waves-effect">OFFERSYNC</div>
+      <div class="black list-group-item text-white waves-effect ml-2"> OFFERSYNC</div>
       <div class="space"></div>
       <a href="/profile" class="sideb list-group-item list-group-item-action waves-effect">
         <i class="fas fa-user mr-3"></i>Profile</a>
@@ -49,10 +49,10 @@
 
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                   <div>
-                    <h3 class="text-black">Greetings <?=$_COOKIE['Username']?> !</h3>
+                    <h3 class="black-text" >Welcome <?=$_COOKIE['Username']?></h3>
                   </div>
-                  <a class="btn btn-outline-white waves-effect" href="/search">Search Offer<i class="fas fa-search ml-2"></i></a>
-                  <a class="btn btn-outline-white waves-effect" href="/postOffer">Post an Offer<i
+                  <a class="btn btn-outline-black waves-effect" href="/search">Search Offer<i class="fas fa-search ml-2"></i></a>
+                  <a class="btn btn-outline-black waves-effect" href="/postOffer">Post an Offer<i
                       class="far fa-paper-plane ml-2"></i></a>
                 </div>
               </div>

@@ -33,7 +33,7 @@
         <div class="list-group ">
             <a href="/" class="sideb list-group-item list-group-item-action waves-effect"><i class="fas fa-arrow-circle-left mr-2"></i>Home</a>
             <div class="space"></div>
-            <a href="/profile" class="sideb list-group-item list-group-item-action white black-text">
+            <a href="" class="sideb list-group-item list-group-item-action white black-text">
                 <i class="fas fa-user mr-3"></i>Profile</a>
 
             <a href="/posts" id= offers class="sideb list-group-item list-group-item-action waves-effect" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
