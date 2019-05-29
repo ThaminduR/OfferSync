@@ -10,12 +10,12 @@ class ViewController
         if ($viewName == 'index') {
             $logged = CheckLoginStatus();
             if ($logged) {
-                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/welcome.html');
+                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/welcome.php');
             } else {
-                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/index.html');
+                require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/index.php');
             }
         } else {
-            require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.html');
+            require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.php');
         }
     }
 
@@ -23,7 +23,7 @@ class ViewController
     {
         $logged = CheckLoginStatus();
         if ($logged) {
-            require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.html');
+            require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/' . $viewName . '.php');
         } else {
             require_once($_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/Login/LoginFail.php');
         }
