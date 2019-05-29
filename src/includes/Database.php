@@ -57,6 +57,19 @@ class Database
         $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $result;
     }
+    //Edit user registration details.
+    public function EditUserDetail($email, $city, $number)
+    {
+
+        $email = mysqli_real_escape_string($this->connection, $email);
+        $city = mysqli_real_escape_string($this->connection, $city);
+        $number = mysqli_real_escape_string($this->connection, $number);
+        $sql = "INSERT INTO users SET city='$city', gender='$gender', email='$email', MobileNumber='$number'";
+        $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
+        return $result;
+    }
+
+
     //Insert user login details
     public function InsertLoginData($username, $password, $salt)
     {
@@ -65,6 +78,15 @@ class Database
         $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $result;
     }
+    //Edit user login details
+    public function EditLoginData($username, $password, $salt)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $sql = "INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
+        $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
+        return $result;
+    }
+
 
     //to find a certain user from username 
     public function FindUserDetail($username)
@@ -122,7 +144,7 @@ class Database
     //get posts to profile..........DELEEEEEEETEEEEEE
     public function GetPosts($username)
     {
-        
+
         $sql = "SELECT * FROM offers WHERE Username ='$username'";
         $result = mysqli_query($this->connection, $sql);
         $offers = array();
@@ -149,7 +171,7 @@ class Database
         // }
         return $result;
     }
-    
+
     //------------------------------------------Fetch Posts from the databse---------------------------------------------
     public function GetOffers($search)
     {
@@ -206,14 +228,15 @@ class Database
 
     //------------------------------------------------Requests Related -----------------------------------------------------------------------
 
-    public function InsertRequest($sender,$receiver){
+    public function InsertRequest($sender, $receiver)
+    {
         $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , IsConfirmed='false' ";
         $result = mysqli_query($this->connection, $sql);
         return $result;
-
     }
 
-    public function SearchRequests($username){
+    public function SearchRequests($username)
+    {
         $username = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT * FROM requests WHERE Receiver ='$username'";
         $result = mysqli_query($this->connection, $sql);

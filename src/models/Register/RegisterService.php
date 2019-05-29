@@ -21,3 +21,22 @@ function UserSignUp($username, $firstname, $lastname, $email, $gender, $city, $p
         }
     }
 }
+
+function UserEdit( $email,$city, $password, $number)
+{
+    
+    if (isset($_REQUEST['submit'])) {
+        extract($_REQUEST);
+        $edit = $user->Reg_User($email, $city, $password, $number);
+
+        if ($edit) {
+            header("Refresh: 0; url=/");
+            $message = "Profile Edit Successful.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        } else {
+            header("Refresh: 0; url=/");
+            $message = "Error occured ! Profile Edit Failed. Please retry again";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+    }
+}
