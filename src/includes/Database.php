@@ -165,10 +165,10 @@ class Database
     }
 
     //------------------------------------------Fetch Posts from the databse---------------------------------------------
-    public function GetOffers($search)
+    public function GetOffers($username)
     {
-        $search = mysqli_real_escape_string($this->connection, $search);
-        $query = "SELECT * FROM offers WHERE Username ='$search'";
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $query = "SELECT * FROM offers WHERE Username ='$username'";
         $result = mysqli_query($this->connection, $query);
         return $result;
     }

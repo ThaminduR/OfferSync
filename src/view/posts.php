@@ -69,6 +69,9 @@
         function load_offers() {
             $.post({
                 url: "/myoffers",
+                data: {
+                    Username: null
+                },
                 success: function (data) {
                     $('#result').html(data);
                 }

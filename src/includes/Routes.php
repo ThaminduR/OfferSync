@@ -28,7 +28,7 @@ $routes = [
     //---------------------------account related---------------------------------
 
     //Get the posted offer by user
-    ['GET','/myoffers',function(){RequestController::GetMyOffers();}],
+    ['POST','/myoffers',function(){RequestController::GetMyOffers();}],
    
     //display a certain user
     ['POST','/AccountView',function(){AccountController::ViewAccount();}],
