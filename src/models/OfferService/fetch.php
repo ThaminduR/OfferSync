@@ -41,9 +41,9 @@ function SearchOffers()
 			
 							  
 				<div class="col-4 ml-3 mr-3 offerd2"  >
-					<p><i class="fas fa-map-marker-alt mr-1"></i>' . $row["Restaurant"] . '</p>
-					<p>' . $row["Offer"] . '</p>
-					<p>Rs.' . $row["Price"] . '</p>
+					<p><i class="fas fa-map-marker-alt mr-2"></i>' . $row["Restaurant"] . '</p>
+					<p><i class="fas fa-utensils mr-2"></i>' . $row["Offer"] . '</p>
+					<p><i class="fas fa-hand-holding-usd mr-2"></i>Rs.' . $row["Price"] . '</p>
 				</div>
 
 				<div class="verticalLine"></div>
