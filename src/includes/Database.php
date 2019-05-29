@@ -119,7 +119,7 @@ class Database
         return $finalOffer;
     }
 
-    //get posts to profile
+    //get posts to profile..........DELEEEEEEETEEEEEE
     public function GetPosts($username)
     {
         
@@ -149,6 +149,16 @@ class Database
         // }
         return $result;
     }
+    
+    //------------------------------------------Fetch Posts from the databse---------------------------------------------
+    public function GetOffers($search)
+    {
+        $search = mysqli_real_escape_string($this->connection, $search);
+        $query = "SELECT * FROM offers WHERE Username ='$search'";
+        $result = mysqli_query($this->connection, $query);
+        return $result;
+    }
+
 
     //------------------------------------------Fetch User Details from the databse---------------------------------------------
     public function FetchUser($username)

@@ -45,7 +45,7 @@
     }
     
     body {
-        background: url("/img/Search.jpg")no-repeat center center fixed;
+        background: url("/img/Search.jpg")no-repeat center center fixed !important;
     }
     
     .bg {

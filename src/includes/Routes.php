@@ -28,6 +28,7 @@ $routes = [
     ['POST','/checkNumber',function(){RequestController::checkNumber();}],
     ['POST','/request',function(){RequestController::SendRequest();}],
     ['POST','/fetch',function(){RequestController::SearchOffer();}],
+    ['POST','/OfferService',function(){RequestController::SearchOffer();}],
     ['POST','/viewRequests',function(){AccountController::ViewRequets();}]
 
 ]
