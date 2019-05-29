@@ -1,7 +1,6 @@
-
+<br>
 <h3 class="lead text-white"><strong class="text-white"> <?= $count ?> </strong> Offers were posted! </h3>
-  
-
+<br>
 <section class="col-xs-12 col-sm-6 col-md-12">
 
     <?php
