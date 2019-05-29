@@ -10,16 +10,6 @@ function Post_Offer($restaurant,$offer,$price,$restaurantbranch,$date,$city,$gen
    
  }
  
-function GetPosts($username){
- 
-    $database = Database::getDbConnection();
-    $offers = $database->GetPosts($username);
-    require_once $_SERVER['DOCUMENT_ROOT']. '/..'. '/src/view/postview.php';
-    foreach($offers as $offer) {
-        echo "Username: " . $offer["Username"]. "     ----- Restaurant: " . $offer["Restaurant"]. "    ----- Offer: " . $offer["Offer"].  "    ----- Price: " . $offer["Price"] ;
-        echo "<br>";
-    }
-}
 
 function SendRequests($receiver)
 {
@@ -40,5 +30,15 @@ function SearchOffers()
 		if (mysqli_num_rows($result) > 0) {
 			require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/SearchResult.php';
 		}
+	}
+}
+
+function GetPosts($username)
+{	
+		$connection = Database::getDBconnection(); 
+		$result = $connection->GetPosts($username);
+		$count = mysqli_num_rows($result);
+		if (mysqli_num_rows($result) > 0) {
+			require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/postview.php';
 	}
 }

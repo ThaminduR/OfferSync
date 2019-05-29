@@ -29,7 +29,7 @@ $routes = [
 
     //Get the posted offer by user
     ['GET','/myoffers',function(){RequestController::GetMyOffers();}],
-
+   
     //display a certain user
     ['POST','/AccountView',function(){AccountController::ViewAccount();}],
 
@@ -65,11 +65,14 @@ $routes = [
     //Requests UI
     ['GET','/requests',function(){ViewController::CreateViewR('requests');}],
 
+    //My Offers UI
+    ['GET','/posts',function(){ViewController::CreateViewR('posts');}],
+
     //Sending a request
     ['POST','/request',function(){RequestController::SendRequest();}],
 
     //Displaying incoming requests to user
-    ['POST','/viewRequests',function(){AccountController::ViewRequets();}]
+    ['POST','/viewRequests',function(){AccountController::ViewRequests();}]
 
     
     

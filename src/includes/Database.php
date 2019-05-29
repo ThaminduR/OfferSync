@@ -125,11 +125,7 @@ class Database
         
         $sql = "SELECT * FROM offers WHERE Username ='$username'";
         $result = mysqli_query($this->connection, $sql);
-        $offers = array();
-        while ($offer = mysqli_fetch_array($result)) {
-            $offers[] = $offer;
-        }
-        return $offers;
+        return $result;
     }
 
     //------------------------------------------Fetch Search Results from the databse---------------------------------------------
@@ -143,10 +139,6 @@ class Database
             OR City LIKE '%" . $search . "%' 
             ";
         $result = mysqli_query($this->connection, $query);
-        // $offers = array();
-        // while ($offer = mysqli_fetch_array($result)) {
-        //     $offers[] = $offer;
-        // }
         return $result;
     }
     

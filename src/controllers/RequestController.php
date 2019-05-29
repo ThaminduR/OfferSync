@@ -2,6 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/CheckingService.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/OfferService/OfferService.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/controllers/Controller.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/Account/UserProfile.php';
 
 class RequestController extends Controller
 {
@@ -51,10 +52,8 @@ class RequestController extends Controller
 
     //Retrieving offers for certain profile
     public function GetMyOffers()
-    {   
-        $username = $_COOKIE['Username'];
-        GetPosts($username);
-        
+    {     
+        DisplayPosts(); 
     }
 
     //----------------------------------------Requests ---------------------------------------

@@ -15,7 +15,7 @@ class AccountController extends Controller
         }
     }
 
-    public function ViewRequets()
+    public function ViewRequests()
     {
         DisplayRequests();
     }
