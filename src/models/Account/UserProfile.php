@@ -65,3 +65,15 @@ function DisplayRequests()
         require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';    
     }
 }
+
+function Accept($id){
+    $connection = Database::getDBconnection();
+    $result = $connection->AcceptRequest($id);
+    echo "AccSuccess";
+}
+
+function Decline($id){
+    $connection = Database::getDBconnection();
+    $result = $connection->DeclineRequest($id);
+    echo "DecSuccess";
+}

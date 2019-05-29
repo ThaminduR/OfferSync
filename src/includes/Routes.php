@@ -68,6 +68,12 @@ $routes = [
     //Sending a request
     ['POST','/request',function(){RequestController::SendRequest();}],
 
+    //Accept request
+    ['POST','/accept',function(){RequestController::AcceptRequest();}],
+
+    //Decline request
+    ['POST','/decline',function(){RequestController::DeclineRequest();}],
+
     //Displaying incoming requests to user
     ['POST','/viewRequests',function(){AccountController::ViewRequets();}]
 

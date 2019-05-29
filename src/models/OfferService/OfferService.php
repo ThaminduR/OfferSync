@@ -27,7 +27,8 @@ function SearchOffers()
     if (isset($_POST["searchText"])) {
         $search = $_POST["searchText"];
         $connection = Database::getDBconnection();
-        $result = $connection->FetchOffer($search);
+        $username = $_COOKIE['Username'];
+        $result = $connection->FetchOffer($search,$username);
         $count = mysqli_num_rows($result);
         if (mysqli_num_rows($result) > 0) {
             require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/SearchResult.php';
