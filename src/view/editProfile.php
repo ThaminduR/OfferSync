@@ -15,11 +15,11 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Custom styles -->
     <link href="css/Registerstyle.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
-    
+
 
 
     <nav class="navbar navbar-expand-lg navbar-dark black scrolling-navbar">
@@ -77,10 +77,10 @@
 
 
 
-                                <form action="upload.php" method="post" enctype="multipart/form-data">
-                                    Select a Profile Picture:
+                                <form action="src\view\upload.php" method="post" enctype="multipart/form-data">
+                                    Select image to upload:
                                     <input type="file" name="fileToUpload" id="fileToUpload">
-
+                                    <input type="submit" value="Upload Image" name="submit">
                                 </form>
                                 <br>
                                 <br>
