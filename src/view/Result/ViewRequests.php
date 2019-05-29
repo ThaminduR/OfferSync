@@ -1,5 +1,4 @@
-<article class="row">
-
+<div class="card white row">
     <div class="col-4 offerdetails">
         <ul>
             <form id="form1" action="/AccountView" method="POST">
@@ -21,5 +20,5 @@
         <a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Decline('<?= '\'' . $row['Sender'] . '\'' ?>')">Decline Request
             <i class="far fa-paper-plane ml-2"></i></a>
     </div>
-</article>
+</div>
 <br>
