@@ -44,12 +44,7 @@
                             <div class="card-body mb-5">
                                 <h2 class="card-title">Edit Profile</h2>
 
-                                <form action="upload.php" method="post" enctype="multipart/form-data">
-                                    Select a Profile Picture:
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
-                                    
-                                </form>
-
+                                
 
 
                                 <div class="md-form">
@@ -79,9 +74,15 @@
 
 
 
-                            </div>
+                            
+                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                                    Select a Profile Picture:
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                    
+                                </form>
+
                             <div class="edit">
-                            <button class="btn"  type="submit" name="submit"  >Submit Updates</button >
+                            <button class="btn" >Submit Updates</button >
 
 
                         </div>
