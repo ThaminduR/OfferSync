@@ -58,12 +58,12 @@ class RequestController extends Controller
 
     //----------------------------------------Requests ---------------------------------------
 
-    
     public function SendRequest()
     {
         if (isset($_POST['username'])) {
             $receiver = $_POST['username'];
-            SendRequests($receiver);
+            $id = $_POST['id'];
+            SendRequests($receiver,$id);
         }
     }
 }

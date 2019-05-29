@@ -13,19 +13,21 @@
         $count += 1; ?>
             <div class="card">
                 <img src="/img/header2.jpg" style="width:100%">
-
+                <div class="mt-2">
+                    <h3><i class="far fa-user-circle"></i> <?= $row['Username'] ?> </h3>
+                </div>
                 <form id="form1" action="/AccountView" method="POST">
-                    <a href="javascript:submitform()">
-                        <h3> <?= $row['Username'] ?> </h3>
-                    </a>
-                    <a class="btn sm black-text">View Profile</a>
+                    <button style="padding: 0; border: none; background: none; color:gray;">View Profile</button>
                     <input type="hidden" name="Username" value="<?= $row['Username'] ?>">
                 </form>
-                <p class="city"><i class="fas fa-map-marker-alt"></i> <span class="ml-2"><?= $row["City"] ?></span></p>
-                <p><i class="fas fa-map-marker-alt mr-2"></i><?= $row["Restaurant"] ?></p>
+                <hr>
+                <p><i class="fas fa-map-marker-alt mr-2"></i> <span><?= $row["City"] ?></span></p>
+                <p><i class="fas fa-building mr-2"></i><?= $row["Restaurant"] ?></p>
                 <p><i class="fas fa-utensils mr-2"></i><?= $row["Offer"] ?></p>
                 <p><i class="fas fa-hand-holding-usd mr-2"></i>Rs. <?= $row["Price"] ?></p>
-                <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="SendRequest(<?= '\'' . $row['Username'] . '\'' ?>)">Send Request
+                <hr>
+
+                <p><a class="btn btn-outline-black " style="cursor: pointer;" onclick="SendRequest(<?= '\'' . $row['Username'] . '\'' ?>,<?= '\'' . $row['OfferID'] . '\'' ?>)">Send Request
                         <i class="far fa-paper-plane ml-2"></i></a></p>
 
             </div>

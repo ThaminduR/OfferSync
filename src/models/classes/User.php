@@ -57,5 +57,27 @@ class User
             return false;
         }
     }
+
+    //For Profile Edit
+    public function Edit_User($email,$city, $password,$number)
+    {
+        //generating salt
+        $salt = getSalt(25);
+        //hashing pw with salt and pepper
+        $hpassword = base64_encode(hash('sha256', "$username.$password.$salt.$this->pepper", true));
+        //checking for existing username
+        $check1 =  $this->database->FindUserName($username);
+        $check2 = $this->database->FindEmail($email);
+        if (!($check1 && $check2)) {
+            //register the user ; username is available
+            
+            $result1 = $this->database->InsertUserDetail($email, $city,$number);
+            
+            $result2 = $this->database->InsertLoginData($hpassword, $salt);
+            return $result1;
+        } else {
+            return false;
+        }
+    }
 }
 
