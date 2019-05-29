@@ -242,7 +242,7 @@ class Database
     public function SearchRequests($username)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
-        $sql = "SELECT * FROM requests WHERE Receiver ='$username'";
+        $sql = "SELECT * FROM requests WHERE Receiver ='$username' AND IsConfirmed=false";
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }

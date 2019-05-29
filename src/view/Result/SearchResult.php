@@ -1,5 +1,8 @@
-<h3 class="lead text-white"><strong class="text-white"> <?= $count ?> </strong> results were found for the search for
-    <strong class="text-white"> <?= $search ?> </strong></h3>
+<div class="card mb-4">
+    <hr>
+    <h3 class="lead black-text mt-1"><strong class="text-black"> <?= $count ?> </strong> results found for the search<strong class="text-black"> <?= $search ?> </strong></h3>
+    <hr>
+</div>
 </hgroup>
 <section class="col-xs-12 col-sm-6 col-md-12">
 

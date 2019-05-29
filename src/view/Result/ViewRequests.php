@@ -23,39 +23,99 @@
 </div>
 </hgroup>
 <section class="col-xs-12 col-sm-6 col-md-12">
+    <?php if ($case == 1) {
+        $count1 = 0;
+        while ($row = mysqli_fetch_array($result)) :
+            if ($count1 == 0) : ?>
+                <div class="card-deck">
 
-    <?php
+                <?php endif;
+            $count1 += 1; ?>
+                <div class="card">
+                    <img src="/img/header3.jpg" style="width:100%">
+                    <div class="mt-2">
+                        <h3> <?= $row['Sender'] ?> </h3>
+                    </div>
+                    <form id="form1" action="/AccountView" method="POST">
+                        <button style="padding: 0; border: none; background: none; color:gray;">View Profile</button>
+                        <input type="hidden" name="Username" value="<?= $row['Sender'] ?>">
+                    </form>
+                    <hr>
+                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
+                    <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
+                    <hr>
+                    <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Accept(<?= '\'' . $row['OfferId'] . '\'' ?>)">Accept Request
+                            <i class="far fa-paper-plane ml-2"></i></a></p>
+                    <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Decline(<?= '\'' . $row['OfferId'] . '\'' ?>)">Decline Request
+                            <i class="far fa-paper-plane ml-2"></i></a></p>
+                </div>
+                <br>
+
+                <?php
+                if ($count1 == 3) :
+                    $count1 = 0; ?>
+                </div>
+                <br>
+            <?php endif;
+    endwhile ?>
+    <?php } elseif ($case = 2) {
     $count1 = 0;
     while ($row = mysqli_fetch_array($result)) :
         if ($count1 == 0) : ?>
-            <div class="card-deck">
+                <div class="card-deck">
 
-            <?php endif;
-        $count1 += 1; ?>
-            <div class="card">
-                <img src="/img/header3.jpg" style="width:100%">
-                <div class="mt-2">
-                    <h3> <?= $row['Sender'] ?> </h3>
+                <?php endif;
+            $count1 += 1; ?>
+                <div class="card">
+                    <img src="/img/header3.jpg" style="width:100%">
+                    <div class="mt-2">
+                        <h3> <?= $row['Sender'] ?> </h3>
+                    </div>
+                    <form id="form1" action="/AccountView" method="POST">
+                        <button style="padding: 0; border: none; background: none; color:gray;">View Profile</button>
+                        <input type="hidden" name="Username" value="<?= $row['Sender'] ?>">
+                    </form>
+                    <hr>
+                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
+                    <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
                 </div>
-                <form id="form1" action="/AccountView" method="POST">
-                    <button style="padding: 0; border: none; background: none; color:gray;">View Profile</button>
-                    <input type="hidden" name="Username" value="<?= $row['Sender'] ?>">
-                </form>
-                <hr>
-                <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
-                <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
-                <hr>
-                <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Accept(<?= '\'' . $row['OfferId'] . '\'' ?>)">Accept Request
-                        <i class="far fa-paper-plane ml-2"></i></a></p>
-                <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Decline(<?= '\'' . $row['OfferId'] . '\'' ?>)">Decline Request
-                        <i class="far fa-paper-plane ml-2"></i></a></p>
-            </div>
-            <br>
+                <br>
 
-            <?php
-            if ($count1 == 3) :
-                $count1 = 0; ?>
-            </div>
-            <br>
-        <?php endif;
-endwhile ?>
+                <?php
+                if ($count1 == 3) :
+                    $count1 = 0; ?>
+                </div>
+                <br>
+            <?php endif;
+    endwhile ?>
+    <?php } elseif ($case = 3) {
+    $count1 = 0;
+    while ($row = mysqli_fetch_array($result)) :
+        if ($count1 == 0) : ?>
+                <div class="card-deck">
+
+                <?php endif;
+            $count1 += 1; ?>
+                <div class="card">
+                    <img src="/img/header3.jpg" style="width:100%">
+                    <div class="mt-2">
+                        <h3> <?= $row['Sender'] ?> </h3>
+                    </div>
+                    <form id="form1" action="/AccountView" method="POST">
+                        <button style="padding: 0; border: none; background: none; color:gray;">View Profile</button>
+                        <input type="hidden" name="Username" value="<?= $row['Sender'] ?>">
+                    </form>
+                    <hr>
+                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
+                    <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
+                </div>
+                <br>
+
+                <?php
+                if ($count1 == 3) :
+                    $count1 = 0; ?>
+                </div>
+                <br>
+            <?php endif;
+    endwhile ?>
+    <?PHP } ?>
