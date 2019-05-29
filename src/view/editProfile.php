@@ -18,7 +18,7 @@
     
 </head>
 
-<body background="editprof.jpg">
+<body>
     
 
 
