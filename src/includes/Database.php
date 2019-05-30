@@ -104,7 +104,7 @@ class Database
     public function EditCity($username, $city)
     {
         $city = mysqli_real_escape_string($this->connection, $city);
-        $sql = "UPDATE userlogin SET city='$city'
+        $sql = "UPDATE users SET city='$city'
         WHERE username='$username'";
         //"INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
         $result = mysqli_query($this->connection, $sql) or die("Data cannot Updated");
@@ -114,7 +114,7 @@ class Database
     public function EditPhone($username,$number)
     {
         $number = mysqli_real_escape_string($this->connection, $number);
-        $sql = "UPDATE userlogin SET MobileNumber='$number'
+        $sql = "UPDATE users SET MobileNumber='$number'
         WHERE username='$username'";
         //"INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
         $result = mysqli_query($this->connection, $sql) or die("Data cannot Updated");
