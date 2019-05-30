@@ -82,6 +82,7 @@ class User
     {
         $username = $_COOKIE['Username'];
         $check1 =  $this->database->FindUserName($username);
+        echo "dsddssd";
         $check2 = $this->database->FindEmail($email);
         if ($check1 && !($check2)) {
             //register the user ; username is available

@@ -39,6 +39,7 @@ $routes = [
     //Profile UI
     ['GET','/profile',function(){ViewController::CreateViewR('profile');}],
 
+
     //----------------------------offers related---------------------------------
 
     //Offer search UI
@@ -84,9 +85,10 @@ $routes = [
     ['POST','/RequestsIAcc',function(){AccountController::RequestsIAcc();}],
 
     //Displaying accepted requetst of user
-    ['POST','/MyAccRequests',function(){AccountController::MyAccRequests();}]
+    ['POST','/MyAccRequests',function(){AccountController::MyAccRequests();}],
 
-    
+    //Edit Profile
+    ['POST','/EditEmail',function(){AccountController::EditEmail();}]
     
 
 ]

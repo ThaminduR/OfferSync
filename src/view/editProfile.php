@@ -85,7 +85,7 @@
                         <li class="selected">
                             <div class="heading">
                                 <h1>Update Your Email</h1>
-                                <form class="text-center p-5" action="/AccountController" method="POST">
+                                <form class="text-center p-5" action="/EditEmail" method="POST">
                                     <!-- Card -->
                                     <div class="card">
                                         <!-- Card Content -->
