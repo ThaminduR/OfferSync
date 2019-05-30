@@ -22,7 +22,3 @@ function UserSignUp($username, $firstname, $lastname, $email, $gender, $city, $p
     }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4cd3ee7c75dec99172e2973d24f76e63db9fd511
