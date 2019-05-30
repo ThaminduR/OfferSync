@@ -262,4 +262,12 @@ class Database
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }
+
+    public function SentRequests($username)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT * FROM requests WHERE Sender ='$username' AND IsConfirmed=false";
+        $result = mysqli_query($this->connection, $sql);
+        return $result;
+    }
 }

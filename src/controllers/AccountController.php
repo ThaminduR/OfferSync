@@ -15,6 +15,13 @@ class AccountController extends Controller
         }
     }
 
+    public function ViewContact()
+    {
+        if (isset($_POST['Username'])) {
+            DisplayContact($_POST['Username']);
+        }
+    }
+
     public function ViewRequests()
     {
         DisplayRequests();
@@ -28,5 +35,10 @@ class AccountController extends Controller
     public function RequestsIAcc()
     {
         DisplayReqIAcc();
+     }
+
+     public function SentReq()
+    {
+        DisplaySentReq();
      }
 }

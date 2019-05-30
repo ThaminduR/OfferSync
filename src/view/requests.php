@@ -29,7 +29,7 @@
     </div>
     <!-- Modal -->
 
-    
+
     <div class="side-nav">
         <div class="list-group ">
             <a href="/" class="sideb list-group-item list-group-item-action waves-effect"><i class="fas fa-arrow-circle-left mr-2"></i>Home</a>
@@ -51,27 +51,34 @@
         <div class="container">
             <div class="col-12">
                 <div class="row-9">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link white black-text" id="newreq-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">New Requests</a>
+                    <ul class="nav nav-tabs md-tabs" id="myTab" role="tablist">
+                        <li class="nav-item mr-1">
+                            <a class="nav-link white black-text" id="newreq-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">New Requests</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link white black-text" id="myreq-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Accpeted Requests</a>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link white black-text" id="sent-tab" data-toggle="tab" href="#sent" role="tab" aria-controls="sent" aria-selected="false">Sent Requests</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link white black-text" id="ireq-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Requests I Accpeted</a>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link white black-text" id="myreq-tab" data-toggle="tab" href="#myacc" role="tab" aria-controls="myacc" aria-selected="false">My Accpeted Requests</a>
+                        </li>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link white black-text" id="ireq-tab white black-text" data-toggle="tab" href="#Iacc" role="tab" aria-controls="Iacc" aria-selected="false">Requests I Accpeted</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="newreq-tab">
+                        <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="newreq-tab">
                             <div id="result"></div>
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="myreq-tab">
+                        <div class="tab-pane fade" id="sent" role="tabpanel" aria-labelledby="sent-tab">
+                            <div id="result4"></div>
+                        </div>
+                        <div class="tab-pane fade" id="myacc" role="tabpanel" aria-labelledby="myreq-tab">
                             <div id="result2"></div>
                         </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="ireq-tab">
+                        <div class="tab-pane fade" id="Iacc" role="tabpanel" aria-labelledby="ireq-tab">
                             <div id="result3"></div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -127,9 +134,20 @@
             });
         }
 
+        function load_Sentrequests() {
+
+            $.post({
+                url: "/SentReq",
+                success: function(data) {
+                    $('#result4').html(data);
+                }
+            });
+        }
+
         load_requests();
         load_myrequests();
         load_Irequests();
+        load_Sentrequests();
 
         function Accept(id) {
             $.ajax({
@@ -143,6 +161,7 @@
                         load_requests();
                         load_myrequests();
                         load_Irequests();
+                        load_Sentrequests();
                     }
                 }
             });
@@ -160,6 +179,7 @@
                         load_requests();
                         load_myrequests();
                         load_Irequests();
+                        load_Sentrequests();
                     }
                 }
             });
@@ -169,6 +189,19 @@
             $.ajax({
                 type: "POST",
                 url: "/AccountView",
+                data: {
+                    Username: p
+                },
+                success: function(data) {
+                    $('#Acccontent').html(data);
+                }
+            });
+        }
+
+        function Contact(p) {
+            $.ajax({
+                type: "POST",
+                url: "/ContactView",
                 data: {
                     Username: p
                 },

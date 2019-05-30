@@ -25,7 +25,7 @@
             <div class="space"></div>
             <a href="/profile" class="sideb list-group-item list-group-item-action waves-effect">
                 <i class="fas fa-user mr-3"></i>Profile</a>
-            <a href="#" class="sideb list-group-item  list-group-item list-group-item-action waves-effect">
+            <a href="#" class="sideb list-group-item  list-group-item list-group-item-action waves-effect white black-text">
                 <i class="fas fa-hamburger mr-3"></i>My Offers</a>
             <a href="/requests" class="sideb list-group-item list-group-item-action waves-effect">
                 <i class="fas fa-user mr-3"></i>Requests</a>
@@ -39,9 +39,22 @@
     <div class="bg">
         <div class="container">
             <div class="col-12">
+                <div class="toast toastdel" style="position: absolute; top: 0; right: 0;" data-autohide="false">
+                    <div class="toast-header">
+                        <svg class="rounded mr-2" width="20" height="20" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                            <rect fill="#007aff" width="100%" height="100%" /></svg>
+                        <strong class="mr-auto">OfferSync</strong>
+                        <small></small>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="toast-body">
+                        Offer deleted !
+                    </div>
+                </div>
                 <div class="row-9">
                     <div id="result"></div>
-                    <div style="clear:both"></div>
                 </div>
             </div>
         </div>
@@ -69,15 +82,27 @@
         function load_offers() {
             $.post({
                 url: "/myoffers",
-                data: {
-                    Username: null
-                },
-                success: function (data) {
+                success: function(data) {
                     $('#result').html(data);
                 }
             });
         }
         load_offers();
+
+        function DeleteOffer(p) {
+            $.post({
+                url: "/deleteOffer",
+                data: {
+                    id: id
+                },
+                success: function(data) {
+                    $('.toastdel').toast('show');
+                    setTimeout(function() {
+                        $('.toastdel').toast('hide');
+                    }, 1000);
+                }
+            });
+        }
     </script>
 
 </body>
