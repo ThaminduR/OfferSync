@@ -82,3 +82,4 @@ function DisplaySentReq()
     $case = 4;
     require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';
 }
+

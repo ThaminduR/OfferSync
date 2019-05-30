@@ -45,6 +45,7 @@ $routes = [
     //Profile UI
     ['GET','/profile',function(){ViewController::CreateViewR('profile');}],
 
+
     //----------------------------offers related---------------------------------
 
     //Offer search UI
@@ -96,9 +97,16 @@ $routes = [
     ['POST','/SentReq',function(){AccountController::SentReq();}],
 
     //Displaying sent requests of user
-    ['GET','/Error',function(){ViewController::CreateView('ErrorPage');}]
+    ['GET','/Error',function(){ViewController::CreateView('ErrorPage');}],
 
-    
+    //Edit Profile
+    ['POST','/EditEmail',function(){AccountController::EditEmail();}],
+
+    ['POST','/EditPassword',function(){AccountController::EditPassword();}],
+
+    ['POST','/EditCity',function(){AccountController::EditCity();}],
+
+    ['POST','/EditNumber',function(){AccountController::EditNumber();}]
     
 
 ]

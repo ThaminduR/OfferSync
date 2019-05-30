@@ -94,7 +94,7 @@ class Database
     public function EditEmail($username, $email)
     {
         $email = mysqli_real_escape_string($this->connection, $email);
-        $sql = "UPDATE userlogin SET email='$email'
+        $sql = "UPDATE users SET email='$email'
         WHERE username='$username'";
         //"INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
         $result = mysqli_query($this->connection, $sql) or die("Data cannot Updated");
