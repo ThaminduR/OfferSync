@@ -3,6 +3,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/Database.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/Account/UserProfile.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/controllers/Controller.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/models/Account/User.php';
 
 
 
@@ -29,4 +30,21 @@ class AccountController extends Controller
     {
         DisplayReqIAcc();
      }
+
+
+    public function EditEmail(){
+
+    }
+
+    public function EditPassword(){
+
+    }
+
+    public function EditCity(){
+
+    }
+
+    public function EditNumber(){
+
+    }
 }

@@ -59,8 +59,9 @@ class User
     }
 
     //For Profile Edit
-    public function Edit_UserPW($username, $password)
+    public function Edit_UserPW($password)
     {
+        $username = $_COOKIE['Username'];
         //generating salt
         $salt = getSalt(25);
         //hashing pw with salt and pepper
@@ -77,8 +78,9 @@ class User
     }
 
 
-    public function EditUserMail($username, $email)
+    public function EditUserMail($email)
     {
+        $username = $_COOKIE['Username'];
         $check1 =  $this->database->FindUserName($username);
         $check2 = $this->database->FindEmail($email);
         if ($check1 && !($check2)) {
@@ -92,8 +94,9 @@ class User
         }
     }
 
-    public function EditUserCity($username, $city)
+    public function EditUserCity($city)
     {
+        $username = $_COOKIE['Username'];
         $check1 =  $this->database->FindUserName($username);
         if ($check1) {
             //register the user ; username is available
@@ -107,8 +110,9 @@ class User
     }
 
 
-    public function EditUserMobile($username, $number)
+    public function EditUserMobile($number)
     {
+        $username = $_COOKIE['Username'];
         $check1 =  $this->database->FindUserName($username);
         if ($check1) {
             //register the user ; username is available
