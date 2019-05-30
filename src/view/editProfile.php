@@ -98,9 +98,10 @@
                                             </div>
 
                                             <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
+                                        </div>
 
+                                    </div>
 
-                                       
                                 </form>
 
                             </div>
@@ -122,26 +123,30 @@
                                                 <span id="password-check"></span>
                                             </div>
                                             <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
-                                            </form>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </li>
 
                         <li>
                             <div class="heading">
                                 <h1>Update Your City</h1><br><br>
-                            <form class="text-center p-5" action="/EditCity" method="POST">
-                                <!-- Card -->
-                                <div class="card">
-                                    <!-- Card Content -->
-                                    <div class="card-body mb-2">
-                                        <div class="md-form">
-                                            <input name="city" type="text" id="city" class="form-control mb-4" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
-                                            <label for="city">City</label>
+                                <form class="text-center p-5" action="/EditCity" method="POST">
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <!-- Card Content -->
+                                        <div class="card-body mb-2">
+                                            <div class="md-form">
+                                                <input name="city" type="text" id="city" class="form-control mb-4" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                                                <label for="city">City</label>
 
+                                            </div>
                                         </div>
-                                        <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
+                                    </div>
+                                    <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
 
-                                        </form>
+                                </form>
                             </div>
                         </li>
 
@@ -149,24 +154,25 @@
                             <div class="heading">
                                 <h1>Update Phone Number</h1><br><br>
 
-                            
-                            <form class="text-center p-5" action="/EditNumber" method="POST">
-                                <!-- Card -->
-                                <div class="card">
-                                    <!-- Card Content -->
-                                    <div class="card-body mb-2">
-                            <div class="md-form">
-                                    <input name="number" type="text" onblur="checknum()" id="number"
-                                        class="form-control mb-4" aria-describedby="defaultRegisterFormPhoneHelpBlock"
-                                        required>
-                                    <label for="number">Phone Number</label>
-                                    <span id="number-check"></span>
-                                </div>
-                                <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
+
+                                <form class="text-center p-5" action="/EditNumber" method="POST">
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <!-- Card Content -->
+                                        <div class="card-body mb-2">
+                                            <div class="md-form">
+                                                <input name="number" type="text" onblur="checknum()" id="number" class="form-control mb-4" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                                                <label for="number">Phone Number</label>
+                                                <span id="number-check"></span>
+                                            </div>
+                                            <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
+
+                                        </div>
+                                    </div>
 
                                 </form>
 
-                        
+
 
                         </li>
 
