@@ -16,7 +16,7 @@ function SearchOffers()
     if (isset($_POST["searchText"])) {
         $search = $_POST["searchText"];
         $connection = Database::getDBconnection();
-        if (isset($username)) {
+        if (isset($_COOKIE['Username'])) {
             $username = $_COOKIE['Username'];
         } else {
             $username = null;
