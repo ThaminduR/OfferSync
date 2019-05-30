@@ -71,7 +71,9 @@ class User
         if ($check1) {
 
             $result1 = $this->database->EditLoginData($username, $hpassword, $salt);
-            return $result1;
+            header("Refresh: 0; url=/");
+            $message = "Password Change Successful. Please login to your account";
+            echo "<script type='text/javascript'>alert('$message');</script>";
         } else {
             return false;
         }
