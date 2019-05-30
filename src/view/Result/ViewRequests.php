@@ -47,12 +47,12 @@
                     <button style="padding: 0; border: none; background: none; color:gray;" data-toggle="modal" data-target="#modalAvatar" onclick="ViewAcc(<?= '\'' . $row['Sender'] . '\'' ?>)">
                         View Profile</button>
                     <hr>
-                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
+                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferID"] ?></p>
                     <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
                     <hr>
-                    <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Accept(<?= '\'' . $row['OfferId'] . '\'' ?>)">Accept Request
+                    <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Accept(<?= '\'' . $row['OfferID'] . '\'' ?>)">Accept Request
                             <i class="far fa-paper-plane ml-2"></i></a></p>
-                    <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Decline(<?= '\'' . $row['OfferId'] . '\'' ?>)">Decline Request
+                    <p><a class="btn btn-outline-black like" style="cursor: pointer;" onclick="Decline(<?= '\'' . $row['OfferID'] . '\'' ?>)">Decline Request
                             <i class="far fa-paper-plane ml-2"></i></a></p>
                 </div>
                 <br>
@@ -84,7 +84,7 @@
                     <button style="padding: 0; border: none; background: none; color:black;" data-toggle="modal" data-target="#modalAvatar" onclick="Contact(<?= '\'' . $row['Sender'] . '\'' ?>)">
                         <i class="fas fa-phone mr-2"></i>Contact</button>
                     <hr>
-                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
+                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferID"] ?></p>
                     <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
                 </div>
                 <br>
@@ -115,7 +115,7 @@
                     <button style="padding: 0; border: none; background: none; color:black;" data-toggle="modal" data-target="#modalAvatar" onclick="Contact(<?= '\'' . $row['Receiver'] . '\'' ?>)">
                         <i class="fas fa-phone mr-2"></i>Contact</button>
                     <hr>
-                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
+                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferID"] ?></p>
                     <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
                 </div>
                 <br>
@@ -143,7 +143,7 @@
                     <button style="padding: 0; border: none; background: none; color:gray;" data-toggle="modal" data-target="#modalAvatar" onclick="ViewAcc(<?= '\'' . $row['Receiver'] . '\'' ?>)">
                         View Profile</button>
                     <hr>
-                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
+                    <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferID"] ?></p>
                     <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
                 </div>
                 <br>
