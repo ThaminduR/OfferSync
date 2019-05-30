@@ -121,15 +121,6 @@ class Database
         return $result;
     }
 
-
-
-
-
-
-
-
-
-
     //to find a certain user from username 
     public function FindUserDetail($username)
     {
@@ -183,19 +174,6 @@ class Database
         return $finalOffer;
     }
 
-    //get posts to profile..........DELEEEEEEETEEEEEE
-    public function GetPosts($username)
-    {
-
-        $sql = "SELECT * FROM offers WHERE Username ='$username'";
-        $result = mysqli_query($this->connection, $sql);
-        $offers = array();
-        while ($offer = mysqli_fetch_array($result)) {
-            $offers[] = $offer;
-        }
-        return $offers;
-    }
-
     //------------------------------------------Fetch Search Results from the databse---------------------------------------------
     public function FetchOffer($search,$username)
     {
@@ -214,6 +192,14 @@ class Database
     {
         $search = mysqli_real_escape_string($this->connection, $search);
         $query = "SELECT * FROM offers WHERE Username ='$search'";
+        $result = mysqli_query($this->connection, $query);
+        return $result;
+    }
+
+    public function DeleteOffers($sender,$id)
+    {
+        $id = mysqli_real_escape_string($this->connection, $id);
+        $query = "DELETE FROM offers WHERE Username ='$sender' AND OfferID='$id'";
         $result = mysqli_query($this->connection, $query);
         return $result;
     }

@@ -40,7 +40,7 @@ class RequestController extends Controller
         }
     }
 
-    //------------------------------------------ Offers Searching ---------------------------
+    //------------------------------------------ Offers ---------------------------
 
     //Searching offers from search page
     public function SearchOffers()
@@ -48,6 +48,14 @@ class RequestController extends Controller
         if (isset($_POST['searchText'])) {
             $search = $_POST['searchText'];
             SearchOffers();
+        }
+    }
+
+    public function DeleteOffers()
+    {
+        if (isset($_POST['id'])) {
+            $id = $_POST['id'];
+            DeleteOff($id);
         }
     }
 
