@@ -80,15 +80,15 @@ class User
 
     public function EditUserMail($email)
     {
-        $username = $_COOKIE['Username'];
-        $check1 =  $this->database->FindUserName($username);
+        
+        $check1 =  $this->database->FindUserName($this->name);
         $check2 = $this->database->FindEmail($email);
         if ($check1 && !($check2)) {
             //register the user ; username is available
 
-            $result1 = $this->database->EditEmail($username, $email);
+            $result1 = $this->database->EditEmail($this->name, $email);
 
-            return $result1;
+            
         } else {
             return false;
         }
@@ -96,12 +96,12 @@ class User
 
     public function EditUserCity($city)
     {
-        $username = $_COOKIE['Username'];
-        $check1 =  $this->database->FindUserName($username);
+        
+        $check1 =  $this->database->FindUserName($this->name);
         if ($check1) {
             //register the user ; username is available
 
-            $result1 = $this->database->EditCity($username, $city);
+            $result1 = $this->database->EditCity($this->name, $city);
 
             return $result1;
         } else {
@@ -112,12 +112,12 @@ class User
 
     public function EditUserMobile($number)
     {
-        $username = $_COOKIE['Username'];
-        $check1 =  $this->database->FindUserName($username);
+       
+        $check1 =  $this->database->FindUserName($this->name);
         if ($check1) {
             //register the user ; username is available
 
-            $result1 = $this->database->EditPhone($username, $number);
+            $result1 = $this->database->EditPhone($this->name, $number);
 
             return $result1;
         } else {

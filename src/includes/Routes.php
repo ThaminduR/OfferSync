@@ -33,6 +33,9 @@ $routes = [
     //display a certain user
     ['POST','/AccountView',function(){AccountController::ViewAccount();}],
 
+    //display profile of user
+    ['POST','/MyProfile',function(){AccountController::MyProfile();}],
+
     //Display a certain user's contact detials
     ['POST','/ContactView',function(){AccountController::ViewContact();}],
 
@@ -41,6 +44,7 @@ $routes = [
 
     //Profile UI
     ['GET','/profile',function(){ViewController::CreateViewR('profile');}],
+
 
     //----------------------------offers related---------------------------------
 
@@ -93,9 +97,16 @@ $routes = [
     ['POST','/SentReq',function(){AccountController::SentReq();}],
 
     //Displaying sent requests of user
-    ['GET','/Error',function(){ViewController::CreateView('ErrorPage');}]
+    ['GET','/Error',function(){ViewController::CreateView('ErrorPage');}],
 
-    
+    //Edit Profile
+    ['POST','/EditEmail',function(){AccountController::EditEmail();}],
+
+    ['POST','/EditPassword',function(){AccountController::EditPassword();}],
+
+    ['POST','/EditCity',function(){AccountController::EditCity();}],
+
+    ['POST','/EditNumber',function(){AccountController::EditNumber();}]
     
 
 ]
