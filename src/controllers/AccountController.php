@@ -33,18 +33,29 @@ class AccountController extends Controller
 
 
     public function EditEmail(){
+        $email = $_POST['email'];
+
+        EditUserMail($email);
+        
+        
 
     }
 
     public function EditPassword(){
+        $password = $_POST['password'];
+        Edit_UserPW($password);
 
     }
 
     public function EditCity(){
+        $city = $_POST['city'];
+        EditUserCity($city);
 
     }
 
     public function EditNumber(){
+        $number = $_POST['number'];
+        EditUserMobile($number);
 
     }
 }
