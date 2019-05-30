@@ -38,12 +38,10 @@ class AccountController extends Controller
         DisplayReqIAcc();
      }
 
-<<<<<<< HEAD
      public function SentReq()
     {
         DisplaySentReq();
      }
-=======
 
     public function EditEmail(){
         $email = $_POST['email'];
@@ -71,5 +69,4 @@ class AccountController extends Controller
         EditUserMobile($number);
 
     }
->>>>>>> 4532245c3faf0ca962010f3c16c670f1e1d31cfa
 }
