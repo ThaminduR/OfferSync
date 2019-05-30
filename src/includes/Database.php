@@ -91,6 +91,44 @@ class Database
         return $result;
     }
 
+    public function EditEmail($username, $email)
+    {
+        $email = mysqli_real_escape_string($this->connection, $email);
+        $sql = "UPDATE userlogin SET email='$email'
+        WHERE username='$username'";
+        //"INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
+        $result = mysqli_query($this->connection, $sql) or die("Data cannot Updated");
+        return $result;
+    }
+
+    public function EditCity($username, $city)
+    {
+        $city = mysqli_real_escape_string($this->connection, $city);
+        $sql = "UPDATE userlogin SET city='$city'
+        WHERE username='$username'";
+        //"INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
+        $result = mysqli_query($this->connection, $sql) or die("Data cannot Updated");
+        return $result;
+    }
+
+    public function EditPhone($username,$number)
+    {
+        $number = mysqli_real_escape_string($this->connection, $number);
+        $sql = "UPDATE userlogin SET MobileNumber='$number'
+        WHERE username='$username'";
+        //"INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
+        $result = mysqli_query($this->connection, $sql) or die("Data cannot Updated");
+        return $result;
+    }
+
+
+
+
+
+
+
+
+
 
     //to find a certain user from username 
     public function FindUserDetail($username)
