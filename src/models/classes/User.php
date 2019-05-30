@@ -75,7 +75,7 @@ class User
             $message = "Password Change Successful. Please login to your account";
             echo "<script type='text/javascript'>alert('$message');</script>";
         } else {
-            return false;
+            header("Refresh: 0; url=/Error");
         }
     }
 
@@ -89,10 +89,13 @@ class User
             //register the user ; username is available
 
             $result1 = $this->database->EditEmail($this->name, $email);
+            header("Refresh: 0; url=/Edit");
+            $message = "Email Changes Successful.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
 
             
         } else {
-            return false;
+            header("Refresh: 0; url=/Error");
         }
     }
 
@@ -104,10 +107,11 @@ class User
             //register the user ; username is available
 
             $result1 = $this->database->EditCity($this->name, $city);
-
-            return $result1;
+            header("Refresh: 0; url=/Edit");
+            $message = "City Changes Successful.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
         } else {
-            return false;
+            header("Refresh: 0; url=/Error");
         }
     }
 
@@ -120,10 +124,11 @@ class User
             //register the user ; username is available
 
             $result1 = $this->database->EditPhone($this->name, $number);
-
-            return $result1;
+            header("Refresh: 0; url=/Edit");
+            $message = "Mobile Number Changes Successful.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
         } else {
-            return false;
+            header("Refresh: 0; url=/Error");
         }
     }
 }
