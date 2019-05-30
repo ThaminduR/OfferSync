@@ -1,3 +1,12 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/Database.php';
+
+$connection = Database::getDBconnection();
+$username = $_COOKIE['Username'];
+$user = $connection->FetchUser($username);
+echo $user['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,9 +35,6 @@
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-
-
     <div class="side-nav">
         <div class="list-group ">
             <a href="/" class="sideb list-group-item list-group-item-action waves-effect"><i class="fas fa-arrow-circle-left mr-2"></i>Home</a>
@@ -46,15 +52,21 @@
         <a href="/Logout " class="sideb list-group-item list-group-item-action waves-effect ">
             <i class="fas fa-sign-out-alt mr-3 "></i>Logout</a>
     </div>
+    <div class="card">
 
+        <div class="modal-header" center>
+            <img src="data:image/jpeg;base64,<?php echo base64_encode($user['photo']); ?>" alt="Avatar" style="width:100%">
+        </div>
+        <!--Body-->
+        <div class="modal-body text-center mb-1">
 
+            <h3 class="mt-1 mb-1 black-text"><?= $user["username"] ?> </h3>
+            <hr>
+            <p class="black-text">Gender :<?= $user["gender"] ?></p>
+            <p class="mt-1 black-text">City : <?= $user["city"] ?> </p>
 
-    <div class="container " style="align-items: center ">
-        <div id="Acccontent"></div>
+        </div>
     </div>
-
-
-
 
 
 
