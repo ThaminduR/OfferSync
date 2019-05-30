@@ -50,12 +50,7 @@
 
 
     <div class="container " style="align-items: center ">
-        <div class="modal fade" id="modalAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-            <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
-                <div class="modal-content" id="Acccontent">
-                </div>
-            </div>
-        </div>
+        <div id="Acccontent"></div>
     </div>
 
 
@@ -87,16 +82,12 @@
         function ViewAcc(p) {
             $.ajax({
                 type: "POST",
-                url: "/AccountView",
-                data: {
-                    Username: p
-                },
+                url: "/MyProfile",
                 success: function(data) {
                     $('#Acccontent').html(data);
                 }
             });
         }
-        ViewAcc(<?= '\'' . $_COOKIE['Username'] . '\'' ?>);
     </script>
 </body>
 

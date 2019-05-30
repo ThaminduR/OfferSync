@@ -16,6 +16,13 @@ class AccountController extends Controller
         }
     }
 
+    public function MyProfile()
+    {
+        if (isset($_POST['Username'])) {
+            ViewMyProfile($_POST['Username']);
+        }
+    }
+
     public function ViewContact()
     {
         if (isset($_POST['Username'])) {
