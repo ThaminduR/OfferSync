@@ -93,13 +93,14 @@
             $.post({
                 url: "/deleteOffer",
                 data: {
-                    id: id
+                    id: p
                 },
                 success: function(data) {
                     $('.toastdel').toast('show');
                     setTimeout(function() {
                         $('.toastdel').toast('hide');
                     }, 1000);
+                    load_offers();
                 }
             });
         }
