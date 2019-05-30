@@ -73,6 +73,8 @@
                         <div class="form-group">
                             <div class="input-group text-center">
                                 <input type="text" name="search_text" id="search_text" placeholder="Search by Restaurant" class="form-control" />
+                                <input type="text" name="city" id="city" placeholder="Search by City" class="form-control" />
+                       
                             </div>
                         </div>
                     </div>
@@ -125,6 +127,15 @@
             }
 
             $('#search_text').keyup(function() {
+                var search = $(this).val();
+                if (search != '') {
+                    load_data(search);
+                } else {
+                    load_data();
+                }
+            });
+            
+            $('#city').keyup(function() {
                 var search = $(this).val();
                 if (search != '') {
                     load_data(search);
