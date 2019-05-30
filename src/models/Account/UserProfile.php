@@ -7,6 +7,13 @@ function DisplayUser($username)
     require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/AccountView.php';
 }
 
+function ViewMyProfile($username)
+{
+    $connection = Database::getDBconnection();
+    $user = $connection->FetchUser($username);
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ProfileView.php';
+}
+
 function DisplayContact($username)
 {
     $connection = Database::getDBconnection();

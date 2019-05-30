@@ -33,6 +33,9 @@ $routes = [
     //display a certain user
     ['POST','/AccountView',function(){AccountController::ViewAccount();}],
 
+    //display profile of user
+    ['POST','/MyProfile',function(){AccountController::MyProfile();}],
+
     //Display a certain user's contact detials
     ['POST','/ContactView',function(){AccountController::ViewContact();}],
 
