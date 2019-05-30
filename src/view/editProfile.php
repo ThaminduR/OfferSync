@@ -131,7 +131,7 @@
 
                         <li>
                             <div class="heading">
-                                <h1>Update Your City</h1><br><br>
+                                <h1>Update Your City</h1>
                                 <form class="text-center p-5" action="/EditCity" method="POST">
                                     <!-- Card -->
                                     <div class="card">
@@ -140,9 +140,10 @@
                                             <div class="md-form">
                                                 <input name="city" type="text" id="city" class="form-control mb-4" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
                                                 <label for="city">City</label>
+                                                
 
-                                            </div>
-                                        </div>
+                                            
+                                        
                                     </div>
                                     <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
 
