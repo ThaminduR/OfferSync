@@ -198,6 +198,14 @@ class Database
         return $result;
     }
 
+    public function DeleteOffers($sender,$id)
+    {
+        $id = mysqli_real_escape_string($this->connection, $id);
+        $query = "DELETE FROM offers WHERE Username ='$sender' AND OfferID='$id'";
+        $result = mysqli_query($this->connection, $query);
+        return $result;
+    }
+
 
     //------------------------------------------Fetch User Details from the databse---------------------------------------------
     public function FetchUser($username)

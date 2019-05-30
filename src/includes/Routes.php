@@ -60,6 +60,9 @@ $routes = [
     //Retrieve the offer related to keyword
     ['POST','/fetch',function(){RequestController::SearchOffers();}],
 
+    //Delete Offer
+    ['POST','/deleteOffer',function(){RequestController::DeleteOffers();}],
+
     //-------------------------------Validation----------------------------------
 
     ['POST','/checkUsername',function(){RequestController::checkUsername();}],
