@@ -6,7 +6,7 @@ function Post_Offer($restaurant, $offer, $price, $restaurantbranch, $date, $city
 {
     $database = Database::getDbConnection();
     $username = $_COOKIE['Username'];
-    $Offer=new Offer($username, $city, $offer, $restaurant, $price, $gender, $restaurantbranch, $date);
+    $Offer=OfferFactory::create($username, $city, $offer, $restaurant, $price, $gender, $restaurantbranch, $date);
     $Offer->Post($database);
  }
  

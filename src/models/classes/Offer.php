@@ -30,7 +30,11 @@ class Offer
         $offers = $database->PostOffer($this->Username, $this->Restaurant, $this->Offer, $this->Price, $this->RestaurantBranch, $this->Date, $this->City, $this->Gender);
         header("location:/");
     }
+}
 
-    public function Search()
-    { }
+Class OfferFactory{
+    public static function create ($Username, $City, $Offer, $Restaurant, $Price, $Gender, $RestaurantBranch, $Date)
+    {
+        return new Offer($Username, $City, $Offer, $Restaurant, $Price, $Gender, $RestaurantBranch, $Date);
+    }
 }
