@@ -37,7 +37,7 @@ class User
         }
     }
     //For Registration
-    public function Reg_User($username, $firstname, $lastname, $email, $gender, $city, $password,$number)
+    public function Reg_User($username, $firstname, $lastname, $email, $gender, $city, $password, $number)
     {
         //generating salt
         $salt = getSalt(25);
@@ -48,9 +48,9 @@ class User
         $check2 = $this->database->FindEmail($email);
         if (!($check1 && $check2)) {
             //register the user ; username is available
-            
-            $result1 = $this->database->InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city,$number);
-            
+
+            $result1 = $this->database->InsertUserDetail($username, $firstname, $lastname, $gender, $email, $city, $number);
+
             $result2 = $this->database->InsertLoginData($username, $hpassword, $salt);
             return $result1;
         } else {
@@ -59,25 +59,69 @@ class User
     }
 
     //For Profile Edit
-    public function Edit_User($username,$email,$city, $password,$number)
+    public function Edit_UserPW($password)
     {
+        $username = $_COOKIE['Username'];
         //generating salt
         $salt = getSalt(25);
         //hashing pw with salt and pepper
         $hpassword = base64_encode(hash('sha256', "$username.$password.$salt.$this->pepper", true));
         //checking for existing username
         $check1 =  $this->database->FindUserName($username);
+        if ($check1) {
+
+            $result1 = $this->database->EditLoginData($username, $hpassword, $salt);
+            return $result1;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function EditUserMail($email)
+    {
+        $username = $_COOKIE['Username'];
+        $check1 =  $this->database->FindUserName($username);
         $check2 = $this->database->FindEmail($email);
+        if ($check1 && !($check2)) {
+            //register the user ; username is available
+
+            $result1 = $this->database->EditEmail($username, $email);
+
+            return $result1;
+        } else {
+            return false;
+        }
+    }
+
+    public function EditUserCity($city)
+    {
+        $username = $_COOKIE['Username'];
+        $check1 =  $this->database->FindUserName($username);
         if ($check1) {
             //register the user ; username is available
-            
-            $result1 = $this->database->EditUserDetail($username,$email, $city,$number);
-            
-            $result2 = $this->database->EditLoginData($username,$hpassword, $salt);
+
+            $result1 = $this->database->EditCity($username, $city);
+
+            return $result1;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function EditUserMobile($number)
+    {
+        $username = $_COOKIE['Username'];
+        $check1 =  $this->database->FindUserName($username);
+        if ($check1) {
+            //register the user ; username is available
+
+            $result1 = $this->database->EditPhone($username, $number);
+
             return $result1;
         } else {
             return false;
         }
     }
 }
-

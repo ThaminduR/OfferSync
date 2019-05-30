@@ -33,13 +33,13 @@
 
     <div class="side-nav">
         <div class="list-group ">
-        
+
             <a href="/" class="sideb list-group-item list-group-item-action waves-effect"><i class="fas fa-arrow-circle-left mr-2"></i>Home</a>
             <div class="space"></div>
             <a href="" class="sideb list-group-item list-group-item-action white black-text">
                 <i class="fas fa-user mr-3"></i>Profile</a>
 
-            <a href="/posts" id= offers class="sideb list-group-item list-group-item-action waves-effect" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
+            <a href="/posts" id=offers class="sideb list-group-item list-group-item-action waves-effect" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
                 <i class="fas fa-hamburger mr-3"></i>My Offers</a>
 
             <a href="/requests " class="sideb list-group-item list-group-item-action waves-effect ">
@@ -85,6 +85,24 @@
                         <li class="selected">
                             <div class="heading">
                                 <h1>Update Your Email</h1>
+                                <form class="text-center p-5" action="/AccountController" method="POST">
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <!-- Card Content -->
+                                        <div class="card-body mb-2">
+
+                                            <div class="md-form">
+                                                <input name="email" onblur="checkemail()" type="email" id="email" class="form-control mb-4" required>
+                                                <label for="email">Email</label>
+                                                <span id="email-check"></span>
+                                            </div>
+
+                                            <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
+
+
+                                        </div>
+                                    </div>
+                                </form>
 
                             </div>
 
@@ -93,23 +111,58 @@
                         <li>
                             <div class="heading">
                                 <h1>Update Your Password</h1>
-
-                            </div>
+                                <form class="text-center p-5" action="/RegisterController" method="POST">
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <!-- Card Content -->
+                                        <div class="card-body mb-2">
+                                            <div class="md-form">
+                                                <input name="password" type="password" onblur="checkpw()" id="password" class="form-control mb-4" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+                                                <label for="paasword">Password</label>
+                                                <span id="password-check"></span>
+                                            </div>
+                                            <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
 
                         </li>
 
                         <li>
                             <div class="heading">
-                                <h1>Update Your City</h1>
-                            </div>
+                                <h1>Update Your City</h1><br><br>
+                            <form class="text-center p-5" action="/RegisterController" method="POST">
+                                <!-- Card -->
+                                <div class="card">
+                                    <!-- Card Content -->
+                                    <div class="card-body mb-2">
+                                        <div class="md-form">
+                                            <input name="city" type="text" id="city" class="form-control mb-4" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                                            <label for="city">City</label>
+
+                                        </div>
+                                        <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
+
 
                         </li>
 
                         <li>
                             <div class="heading">
-                                <h1>Update Phone Number</h1>
+                                <h1>Update Phone Number</h1><br><br>
 
-                            </div>
+                            
+                            <form class="text-center p-5" action="/RegisterController" method="POST">
+                                <!-- Card -->
+                                <div class="card">
+                                    <!-- Card Content -->
+                                    <div class="card-body mb-2">
+                            <div class="md-form">
+                                    <input name="number" type="text" onblur="checknum()" id="number"
+                                        class="form-control mb-4" aria-describedby="defaultRegisterFormPhoneHelpBlock"
+                                        required>
+                                    <label for="number">Phone Number</label>
+                                    <span id="number-check"></span>
+                                </div>
+                                <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
+
+
 
                         <li>
 

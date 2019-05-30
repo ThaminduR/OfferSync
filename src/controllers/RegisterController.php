@@ -16,20 +16,6 @@ class RegisterController extends Controller
         $password = $_POST['password'];
         UserSignUp($username,$firstname,$lastname,$email,$gender,$city,$password,$number);
     }
-
-    public function EditProfile()
-    {   
-        
-        $email = $_POST['email'];
-        $city = $_POST['city'];
-        $number = $_POST['number'];
-        $password = $_POST['password'];
-        UserEdit($email,$city,$password,$number);
-    }
-
-
-
-
 }
 
 ?>
