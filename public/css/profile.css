@@ -215,6 +215,7 @@ body {
     background-size: cover;
     height: auto !important;
     border-bottom: 8px solid #ffffff;
+    margin-bottom: 20%;
 }
 
 .space {
@@ -248,8 +249,9 @@ body {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    max-width: 30% !important;
     margin: auto;
     text-align: center;
     font-family: arial;
+    
 }
