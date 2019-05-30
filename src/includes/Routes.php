@@ -93,6 +93,9 @@ $routes = [
     //Displaying sent requests of user
     ['POST','/SentReq',function(){AccountController::SentReq();}],
 
+    //Displaying sent requests of user
+    ['GET','/Error',function(){ViewController::CreateView('ErrorPage');}]
+
     //Edit Profile
     ['POST','/EditEmail',function(){AccountController::EditEmail();}],
 

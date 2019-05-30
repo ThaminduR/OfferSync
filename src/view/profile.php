@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -36,7 +36,7 @@
             <a href="" class="sideb list-group-item list-group-item-action white black-text">
                 <i class="fas fa-user mr-3"></i>Profile</a>
 
-            <a href="/posts" id= offers class="sideb list-group-item list-group-item-action waves-effect" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
+            <a href="/posts" id=offers class="sideb list-group-item list-group-item-action waves-effect" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
                 <i class="fas fa-hamburger mr-3"></i>My Offers</a>
 
             <a href="/requests " class="sideb list-group-item list-group-item-action waves-effect ">
@@ -50,74 +50,54 @@
 
 
     <div class="container " style="align-items: center ">
-        <header>
-            <div class="bio ">
-                <img src="/img/profcvr.jpg ">
-                <div class="desc ">
+        <div class="modal fade" id="modalAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+            <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+                <div class="modal-content" id="Acccontent">
                 </div>
             </div>
-
-            <div class="avatarcontainer ">
-                <img src="http://www.croop.cl/UI/twitter/images/carl.jpg " alt="avatar " class="avatar ">
-                <div class="hover ">
-
-                </div>
-            </div>
-
-
-        </header>
-
-        <div class="content " style="align-self: center ">
-            <div class="data " style="align-items: center ">
-                <div class=" ">
-                    <ul>
-                        <li>
-                            6
-
-                            <span>Posts</span>
-                        </li>
-                        <li>
-                            5
-                            <span>Requests</span>
-                        </li>
-                        <li>
-                            96.7%
-                            <span>Rating</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="edit ">
-                    <a href="/Edit"> Edit Profile</a>
-                </div>
-
-            </div>
-
         </div>
+    </div>
 
 
 
 
 
-        <!-- Footer-->
-        <footer class="page-footer fixed-bottom font-small black ">
-            <div class="footer-copyright text-center py-3 ">© 2019 Copyright:
-                <a href="/ "> OfferSync.com</a>
-            </div>
-        </footer>
-        <!--/.Footer -->
 
-        <!-- SCRIPTS -->
-        <!-- JQuery -->
-        <script type="text/javascript " src="js/jquery-3.4.0.min.js "></script>
-        <!-- Bootstrap tooltips -->
-        <script type="text/javascript " src="js/popper.min.js "></script>
-        <!-- Bootstrap core JavaScript -->
-        <script type="text/javascript " src="js/bootstrap.min.js "></script>
-        <!-- MDB core JavaScript -->
-        <script type="text/javascript " src="js/mdb.min.js "></script>
-        <!-- Initializations -->
-           
+
+    <!-- Footer-->
+    <footer class="page-footer fixed-bottom font-small black ">
+        <div class="footer-copyright text-center py-3 ">© 2019 Copyright:
+            <a href="/ "> OfferSync.com</a>
+        </div>
+    </footer>
+    <!--/.Footer -->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript " src="js/jquery-3.4.0.min.js "></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript " src="js/popper.min.js "></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript " src="js/bootstrap.min.js "></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript " src="js/mdb.min.js "></script>
+    <!-- Initializations -->
+
+    <script>
+        function ViewAcc(p) {
+            $.ajax({
+                type: "POST",
+                url: "/AccountView",
+                data: {
+                    Username: p
+                },
+                success: function(data) {
+                    $('#Acccontent').html(data);
+                }
+            });
+        }
+        ViewAcc(<?= '\'' . $_COOKIE['Username'] . '\'' ?>);
+    </script>
 </body>
 
 </html>
