@@ -85,16 +85,46 @@
                         <li class="selected">
                             <div class="heading">
                                 <h1>Update Your Email</h1>
+                                <form class="text-center p-5" action="/RegisterController" method="POST">
+                        <!-- Card -->
+                        <div class="card">
+                            <!-- Card Content -->
+                            <div class="card-body mb-2">
+
+                                <div class="md-form">
+                                    <input name="email" onblur="checkemail()" type="email" id="email"
+                                        class="form-control mb-4" required>
+                                    <label for="email">Email</label>
+                                    <span id="email-check"></span>
+                                </div>
+
+                                <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
+                                
+                                
+                            </div>
+                        </div>
+                    </form>
 
                             </div>
 
 
 
                         <li>
-                            <div class="heading">
+                            <div class="heading" >
                                 <h1>Update Your Password</h1>
-
-                            </div>
+                                <form class="text-center p-5" action="/RegisterController" method="POST">
+                        <!-- Card -->
+                        <div class="card">
+                            <!-- Card Content -->
+                            <div class="card-body mb-2">
+                            <div class="md-form">
+                                    <input name="password" type="password" onblur="checkpw()" id="password"
+                                        class="form-control mb-4"
+                                        aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+                                    <label for="paasword">Password</label>
+                                    <span id="password-check"></span>
+                                </div>
+                            <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
 
                         </li>
 

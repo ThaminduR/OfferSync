@@ -1,5 +1,6 @@
 body {
     background: url("/img/Search.jpg")no-repeat center center fixed;
+    overflow: hidden;
 }
 
 .bg {
