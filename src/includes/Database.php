@@ -54,7 +54,7 @@ class Database
         $city = mysqli_real_escape_string($this->connection, $city);
         $number = mysqli_real_escape_string($this->connection, $number);
         $sql = "INSERT INTO users SET username='$username', firstname='$firstname', lastname='$lastname', city='$city', gender='$gender', email='$email', MobileNumber='$number'";
-        $result = mysqli_query($this->connection, $sql);
+        $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $result;
     }
     //Edit user registration details.
