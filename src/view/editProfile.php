@@ -118,8 +118,10 @@
                                         <!-- Card Content -->
                                         <div class="card-body mb-2">
                                             <div class="md-form">
-                                                <input name="password" type="password" onblur="checkpw()" id="password" class="form-control mb-4" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
-                                                <label for="paasword">Password</label>
+                                                <input name="password" onblur="checkpw()" 
+                                                type="password"  id="password" class="form-control mb-4" 
+                                                aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+                                                <label for="password">Password</label>
                                                 <span id="password-check"></span>
                                             </div>
                                             <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
