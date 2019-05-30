@@ -125,7 +125,7 @@ class Database
     public function FindUserDetail($username)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
-        $sql = "SELECT * FROM users WHERE username='$username'";
+        $sql = "SELECT * FROM userlogin WHERE username='$username'";
         $result = mysqli_query($this->connection, $sql);
         $user_data = mysqli_fetch_array($result);
         echo 'Testt';
