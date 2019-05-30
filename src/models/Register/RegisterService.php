@@ -22,5 +22,3 @@ function UserSignUp($username, $firstname, $lastname, $email, $gender, $city, $p
     }
 }
 
-
-}
