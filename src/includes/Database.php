@@ -121,15 +121,6 @@ class Database
         return $result;
     }
 
-
-
-
-
-
-
-
-
-
     //to find a certain user from username 
     public function FindUserDetail($username)
     {
