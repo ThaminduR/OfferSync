@@ -39,7 +39,7 @@ echo $user['username'];
         <div class="list-group ">
             <a href="/" class="sideb list-group-item list-group-item-action waves-effect"><i class="fas fa-arrow-circle-left mr-2"></i>Home</a>
             <div class="space"></div>
-            <a href="" class="sideb list-group-item list-group-item-action white black-text">
+            <a href="/profile" class="sideb list-group-item list-group-item-action white black-text">
                 <i class="fas fa-user mr-3"></i>Profile</a>
 
             <a href="/posts" id=offers class="sideb list-group-item list-group-item-action waves-effect" method="GET" class="sideb list-group-item list-group-item list-group-item-action waves-effect ">
@@ -62,8 +62,11 @@ echo $user['username'];
 
             <h3 class="mt-1 mb-1 black-text"><?= $user["username"] ?> </h3>
             <hr>
-            <p class="black-text">Gender :<?= $user["gender"] ?></p>
+            <p class="black-text">Gender : <?= $user["gender"] ?></p>
             <p class="mt-1 black-text">City : <?= $user["city"] ?> </p>
+            <p class="mt-1 black-text">Number : <?= $user["MobileNumber"] ?> </p>
+            <p class="mt-1 black-text">Email : <?= $user["email"] ?> </p>
+            <a class="btn-outline-black btn-lg" href="/Edit" >Edit Profile</a>
 
         </div>
     </div>
