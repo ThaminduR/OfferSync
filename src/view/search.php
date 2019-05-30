@@ -18,7 +18,12 @@
 
 <body>
     <!-- Modal -->
-
+    <div class="modal fade" id="modalAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+            <div class="modal-content" id="Acccontent">
+            </div>
+        </div>
+    </div>
     <!-- Modal -->
     <nav class="navbar navbar-expand-lg  fixed-top navbar-dark black scrolling-navbar">
         <div class="container">
@@ -140,12 +145,29 @@
                 success: function(data) {
                     if (data == 'failed') {
                         $('.toastfail').toast('show');
-                        setTimeout(function(){$('.toastfail').toast('hide');}, 1000);
+                        setTimeout(function() {
+                            $('.toastfail').toast('hide');
+                        }, 1000);
                     } else {
                         $('.toastsuc').toast('show');
-                        setTimeout(function(){$('.toastsuc').toast('hide');}, 1000);
+                        setTimeout(function() {
+                            $('.toastsuc').toast('hide');
+                        }, 1000);
                     }
 
+                }
+            });
+        }
+
+        function ViewAcc(p) {
+            $.ajax({
+                type: "POST",
+                url: "/AccountView",
+                data: {
+                    Username: p
+                },
+                success: function(data) {
+                    $('#Acccontent').html(data);
                 }
             });
         }

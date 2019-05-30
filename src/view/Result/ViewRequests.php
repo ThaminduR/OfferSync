@@ -36,10 +36,8 @@
                     <div class="mt-2">
                         <h3> <?= $row['Sender'] ?> </h3>
                     </div>
-                    <form id="form1" action="/AccountView" method="POST">
-                        <button style="padding: 0; border: none; background: none; color:gray;">View Profile</button>
-                        <input type="hidden" name="Username" value="<?= $row['Sender'] ?>">
-                    </form>
+                    <button style="padding: 0; border: none; background: none; color:gray;" data-toggle="modal" data-target="#modalAvatar" onclick="ViewAcc(<?= '\'' . $row['Sender'] . '\'' ?>)">
+                        View Profile</button>
                     <hr>
                     <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
                     <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
@@ -71,10 +69,8 @@
                     <div class="mt-2">
                         <h3> <?= $row['Sender'] ?> </h3>
                     </div>
-                    <form id="form1" action="/AccountView" method="POST">
-                        <button style="padding: 0; border: none; background: none; color:gray;">View Profile</button>
-                        <input type="hidden" name="Username" value="<?= $row['Sender'] ?>">
-                    </form>
+                    <button style="padding: 0; border: none; background: none; color:gray;" data-toggle="modal" data-target="#modalAvatar" onclick="ViewAcc(<?= '\'' . $row['Sender'] . '\'' ?>)">
+                        View Profile</button>
                     <hr>
                     <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
                     <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>
@@ -101,10 +97,8 @@
                     <div class="mt-2">
                         <h3> <?= $row['Sender'] ?> </h3>
                     </div>
-                    <form id="form1" action="/AccountView" method="POST">
-                        <button style="padding: 0; border: none; background: none; color:gray;">View Profile</button>
-                        <input type="hidden" name="Username" value="<?= $row['Sender'] ?>">
-                    </form>
+                    <button style="padding: 0; border: none; background: none; color:gray;" data-toggle="modal" data-target="#modalAvatar" onclick="ViewAcc(<?= '\'' . $row['Sender'] . '\'' ?>)">
+                        View Profile</button>
                     <hr>
                     <p class="date"><i class="fas fa-fingerprint"></i><span class="ml-2">Offer Id : <?= $row["OfferId"] ?></p>
                     <p class="date"><i class="fas fa-calendar-alt mr-1"></i><span class="ml-2"><?= $row["Date"] ?></p>

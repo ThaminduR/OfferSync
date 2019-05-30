@@ -19,10 +19,7 @@
                 <div class="mt-2">
                     <h3><i class="far fa-user-circle"></i> <?= $row['Username'] ?> </h3>
                 </div>
-                <form id="form1" action="/AccountView" method="POST">
-                    <button style="padding: 0; border: none; background: none; color:gray;">View Profile</button>
-                    <input type="hidden" name="Username" value="<?= $row['Username'] ?>">
-                </form>
+                <button style="padding: 0; border: none; background: none; color:gray;" data-toggle="modal" data-target="#modalAvatar" onclick="ViewAcc(<?= '\'' . $row['Username'] . '\'' ?>)">View Profile</button>
                 <hr>
                 <p><i class="fas fa-map-marker-alt mr-2"></i> <span><?= $row["City"] ?></span></p>
                 <p><i class="fas fa-building mr-2"></i><?= $row["Restaurant"] ?></p>
