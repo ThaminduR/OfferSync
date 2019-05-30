@@ -183,19 +183,6 @@ class Database
         return $finalOffer;
     }
 
-    //get posts to profile..........DELEEEEEEETEEEEEE
-    public function GetPosts($username)
-    {
-
-        $sql = "SELECT * FROM offers WHERE Username ='$username'";
-        $result = mysqli_query($this->connection, $sql);
-        $offers = array();
-        while ($offer = mysqli_fetch_array($result)) {
-            $offers[] = $offer;
-        }
-        return $offers;
-    }
-
     //------------------------------------------Fetch Search Results from the databse---------------------------------------------
     public function FetchOffer($search,$username)
     {
