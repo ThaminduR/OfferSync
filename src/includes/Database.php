@@ -197,15 +197,10 @@ class Database
     }
 
     //------------------------------------------Fetch Search Results from the databse---------------------------------------------
-    public function FetchOffer($search)
+    public function FetchOffer($search,$username)
     {
         $search = mysqli_real_escape_string($this->connection, $search);
-        $query = "
-            SELECT * FROM offers 
-            WHERE 
-            Restaurant LIKE '%" . $search . "%' 
-            OR City LIKE '%" . $search . "%' 
-            ";
+        $query = "SELECT * FROM offers WHERE Restaurant LIKE '%" . $search . "%' AND Username!='$username' ";
         $result = mysqli_query($this->connection, $query);
         // $offers = array();
         // while ($offer = mysqli_fetch_array($result)) {
