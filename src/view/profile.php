@@ -52,6 +52,7 @@ echo $user['username'];
         <a href="/Logout " class="sideb list-group-item list-group-item-action waves-effect ">
             <i class="fas fa-sign-out-alt mr-3 "></i>Logout</a>
     </div>
+    <div class="prof">
     <div class="card">
 
         <div class="modal-header" center>

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.prof {
+    margin-bottom: 5%;
+}
+
 body {
     background-color: #ffffff;
 }
@@ -253,5 +257,4 @@ body {
     margin: auto;
     text-align: center;
     font-family: arial;
-    
 }
