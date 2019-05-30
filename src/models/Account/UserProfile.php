@@ -7,14 +7,11 @@ function DisplayUser($username)
     require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/AccountView.php';
 }
 
-function DisplayRequests()
+function DisplayContact($username)
 {
     $connection = Database::getDBconnection();
-    $username = $_COOKIE['Username'];
-    $result = $connection->SearchRequests($username);
-    $count = mysqli_num_rows($result);
-    $case = 1;
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';
+    $user = $connection->FetchUser($username);
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ContactView.php';
 }
 
 function DisplayPosts()
@@ -40,13 +37,23 @@ function Decline($id)
     echo "DecSuccess";
 }
 
+function DisplayRequests()
+{
+    $connection = Database::getDBconnection();
+    $username = $_COOKIE['Username'];
+    $result = $connection->SearchRequests($username);
+    $count = mysqli_num_rows($result);
+    $case = 1;
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';
+}
+
 function DisplayMyAccReq()
 {
     $connection = Database::getDBconnection();
     $username = $_COOKIE['Username'];
     $result = $connection->MyAcceptedRequests($username);
     $count = mysqli_num_rows($result);
-    $case = 2;
+    $case = 3;
     require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';
 }
 function DisplayReqIAcc()
@@ -55,6 +62,17 @@ function DisplayReqIAcc()
     $username = $_COOKIE['Username'];
     $result = $connection->RequestsIAccpeted($username);
     $count = mysqli_num_rows($result);
-    $case = 3;
+    $case = 2;
     require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';
 }
+
+function DisplaySentReq()
+{
+    $connection = Database::getDBconnection();
+    $username = $_COOKIE['Username'];
+    $result = $connection->SentRequests($username);
+    $count = mysqli_num_rows($result);
+    $case = 4;
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/ViewRequests.php';
+}
+

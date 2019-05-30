@@ -33,6 +33,9 @@ $routes = [
     //display a certain user
     ['POST','/AccountView',function(){AccountController::ViewAccount();}],
 
+    //Display a certain user's contact detials
+    ['POST','/ContactView',function(){AccountController::ViewContact();}],
+
     //Edit Profile UI
     ['GET','/Edit',function(){ViewController::CreateViewR('editProfile');}],
 
@@ -87,8 +90,17 @@ $routes = [
     //Displaying accepted requetst of user
     ['POST','/MyAccRequests',function(){AccountController::MyAccRequests();}],
 
+    //Displaying sent requests of user
+    ['POST','/SentReq',function(){AccountController::SentReq();}],
+
     //Edit Profile
-    ['POST','/EditEmail',function(){AccountController::EditEmail();}]
+    ['POST','/EditEmail',function(){AccountController::EditEmail();}],
+
+    ['POST','/EditPassword',function(){AccountController::EditPassword();}],
+
+    ['POST','/EditCity',function(){AccountController::EditCity();}],
+
+    ['POST','/EditNumber',function(){AccountController::EditNumber();}]
     
 
 ]

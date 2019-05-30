@@ -100,18 +100,18 @@
                                             <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
 
 
-                                        </div>
-                                    </div>
+                                       
                                 </form>
 
                             </div>
+                        </li>
 
 
 
                         <li>
                             <div class="heading">
                                 <h1>Update Your Password</h1>
-                                <form class="text-center p-5" action="/RegisterController" method="POST">
+                                <form class="text-center p-5" action="/EditPassword" method="POST">
                                     <!-- Card -->
                                     <div class="card">
                                         <!-- Card Content -->
@@ -122,13 +122,14 @@
                                                 <span id="password-check"></span>
                                             </div>
                                             <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
-
+                                            </form>
+                            </div>
                         </li>
 
                         <li>
                             <div class="heading">
                                 <h1>Update Your City</h1><br><br>
-                            <form class="text-center p-5" action="/RegisterController" method="POST">
+                            <form class="text-center p-5" action="/EditCity" method="POST">
                                 <!-- Card -->
                                 <div class="card">
                                     <!-- Card Content -->
@@ -140,7 +141,8 @@
                                         </div>
                                         <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
 
-
+                                        </form>
+                            </div>
                         </li>
 
                         <li>
@@ -148,7 +150,7 @@
                                 <h1>Update Phone Number</h1><br><br>
 
                             
-                            <form class="text-center p-5" action="/RegisterController" method="POST">
+                            <form class="text-center p-5" action="/EditNumber" method="POST">
                                 <!-- Card -->
                                 <div class="card">
                                     <!-- Card Content -->
@@ -162,9 +164,9 @@
                                 </div>
                                 <button class="btn btn-info my-6 btn-block" type="submit" name="submit">Submit </button>
 
+                                </form>
 
-
-                        <li>
+                        
 
                         </li>
 

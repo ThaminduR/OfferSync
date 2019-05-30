@@ -94,7 +94,7 @@ class Database
     public function EditEmail($username, $email)
     {
         $email = mysqli_real_escape_string($this->connection, $email);
-        $sql = "UPDATE userlogin SET email='$email'
+        $sql = "UPDATE users SET email='$email'
         WHERE username='$username'";
         //"INSERT INTO userlogin SET username='$username', password='$password', salt='$salt'";
         $result = mysqli_query($this->connection, $sql) or die("Data cannot Updated");
@@ -297,6 +297,14 @@ class Database
     {
         $username = mysqli_real_escape_string($this->connection, $username);
         $sql = "SELECT * FROM requests WHERE Receiver ='$username' AND IsConfirmed=true";
+        $result = mysqli_query($this->connection, $sql);
+        return $result;
+    }
+
+    public function SentRequests($username)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT * FROM requests WHERE Sender ='$username' AND IsConfirmed=false";
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }
