@@ -121,15 +121,6 @@ class Database
         return $result;
     }
 
-
-
-
-
-
-
-
-
-
     //to find a certain user from username 
     public function FindUserDetail($username)
     {
@@ -181,19 +172,6 @@ class Database
         $sql = "INSERT INTO offers SET Username='$username',Restaurant='$restaurant',Offer='$offer', Price='$price', City='$city', RestaurantBranch='$restaurantbranch', Date='$date', Gender='$gender'";
         $finalOffer = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $finalOffer;
-    }
-
-    //get posts to profile..........DELEEEEEEETEEEEEE
-    public function GetPosts($username)
-    {
-
-        $sql = "SELECT * FROM offers WHERE Username ='$username'";
-        $result = mysqli_query($this->connection, $sql);
-        $offers = array();
-        while ($offer = mysqli_fetch_array($result)) {
-            $offers[] = $offer;
-        }
-        return $offers;
     }
 
     //------------------------------------------Fetch Search Results from the databse---------------------------------------------
