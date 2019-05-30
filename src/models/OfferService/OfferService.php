@@ -16,7 +16,12 @@ function SearchOffers()
     if (isset($_POST["searchText"])) {
         $search = $_POST["searchText"];
         $connection = Database::getDBconnection();
-        $username = $_COOKIE['Username'];
+        if (isset($username)) {
+            $username = $_COOKIE['Username'];
+        } else {
+            $username = null;
+        }
+
         $result = $connection->FetchOffer($search, $username);
         $count = mysqli_num_rows($result);
         if (mysqli_num_rows($result) > 0) {
