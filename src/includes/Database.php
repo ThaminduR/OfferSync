@@ -54,19 +54,19 @@ class Database
         $city = mysqli_real_escape_string($this->connection, $city);
         $number = mysqli_real_escape_string($this->connection, $number);
         $sql = "INSERT INTO users SET username='$username', firstname='$firstname', lastname='$lastname', city='$city', gender='$gender', email='$email', MobileNumber='$number'";
-        $result = mysqli_query($this->connection, $sql);
+        $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $result;
     }
     //Edit user registration details.
-    public function EditUserDetail($username,$email, $city, $number)
+    public function EditUserDetail($username, $email, $city, $number)
     {
 
         $email = mysqli_real_escape_string($this->connection, $email);
         $city = mysqli_real_escape_string($this->connection, $city);
         $number = mysqli_real_escape_string($this->connection, $number);
-        $sql ="UPDATE users SET city='$city', email='$email', MobileNumber='$number'
+        $sql = "UPDATE users SET city='$city', email='$email', MobileNumber='$number'
         WHERE username='$username'";
-         //"INSERT INTO users SET city='$city', gender='$gender', email='$email', MobileNumber='$number'";
+        //"INSERT INTO users SET city='$city', gender='$gender', email='$email', MobileNumber='$number'";
         $result = mysqli_query($this->connection, $sql) or die("Data cannot inserted");
         return $result;
     }
@@ -111,7 +111,7 @@ class Database
         return $result;
     }
 
-    public function EditPhone($username,$number)
+    public function EditPhone($username, $number)
     {
         $number = mysqli_real_escape_string($this->connection, $number);
         $sql = "UPDATE users SET MobileNumber='$number'
@@ -128,6 +128,7 @@ class Database
         $sql = "SELECT * FROM users WHERE username='$username'";
         $result = mysqli_query($this->connection, $sql);
         $user_data = mysqli_fetch_array($result);
+        echo 'Testt';
         return $user_data;
         
     }
@@ -176,7 +177,7 @@ class Database
     }
 
     //------------------------------------------Fetch Search Results from the databse---------------------------------------------
-    public function FetchOffer($search,$username)
+    public function FetchOffer($search, $username)
     {
         $search = mysqli_real_escape_string($this->connection, $search);
         $query = "SELECT * FROM offers WHERE (Restaurant LIKE '%" . $search . "%' OR City LIKE '%" . $search . "%' )AND Username!='$username' ";
@@ -197,7 +198,7 @@ class Database
         return $result;
     }
 
-    public function DeleteOffers($sender,$id)
+    public function DeleteOffers($sender, $id)
     {
         $id = mysqli_real_escape_string($this->connection, $id);
         $query = "DELETE FROM offers WHERE Username ='$sender' AND OfferID='$id'";
@@ -252,12 +253,24 @@ class Database
 
     //------------------------------------------------Requests Related -----------------------------------------------------------------------
 
-    public function InsertRequest($sender, $receiver)
+    public function AlreadySent($sender, $id)
     {
-        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , IsConfirmed='false' ";
+        $sql = "SELECT * FROM requests WHERE Sender='$sender'and OfferId='$id'";
+        $result = mysqli_query($this->connection, $sql);
+        $req_data = mysqli_fetch_array($result);
+        if (empty($req_data)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    public function InsertRequest($sender, $receiver, $id)
+    {
+        $sql = "INSERT INTO requests SET Sender='$sender', Receiver='$receiver' , Date=CURDATE() , OfferID='$id', IsConfirmed=false ";
         $result = mysqli_query($this->connection, $sql);
         return $result;
     }
+
 
     public function SearchRequests($username)
     {
@@ -281,6 +294,18 @@ class Database
         $sql = "SELECT * FROM requests WHERE Receiver ='$username' AND IsConfirmed=true";
         $result = mysqli_query($this->connection, $sql);
         return $result;
+    }
+    public function AcceptRequest($id)
+    {
+        $sql = "UPDATE requests SET IsConfirmed=true WHERE OfferId=$id";
+        $result = mysqli_query($this->connection, $sql);
+        return ($result);
+    }
+    public function DeclineRequest($id)
+    {
+        $sql = "DELETE FROM requests WHERE OfferId=$id ";
+        $result = mysqli_query($this->connection, $sql);
+        return ($result);
     }
 
     public function SentRequests($username)

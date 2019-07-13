@@ -145,7 +145,7 @@
             });
         });
 
-        function SendRequest(p, id) {
+        function SendRequest(p,id) {
             $.ajax({
                 type: "POST",
                 url: "/request",
