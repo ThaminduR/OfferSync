@@ -45,8 +45,12 @@ class RequestController extends Controller
     //Searching offers from search page
     public function SearchOffers()
     {
-        if (isset($_POST['searchText'])) {
-            $search = $_POST['searchText'];
+        if (isset($_POST['restaurant'])) {
+            $search = $_POST['restaurant'];
+            SearchOffers();
+        }
+        if (isset($_POST['city'])) {
+            $search = $_POST['city'];
             SearchOffers();
         }
     }

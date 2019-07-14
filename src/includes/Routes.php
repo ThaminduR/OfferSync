@@ -60,7 +60,8 @@ $routes = [
     ['POST','/OfferController_Post',function(){OfferController::PostOffer();}],
 
     //Retrieve the offer related to keyword
-    ['POST','/fetch',function(){RequestController::SearchOffers();}],
+    ['POST','/fetchR',function(){RequestController::SearchOffers();}],
+    ['POST','/fetchC',function(){RequestController::SearchOffers();}],
 
     //Delete Offer
     ['POST','/deleteOffer',function(){RequestController::DeleteOffers();}],
