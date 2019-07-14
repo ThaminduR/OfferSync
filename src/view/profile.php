@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/Database.php';
 $connection = Database::getDBconnection();
 $username = $_COOKIE['Username'];
 $user = $connection->FetchUser($username);
-echo $user['username'];
+
 ?>
 
 <!DOCTYPE html>
