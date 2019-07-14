@@ -130,6 +130,7 @@ class Database
         $user_data = mysqli_fetch_array($result);
         echo 'Testt';
         return $user_data;
+        
     }
 
     //find a user from username or email
