@@ -158,6 +158,20 @@ class Database
         echo "Check Your Email";
     }
     //find a user from username or email
+    public function CheckUserandEmail($username,$email)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $email = mysqli_real_escape_string($this->connection, $email);
+        $sql = "SELECT email FROM users WHERE username='$username'";
+        $result = mysqli_query($this->connection, $sql);
+        $user_data = mysqli_fetch_array($result);
+        if (($user_data['email']==$email)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function FindUserName($username)
     {
         $username = mysqli_real_escape_string($this->connection, $username);

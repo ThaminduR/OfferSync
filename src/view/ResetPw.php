@@ -29,15 +29,19 @@
                     <p class="mx-5 mb-5">Enter your Username and Email</p>
                     <div class="col-6">
                         <div class="white black-text mb-3">
-                            <input name="firstname" type="text" id="FirstName" class="form-control" required>
-                            <label data-error="wrong" data-success="right" for="FirstName">Username</label>
+                            <input name="username" type="text" id="username" class="form-control" required>
+                            <label for="username">Username</label>
                         </div>
                         <div class="white black-text">
-                            <input name="firstname" type="text" id="FirstName" class="form-control" required>
-                            <label data-error="wrong" data-success="right" for="FirstName">Email</label>
+                            <input name="email" type="text" id="email" class="form-control" required>
+                            <label for="email">Email</label>
                         </div>
 
                         <button class="btn btn-black" name="submit" id="rbtn">Reset</button>
+
+                        <span id="reset-check" class="red-text">
+                            <P class="text-center"></P>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -65,11 +69,23 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript " src="js/mdb.min.js "></script>
     <!-- Initializations -->
-<script>
-document.getElementById("rbtn").addEventListener("Click",function(){
-    $
-});
-</script>
+    <script>
+        document.getElementById("rbtn").addEventListener("Click", function() {
+            var u = $(username).val();
+            var e = $(email).val();
+            $.ajax({
+                type: "POST",
+                url: "/resetcheck",
+                data: {
+                    username: u,
+                    email: e
+                },
+                success: function(data) {
+                    $('#reset-check').html(data);
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>

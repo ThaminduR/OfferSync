@@ -31,7 +31,7 @@ function ValidateEmail($email)
     $temp = $database->FindEmail($email);
     if ($temp) {
         echo "<span class='badge badge-danger'>Email already in use</span>";
-    }else{
+    } else {
         echo "<span class='badge badge-success'>Looks good!</span>";
     }
 }
@@ -47,7 +47,7 @@ function ValidateNumber($number)
     }
     if (strlen($number) != '10') {
         echo "<span class='badge badge-danger'>Enter a 10 digit phone number<br></span>";
-    }else{
+    } else {
         echo "<span class='badge badge-success'>Looks good!</span>";
     }
 }
@@ -60,28 +60,41 @@ function ValidatePassword($password)
     if (strlen($password) <= '8') {
         $len = false;
         echo "<span class='badge badge-danger'>Your password must contain at least 8 characters</span><br>";
-    }else {
+    } else {
         $len = true;
     }
     if (!preg_match("#[0-9]+#", $password)) {
         $num = false;
         echo "<span class='badge badge-danger'>Your password must contain at least 1 number<br></span><br>";
-    }else{
+    } else {
         $num = true;
     }
     if (!preg_match("#[A-Z]+#", $password)) {
         $cap = false;
         echo "<span class='badge badge-danger'>Your password must contain at least 1 uppercase letter</span><br>";
-    }else{
-        $cap =true;
+    } else {
+        $cap = true;
     }
     if (!preg_match("#[a-z]+#", $password)) {
         $sim = false;
         echo "<span class='badge badge-danger'>Your password must contain at least 1 lowercase letter<br></span><br>";
-    }else{
+    } else {
         $sim = true;
     }
-    if ($len && $num && $cap && $sim){
+    if ($len && $num && $cap && $sim) {
         echo "<span class='badge badge-success'>Looks good!</span>";
+    }
+}
+
+function resetcheck($username, $email)
+{
+    $database = Database::getDbConnection();
+    $tmp = $database->CheckUserandEmail($username, $email);
+    if ($tmp) {
+        $username = $_COOKIE['Username'];
+        $result = $database->ResetPw($username);
+        echo "Check your email for new password";
+    } else {
+        echo "Invalid Username or Password";
     }
 }

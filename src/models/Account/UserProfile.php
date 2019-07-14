@@ -30,12 +30,6 @@ function DisplayPosts()
     require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/postview.php';
 }
 
-function ResetPw(){
-    $connection = Database::getDBconnection();
-    $username = $_COOKIE['Username'];
-    $result = $connection->ResetPw($username);
-}
-
 function Accept($id)
 {
     $connection = Database::getDBconnection();

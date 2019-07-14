@@ -65,8 +65,8 @@ class RequestController extends Controller
 
     //Retrieving offers for certain profile
     public function GetMyOffers()
-    {     
-        DisplayPosts(); 
+    {
+        DisplayPosts();
     }
 
     //----------------------------------------Requests ---------------------------------------
@@ -76,21 +76,32 @@ class RequestController extends Controller
         if (isset($_POST['username'])) {
             $receiver = $_POST['username'];
             $id = $_POST['id'];
-            SendRequests($receiver,$id);
+            SendRequests($receiver, $id);
         }
     }
 
-    public function AcceptRequest(){
-        if(isset($_POST['id'])){
+    public function AcceptRequest()
+    {
+        if (isset($_POST['id'])) {
             $id = $_POST['id'];
             Accept($id);
         }
     }
 
-    public function DeclineRequest(){
-        if(isset($_POST['id'])){
+    public function DeclineRequest()
+    {
+        if (isset($_POST['id'])) {
             $id = $_POST['id'];
             Decline($id);
         }
+    }
+
+    public function resetcheck()
+    {
+        if (isset($_POST['username']) && (isset($_POST['email']))) {
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            resetcheck($username,$email);
+         }
     }
 }
