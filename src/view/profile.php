@@ -52,10 +52,7 @@ $user = $connection->FetchUser($username);
         <a href="/Logout " class="sideb list-group-item list-group-item-action waves-effect ">
             <i class="fas fa-sign-out-alt mr-3 "></i>Logout</a>
     </div>
-<<<<<<< HEAD
-=======
     <div class="prof">
->>>>>>> 00abcf45e1bcb26da9ca9b9d350087886b2d096d
     <div class="card">
 
         <div class="modal-header" center>
@@ -66,16 +63,11 @@ $user = $connection->FetchUser($username);
 
             <h3 class="mt-1 mb-1 black-text"><?= $user["username"] ?> </h3>
             <hr>
-<<<<<<< HEAD
-            <p class="black-text">Gender :<?= $user["gender"] ?></p>
-            <p class="mt-1 black-text">City : <?= $user["city"] ?> </p>
-=======
             <p class="black-text">Gender : <?= $user["gender"] ?></p>
             <p class="mt-1 black-text">City : <?= $user["city"] ?> </p>
             <p class="mt-1 black-text">Number : <?= $user["MobileNumber"] ?> </p>
             <p class="mt-1 black-text">Email : <?= $user["email"] ?> </p>
             <a class="btn-outline-black btn-lg" href="/Edit" >Edit Profile</a>
->>>>>>> 00abcf45e1bcb26da9ca9b9d350087886b2d096d
 
         </div>
     </div>

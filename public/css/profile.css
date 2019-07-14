@@ -253,11 +253,7 @@ body {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-<<<<<<< HEAD
-    max-width: 300px;
-=======
     max-width: 30% !important;
->>>>>>> 00abcf45e1bcb26da9ca9b9d350087886b2d096d
     margin: auto;
     text-align: center;
     font-family: arial;
