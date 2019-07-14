@@ -17,6 +17,13 @@ class AccountController extends Controller
         }
     }
 
+    public function ResetPw()
+    {
+        if (isset($_POST['Username'])) {
+            ResetPw();
+        }
+    }
+
     public function MyProfile()
     {
         if (isset($_POST['Username'])) {

@@ -12,9 +12,9 @@ function Post_Offer($restaurant, $offer, $price, $restaurantbranch, $date, $city
 
 
 function SearchOffers()
-{
-    if (isset($_POST["searchText"])) {
-        $search = $_POST["searchText"];
+{ 
+    if (isset($_POST["restaurant"])) {
+        $search = $_POST["restaurant"];
         $connection = Database::getDBconnection();
         if (isset($_COOKIE['Username'])) {
             $username = $_COOKIE['Username'];
@@ -22,7 +22,22 @@ function SearchOffers()
             $username = null;
         }
 
-        $result = $connection->FetchOffer($search, $username);
+        $result = $connection->FetchOfferR($search, $username);
+        $count = mysqli_num_rows($result);
+        if (mysqli_num_rows($result) > 0) {
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/SearchResult.php';
+        }
+    }
+    if (isset($_POST["city"])) {
+        $search = $_POST["city"];
+        $connection = Database::getDBconnection();
+        if (isset($_COOKIE['Username'])) {
+            $username = $_COOKIE['Username'];
+        } else {
+            $username = null;
+        }
+
+        $result = $connection->FetchOfferC($search, $username);
         $count = mysqli_num_rows($result);
         if (mysqli_num_rows($result) > 0) {
             require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/view/Result/SearchResult.php';
