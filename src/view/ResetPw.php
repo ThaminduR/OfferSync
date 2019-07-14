@@ -25,24 +25,26 @@
         <div class="jumbotron card card-image" style="background-image: url(/img/back1.jpg);">
             <div class="text-white text-center py-5 px-4">
                 <div>
-                    <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Password Reset !</strong></h2>
-                    <p class="mx-5 mb-5">Enter your Username and Email</p>
-                    <div class="col-6">
-                        <div class="white black-text mb-3">
-                            <input name="username" type="text" id="username" class="form-control" required>
-                            <label for="username">Username</label>
-                        </div>
-                        <div class="white black-text">
-                            <input name="email" type="text" id="email" class="form-control" required>
-                            <label for="email">Email</label>
-                        </div>
+                    <form method="POST" action="/resetcheck">
+                        <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Password Reset !</strong></h2>
+                        <p class="mx-5 mb-5">Enter your Username and Email</p>
+                        <div class="col-6">
+                            <div class="white black-text mb-3">
+                                <input name="username" type="text" id="username" class="form-control" required>
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="white black-text">
+                                <input name="email" type="text" id="email" class="form-control" required>
+                                <label for="email">Email</label>
+                            </div>
 
-                        <button class="btn btn-black" name="submit" id="rbtn">Reset</button>
+                            <button class="btn btn-black" name="submit" id="rbtn">Reset</button>
 
-                        <span id="reset-check" class="red-text">
-                            <P class="text-center"></P>
-                        </span>
-                    </div>
+                            <span id="reset-check" class="red-text">
+                                <P class="text-center"></P>
+                            </span>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -70,7 +72,7 @@
     <script type="text/javascript " src="js/mdb.min.js "></script>
     <!-- Initializations -->
     <script>
-        document.getElementById("rbtn").addEventListener("Click", function() {
+        document.getElementById('rbtn').addEventListener("click", function() {
             var u = $(username).val();
             var e = $(email).val();
             $.ajax({

@@ -91,8 +91,8 @@ function resetcheck($username, $email)
     $database = Database::getDbConnection();
     $tmp = $database->CheckUserandEmail($username, $email);
     if ($tmp) {
-        $username = $_COOKIE['Username'];
-        $result = $database->ResetPw($username);
+        $salt = ($database->SaltToReset($username))['salt'];
+        $result = $database->ResetPw($username,$email,$salt);
         echo "Check your email for new password";
     } else {
         echo "Invalid Username or Password";

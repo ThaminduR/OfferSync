@@ -1,6 +1,7 @@
 <?php
 //TODO : implement database library (PDO)
 //NOTE : If a function is needed comment it here
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/..' . '/src/includes/database_config.php';
 
 class Database
@@ -130,13 +131,6 @@ class Database
         $user_data = mysqli_fetch_array($result);
         return $user_data;
     }
-    public function EmailToReset($username)
-    {
-        $username = mysqli_real_escape_string($this->connection, $username);
-        $sql = "SELECT email FROM users WHERE username='$username'";
-        $result = mysqli_query($this->connection, $sql);
-        $user_data = mysqli_fetch_array($result);
-    }
 
     public function SaltToReset($username)
     {
@@ -144,28 +138,33 @@ class Database
         $sql = "SELECT salt FROM userlogin WHERE username='$username'";
         $result = mysqli_query($this->connection, $sql);
         $user_data = mysqli_fetch_array($result);
+        return $user_data;
     }
 
-    public function ResetPw($username)
+    public function ResetPw($username, $email, $salt)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
-        $email = EmailToReset($username)['email'];
-        $salt = SaltToReset($username)['salt'];
+        $email = mysqli_real_escape_string($this->connection, $email);
+        $salt = mysqli_real_escape_string($this->connection, $salt);
         $password = rand(999, 99999);
         $password_hash = base64_encode(hash('sha256', "$username.$password.$salt.'#1q2w3e4r5t6@t9h8m7n6d5'", true));
-        EditLoginData($username, $password_hash, $salt);
-        mail($email,"OfferSync Password Reset",$password_hash);
-        echo "Check Your Email";
+        ini_set("SMTP", "smtp.gmail.com");
+        ini_set("smtp_port", "25");
+        ini_set('sendmail_from', 'help@OfferSync.com');
+        $sql = "UPDATE userlogin SET password='$password', salt='$salt' WHERE username='$username'";
+        $result = mysqli_query($this->connection, $sql);
+
+        mail($email, "OfferSync Password Reset", $password_hash);
     }
     //find a user from username or email
-    public function CheckUserandEmail($username,$email)
+    public function CheckUserandEmail($username, $email)
     {
         $username = mysqli_real_escape_string($this->connection, $username);
         $email = mysqli_real_escape_string($this->connection, $email);
         $sql = "SELECT email FROM users WHERE username='$username'";
         $result = mysqli_query($this->connection, $sql);
         $user_data = mysqli_fetch_array($result);
-        if (($user_data['email']==$email)) {
+        if (($user_data['email'] == $email)) {
             return true;
         } else {
             return false;
