@@ -72,7 +72,7 @@
                         <br>
                         <div class="form-group">
                             <div class="input-group text-center">
-                                <input type="text" name="search_text" id="search_text" placeholder="Search by Restaurant" class="form-control" />
+                                <input type="text" name="restaurant" id="restaurant" placeholder="Search by Restaurant" class="form-control" />
                                 <input type="text" name="city" id="city" placeholder="Search by City" class="form-control" />
                        
                             </div>
@@ -111,14 +111,14 @@
     <script>
         $(document).ready(function() {
 
-            load_data();
+           
 
-            function load_data(query) {
+            function load_data1(query) {
                 $.ajax({
-                    url: "/fetch",
+                    url: "/fetchR",
                     method: "POST",
                     data: {
-                        searchText: query
+                        restaurant: query
                     },
                     success: function(data) {
                         $('#result').html(data);
@@ -126,21 +126,34 @@
                 });
             }
 
-            $('#search_text').keyup(function() {
+            function load_data2(query) {
+                $.ajax({
+                    url: "/fetchC",
+                    method: "POST",
+                    data: {
+                        city: query
+                    },
+                    success: function(data) {
+                        $('#result').html(data);
+                    }
+                });
+            }
+
+            $('#restaurant').keyup(function() {
                 var search = $(this).val();
                 if (search != '') {
-                    load_data(search);
+                    load_data1(search);
                 } else {
-                    load_data();
+                    load_data1();
                 }
             });
             
             $('#city').keyup(function() {
                 var search = $(this).val();
                 if (search != '') {
-                    load_data(search);
+                    load_data2(search);
                 } else {
-                    load_data();
+                    load_data2();
                 }
             });
         });
