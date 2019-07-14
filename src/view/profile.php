@@ -5,6 +5,17 @@ $connection = Database::getDBconnection();
 $username = $_COOKIE['Username'];
 $user = $connection->FetchUser($username);
 
+$sql = "SELECT * FROM user_image WHERE userid = ?";
+$stmt = mysqli_prepare($connect, $sql);
+mysqli_stmt_bind_param($stmt,"i",$_SESSION['userid']);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$userImage = mysqli_fetch_assoc($result);
+mysqli_stmt_close($stmt);
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +42,18 @@ $user = $connection->FetchUser($username);
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
     <link href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 </head>
-
+<h1>User's Profile</h1>
+  <?php if($userImage['is_set'] == 0){
+            echo '<img src="profile_pics/default-profile-pic.png"/>'; 
+   }
+        else{
+            echo '<img src="'.$userImage['image_dir'].'"/>';
+   }
+   ?>
+   <form action="upload.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="file" accept="image/*">
+                    <button type="submit" name="submit">Upload</button>
+   </form>
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -52,10 +74,7 @@ $user = $connection->FetchUser($username);
         <a href="/Logout " class="sideb list-group-item list-group-item-action waves-effect ">
             <i class="fas fa-sign-out-alt mr-3 "></i>Logout</a>
     </div>
-<<<<<<< HEAD
-=======
     <div class="prof">
->>>>>>> 00abcf45e1bcb26da9ca9b9d350087886b2d096d
     <div class="card">
 
         <div class="modal-header" center>
@@ -66,16 +85,11 @@ $user = $connection->FetchUser($username);
 
             <h3 class="mt-1 mb-1 black-text"><?= $user["username"] ?> </h3>
             <hr>
-<<<<<<< HEAD
-            <p class="black-text">Gender :<?= $user["gender"] ?></p>
-            <p class="mt-1 black-text">City : <?= $user["city"] ?> </p>
-=======
             <p class="black-text">Gender : <?= $user["gender"] ?></p>
             <p class="mt-1 black-text">City : <?= $user["city"] ?> </p>
             <p class="mt-1 black-text">Number : <?= $user["MobileNumber"] ?> </p>
             <p class="mt-1 black-text">Email : <?= $user["email"] ?> </p>
             <a class="btn-outline-black btn-lg" href="/Edit" >Edit Profile</a>
->>>>>>> 00abcf45e1bcb26da9ca9b9d350087886b2d096d
 
         </div>
     </div>
