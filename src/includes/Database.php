@@ -128,11 +128,35 @@ class Database
         $sql = "SELECT * FROM userlogin WHERE username='$username'";
         $result = mysqli_query($this->connection, $sql);
         $user_data = mysqli_fetch_array($result);
-        echo 'Testt';
         return $user_data;
-        
+    }
+    public function EmailToReset($username)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT email FROM users WHERE username='$username'";
+        $result = mysqli_query($this->connection, $sql);
+        $user_data = mysqli_fetch_array($result);
     }
 
+    public function SaltToReset($username)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $sql = "SELECT salt FROM userlogin WHERE username='$username'";
+        $result = mysqli_query($this->connection, $sql);
+        $user_data = mysqli_fetch_array($result);
+    }
+
+    public function ResetPw($username)
+    {
+        $username = mysqli_real_escape_string($this->connection, $username);
+        $email = EmailToReset($username)['email'];
+        $salt = SaltToReset($username)['salt'];
+        $password = rand(999, 99999);
+        $password_hash = base64_encode(hash('sha256', "$username.$password.$salt.'#1q2w3e4r5t6@t9h8m7n6d5'", true));
+        EditLoginData($username, $password_hash, $salt);
+        mail($email,"OfferSync Password Reset",$password_hash);
+        echo "Check Your Email";
+    }
     //find a user from username or email
     public function FindUserName($username)
     {
@@ -224,7 +248,6 @@ class Database
         $sql = "SELECT data FROM sessions WHERE id ='$id'";
         $result = mysqli_query($this->connection, $sql);
         return mysqli_fetch_array($result);
-        echo "test";
     }
 
     //Inserting the session to database

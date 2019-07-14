@@ -23,8 +23,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
                 <a class="navbar-brand" href="/">OfferSync</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -34,8 +33,7 @@
 
                     <ul class="navbar-nav nav-flex-icons">
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#LoginForm"><i
-                                    class="fas fa-sign-in-alt mr-2"></i>LOGIN</a>
+                            <a class="nav-link" data-toggle="modal" data-target="#LoginForm"><i class="fas fa-sign-in-alt mr-2"></i>LOGIN</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/Register"><i class="fas fa-user-plus mr-2"></i>SIGN UP</a>
@@ -46,42 +44,42 @@
         </nav>
 
         <!-- Login -->
-        <div class="modal fade " id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
-            <form id="loginform" action="/LoginController" method="POST">
-                <div class="modal-dialog loginform" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header text-center">
-                            <h4 class="modal-title w-100 font-weight-bold">Sign In</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+        <div class="modal fade " id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <!-- action="/LoginController" -->
+            <!-- <form id="loginform"  method="POST"> -->
+            <div class="modal-dialog loginform" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign In</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                            <i class="fas fa-user prefix grey-text"></i>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                            <label for="defaultForm-email">Username</label>
                         </div>
-                        <div class="modal-body mx-3">
-                            <div class="md-form mb-5">
-                                <i class="fas fa-user prefix grey-text"></i>
-                                <input type="text" id="defaultForm-text" name="username" class="form-control validate"
-                                    required>
-                                <label data-error="wrong" for="defaultForm-email">Username</label>
-                            </div>
 
-                            <div class="md-form mb-4">
-                                <i class="fas fa-lock prefix grey-text"></i>
-                                <input type="password" id="defaultForm-pass" name="password"
-                                    class="form-control validate" required>
-                                <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
-                            </div>
-                            <span id="login-check">
-                                <P class="text-center"></P>
-                            </span>
+                        <div class="md-form mb-4">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                            <label for="defaultForm-pass">Password</label>
                         </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn btn-outline-black" name="submit">Login<i
-                                    class="fas fa-chevron-circle-right ml-2 mt-1"></i></button>
-                        </div>
+                        <span id="login-check" class="red-text">
+                            <P class="text-center"></P>
+                        </span>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-outline-black" name="submit" id="sbtn">Login<i class="fas fa-chevron-circle-right ml-2 mt-1"></i></button>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <a href="/ResetPw">Reset Password</a>
                     </div>
                 </div>
-            </form>
+            </div>
+            <!-- </form> -->
         </div>
         <!-- /Login -->
 
@@ -99,10 +97,8 @@
                             <h4 class="white-text my-4">You've come to the right place. Search for hundres of offers
                                 or
                                 post an offer yourself.</h4>
-                            <a class="btn btn-outline-white" href="/search">Search Offer<i
-                                    class="fas fa-search ml-2"></i></a>
-                            <a class="btn btn-outline-white" href="/postOffer">Post an Offer<i
-                                    class="far fa-paper-plane ml-2"></i></a>
+                            <a class="btn btn-outline-white" href="/search">Search Offer<i class="fas fa-search ml-2"></i></a>
+                            <a class="btn btn-outline-white" href="/postOffer">Post an Offer<i class="far fa-paper-plane ml-2"></i></a>
                         </div>
                     </div>
 
@@ -157,6 +153,52 @@
     <script type="text/javascript" src="js/mdb.js"></script>
     <!-- Chcekc Username and Password  -->
     <script type="text/javascript" src="js/checking.js"></script>
+
+    <script>
+        document.getElementById('sbtn').addEventListener("click", function() {
+            var u = $(username).val();
+            var p = $(password).val();
+            $.ajax({
+                type: "POST",
+                url: "/LoginController",
+                data: {
+                    username: u,
+                    password: p
+                },
+                success: function(data) {
+                    if (data == "Login Success !") {
+                        window.location.href = "/";
+                    } else {
+                        $('#login-check').html(data);
+                    }
+                }
+
+            })
+        });
+
+        document.getElementById('password').addEventListener("keypress", function(event) {
+            if (event.keyCode == 13) {
+                var u = $(username).val();
+                var p = $(password).val();
+                $.ajax({
+                    type: "POST",
+                    url: "/LoginController",
+                    data: {
+                        username: u,
+                        password: p
+                    },
+                    success: function(data) {
+                        if (data == "Login Success !") {
+                            window.location.href = "/";
+                        } else {
+                            $('#login-check').html(data);
+                        }
+                    }
+
+                })
+            }
+        });
+    </script>
 </body>
 
 </html>

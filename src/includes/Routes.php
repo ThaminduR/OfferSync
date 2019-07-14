@@ -45,6 +45,8 @@ $routes = [
     //Profile UI
     ['GET','/profile',function(){ViewController::CreateViewR('profile');}],
 
+    //Reset Pw
+    ['GET','/ResetPw',function(){ViewController::CreateView('ResetPw');}],
 
     //----------------------------offers related---------------------------------
 
